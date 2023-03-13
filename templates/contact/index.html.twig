@@ -1,0 +1,10 @@
+{% extends "base.html.twig" %} {% block title %}SnowTricks - Contact{% endblock %} {% block body %}
+<section id="contact">
+	<h2>Contact Us</h2>
+	{{ form_start(form) }}
+	{{ form_widget(form) }}
+	<button type="submit" class="btn btn-primary">Send</button>
+	{{ form_end(form) }}
+</section>
+
+{% endblock %}

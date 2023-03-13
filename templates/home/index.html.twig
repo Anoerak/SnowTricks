@@ -1,20 +1,35 @@
 {% extends 'base.html.twig' %}
-
-{% block title %}Hello HomeController!{% endblock %}
-
+{% block title %}SnowTricks - Home
+{% endblock %}
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+	<section class="hero">
+		<div class="container">
+			<h1 class="title">Welcome to SnowTricks</h1>
+			<p class="subtitle">Your ultimate resource for everything snowboarding!</p>
+			<img src="{{ asset('images/snowtricks_home.jpg') }}" alt="snowboarder in the air"/>
+			<p class="description">
+				Our website is dedicated to providing you with the latest news, tips, and tricks for mastering the slopes
+				and performing jaw-dropping stunts on your snowboard. Whether you're a seasoned pro or just getting started,
+				we have something for everyone, with articles, videos, and tutorials covering all aspects of snowboarding,
+				from basic techniques to advanced freestyle maneuvers.
+			</p>
+			<a href="#" class="button">Join our community</a>
+			<p class="disclaimer">
+				<span>Disclaimer:</span>
+				All the texts are fictitious and originate from the OpenAI ChatGPT API.
+			</p>
+		</div>
+		<a href="#tricks" class="arrow">
+			<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+				<path d="M8 10l4 4 4-4"/>
+			</svg>
+		</a>
+	</section>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+	<section id="tricks" class="tricks">
+		{% block tricks %}
+			{# {% include "pages/display_tricks/index.html.twig" %} #}
+		{% endblock %}
+	</section>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/anorak/Documents/Dev/SnowTricks (new)/SnowTricks/src/Controller/HomeController.php'|file_link(0) }}">src/Controller/HomeController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/anorak/Documents/Dev/SnowTricks (new)/SnowTricks/templates/home/index.html.twig'|file_link(0) }}">templates/home/index.html.twig</a></code></li>
-    </ul>
-</div>
 {% endblock %}

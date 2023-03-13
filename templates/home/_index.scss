@@ -1,0 +1,90 @@
+.hero {
+	padding: 100px 0;
+
+	.container {
+		max-width: 960px;
+		margin: 0 auto;
+		text-align: center;
+		color: $blue;
+
+		.title {
+			font-size: 4rem;
+			font-weight: bold;
+			margin-bottom: 20px;
+		}
+
+		.subtitle {
+			font-size: 2rem;
+			margin-bottom: 40px;
+		}
+
+		.description {
+			font-size: 1.5rem;
+			line-height: 1.6;
+			margin-bottom: 40px;
+		}
+
+		.button {
+			display: inline-block;
+			padding: 10px 20px;
+			background-color: $extra-light-blue;
+			border-radius: 4px;
+			color: $blue;
+			font-size: 1.5rem;
+			text-decoration: none;
+			transition: all 0.3s ease-in-out;
+
+			&:hover {
+				background-color: $light-blue;
+				color: $white;
+			}
+		}
+		.disclaimer {
+			margin-top: 2rem;
+			color: $text-light;
+			font-weight: 100;
+			span {
+				color: $text-light;
+				font-weight: 400;
+			}
+		}
+	}
+	.arrow {
+		svg {
+			position: absolute;
+			right: 1rem;
+			bottom: 1rem;
+			width: 100px;
+			height: 100px;
+			color: $extra-light-blue;
+			margin-top: 50px;
+			transition: all 0.75s ease-in-out;
+
+			&:hover {
+				color: $blue;
+			}
+		}
+	}
+}
+
+.tricks {
+	min-height: 100vh;
+	margin: 2rem 0;
+	.arrow {
+		svg {
+			position: absolute;
+			right: 1rem;
+			bottom: -105vh;
+			width: 100px;
+			height: 100px;
+			color: $extra-light-blue;
+			margin-top: 50px;
+			transition: all 0.75s ease-in-out;
+			rotate: 180deg;
+
+			&:hover {
+				color: $blue;
+			}
+		}
+	}
+}

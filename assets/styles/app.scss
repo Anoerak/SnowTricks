@@ -1,5 +1,13 @@
 @import '~/assets/styles/abstracts/variables.scss';
 
+@import '~/templates/components/header/header.scss';
+@import '~/templates/components/footer/footer.scss';
+@import '~/templates/components/form/form.scss';
+
+@import '~/templates/home/index.scss';
+@import '~/templates/trick/trick.scss';
+@import '~/templates/about/about.scss';
+
 * {
 	box-sizing: border-box;
 	padding: 0;
