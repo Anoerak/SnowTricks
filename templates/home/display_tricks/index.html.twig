@@ -1,0 +1,35 @@
+<div class="container">
+	<h2 class="title">Latest tricks</h2>
+	<div id="tricks_list" class="tricks">
+		{% for trick in tricks %}
+			<div class="trick">
+				<div class="trick__image">
+					<img src="{{ trick.mainPicture }}" alt="{{ trick.name }}"/>
+				</div>
+				<div class="trick__content">
+					<h3 class="trick__title">
+						{{ trick.name }}
+					</h3>
+					<p class="trick__description">
+						{{ trick.description }}
+					</p>
+					<a href="{{ path('app_trick', { id: trick.id }) }}" class="button">Read more</a>
+				</div>
+			</div>
+		{% endfor %}
+
+		<div id="load_more_card" class="trick__load__more">
+			<h3 class=""></h3>
+			<p class="trick__description">
+				Want to see more tricks??
+			</p>
+			<button id="display-more_button">Click Here</button>
+		</div>
+
+	</div>
+</div>
+<a href="#home" class="arrow">
+	<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+		<path d="M8 10l4 4 4-4"/>
+	</svg>
+</a>

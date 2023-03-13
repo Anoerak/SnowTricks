@@ -1,0 +1,16 @@
+{% for trick in tricks %}
+	<div class="trick">
+		<div class="trick__image">
+			<img src="{{ trick.mainPicture }}" alt="{{ trick.name }}"/>
+		</div>
+		<div class="trick__content">
+			<h3 class="trick__title">
+				{{ trick.name }}
+			</h3>
+			<p class="trick__description">
+				{{ trick.description }}
+			</p>
+			<a href="{{ path('app_trick', { id: trick.id }) }}" class="button">Read more</a>
+		</div>
+	</div>
+{% endfor %}
