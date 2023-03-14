@@ -1,8 +1,8 @@
-<div class="container">
+<div id="tricks_count_{{ tricksCount }}" class="container">
 	<h2 class="title">Latest tricks</h2>
 	<div id="tricks_list" class="tricks">
 		{% for trick in tricks %}
-			<div class="trick">
+			<div id="trick_{{ trick.id }}" class="trick">
 				<div class="trick__image">
 					<img src="{{ trick.mainPicture }}" alt="{{ trick.name }}"/>
 				</div>

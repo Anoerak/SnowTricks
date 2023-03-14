@@ -1,5 +1,5 @@
 {% for trick in tricks %}
-	<div class="trick">
+	<div id="trick_{{ trick.id }}" class="trick">
 		<div class="trick__image">
 			<img src="{{ trick.mainPicture }}" alt="{{ trick.name }}"/>
 		</div>
