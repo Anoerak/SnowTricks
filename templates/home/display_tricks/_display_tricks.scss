@@ -65,14 +65,11 @@ section#tricks .container {
 					display: -webkit-box;
 					-webkit-line-clamp: 3;
 					-webkit-box-orient: vertical;
-					display: flex;
-					justify-content: center;
-					align-items: center;
 					height: 50px;
 					width: 100%;
 					background-color: $white;
 					color: $blue;
-					font-size: 0.75rem;
+					font-size: 0.7rem;
 					font-weight: normal;
 					text-transform: uppercase;
 					text-align: center;
