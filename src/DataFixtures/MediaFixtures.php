@@ -29,7 +29,7 @@ class MediaFixtures extends Fixture implements DependentFixtureInterface
             $newMedia = new Media();
             $newMedia->setPath($media['media'])
                 ->setType($media['type'])
-                ->setTrick($manager->getRepository(Trick::class)->findOneBy(['name' => (TrickFixtures::TRICKS_NAME[rand(0, 14)])]));
+                ->setTrick($manager->getRepository(Trick::class)->findOneBy(['name' => $media['trick_name']]));
 
             $manager->persist($newMedia);
         }
