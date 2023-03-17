@@ -2,8 +2,11 @@
 <section id="contact">
 	<h2>Contact Us</h2>
 	{{ form_start(form) }}
-	{{ form_widget(form) }}
-	<button type="submit" class="btn btn-primary">Send</button>
+	<div id="form">
+		{{ form_widget(form) }}
+		<button type="submit" class="btn btn-primary">Send</button>
+		<button type="reset" class="btn btn-cancel">Cancel</button>
+	</div>
 	{{ form_end(form) }}
 </section>
 

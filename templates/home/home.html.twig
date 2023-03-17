@@ -3,6 +3,9 @@
 {% endblock %}
 {% block body %}
 	<section class="hero">
+		{% block delete_modal %}
+			{% include "components/modals/delete_trick_confirmation.html.twig" %}
+		{% endblock %}
 		<div class="container">
 			<h1 class="title">Welcome to SnowTricks</h1>
 			<p class="subtitle">Your ultimate resource for everything snowboarding!</p>
@@ -28,7 +31,7 @@
 
 	<section id="tricks" class="tricks">
 		{% block tricks %}
-			{% include "home/display_tricks/index.html.twig" %}
+			{% include "home/display_tricks/display_tricks.html.twig" %}
 		{% endblock %}
 	</section>
 

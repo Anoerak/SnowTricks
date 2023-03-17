@@ -15,5 +15,6 @@ import './styles/app.scss';
 // import './bootstrap';
 
 import '../templates/components/header/header.js';
+import '../templates/components/modals/delete_trick.js';
 import '../templates/home/display_tricks/display_tricks.js';
 import '../templates/components/carousel/carousel.js';

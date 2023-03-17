@@ -11,9 +11,16 @@ $logo-red: #dc3545;
 
 $base-color: #66f;
 $text-dark: #3c4250;
+$text-dark-hover: #2c2f3a;
 $text-light: #a0a5b1;
-$text-error: #dc3545;
+$text-error: $logo-red;
 $text-confirm: #35dcc6;
-$text-info: #0d6efd;
+$text-info: $logo-blue;
 
 $border-color: #eceef3;
+
+$primary-button-blue: #007bff;
+$primary-button-blue-hover: #0069d9;
+
+$cancel-button-red: $text-error;
+$cancel-button-red-hover: #c82333;

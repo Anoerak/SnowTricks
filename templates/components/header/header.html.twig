@@ -41,7 +41,7 @@
 						<a href="{{ path('app_signin') }}">Signin</a>
 					</li>
 					<li class="signup {{ app.request.attributes.get('_route') == 'app_signup' ? 'active' : '' }}">
-						<a href="{{ path('app_signup') }}">Signup</a>
+						<a class="signup" href="{{ path('app_signup') }}">Signup</a>
 					</li>
 					{% else %}
 					<li class="dropdown">

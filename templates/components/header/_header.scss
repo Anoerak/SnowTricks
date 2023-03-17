@@ -237,6 +237,9 @@ a {
 					}
 				}
 				&.active {
+					> a.signup {
+						border-radius: 0.25rem;
+					}
 					> a {
 						color: $blue;
 						// We reduce the length of the border to make it look like a line

@@ -2,8 +2,10 @@
 <section id="signup">
 	<h1>Signup</h1>
 	{{ form_start(form) }}
-	{{ form_widget(form) }}
-	<button type="submit" class="btn btn-primary">Signup</button>
+	<div id="form">
+		{{ form_widget(form) }}
+		<button type="submit" class="btn btn-primary">Signup</button>
+	</div>
 	{{ form_end(form) }}
 </section>
 {% endblock %}
