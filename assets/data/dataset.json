@@ -1,0 +1,338 @@
+{
+	"tricks": [
+		{
+			"id": 1,
+			"user_id": 1,
+			"name": "Mute",
+			"category": "grabs",
+			"description": "The Mute is a snowboarding trick where the rider grabs the frontside edge of the board between the two feet with the front hand.",
+			"picture": "https://www.picsum.photos/id/1/260/200"
+		},
+		{
+			"id": 2,
+			"user_id": 1,
+			"name": "Indy",
+			"category": "grabs",
+			"description": "The Indy is a snowboarding trick where the rider grabs the frontside edge of the board, between the two feet, with the back hand.",
+			"picture": "https://www.picsum.photos/id/2/260/200"
+		},
+		{
+			"id": 3,
+			"user_id": 1,
+			"name": "Stalefish",
+			"category": "grabs",
+			"description": "The Stalefish is a snowboarding trick where the rider grabsthe backside edge of the board between the two feet with the back hand.",
+			"picture": "https://www.picsum.photos/id/3/260/200"
+		},
+		{
+			"id": 4,
+			"user_id": 1,
+			"name": "Japan (or Japan Air)",
+			"category": "grabs",
+			"description": "The Japan is a snowboarding trick where the rider grabs the front of the board, with the front hand, on the side of the frontside edge.",
+			"picture": "https://www.picsum.photos/id/4/260/200"
+		},
+		{
+			"id": 5,
+			"user_id": 1,
+			"name": "Seatbelt",
+			"category": "grabs",
+			"description": "The Seatbelt is a snowboarding trick where the rider grabs the frontside edge at the rear with the front hand; truck driver: gripping the front edge and back edge with each hand (like holding a steering wheel).",
+			"picture": "https://www.picsum.photos/id/5/260/200"
+		},
+		{
+			"id": 6,
+			"user_id": 1,
+			"name": "Nosegrab",
+			"category": "grabs",
+			"description": "The Nosegrab is a snowboarding trick where the rider grabs the front part of the board, with the front hand.",
+			"picture": "https://www.picsum.photos/id/6/260/200"
+		},
+		{
+			"id": 7,
+			"user_id": 1,
+			"name": "Tailgrab",
+			"category": "grabs",
+			"description": "The Tailgrab is a snowboarding trick where the rider grabs the back part of the board, with the back hand.",
+			"picture": "https://www.picsum.photos/id/7/260/200"
+		},
+		{
+			"id": 8,
+			"user_id": 2,
+			"name": "180",
+			"category": "rotations",
+			"description": "The 180 is a snowboarding trick where the rider rotates 180 degrees in the air.",
+			"picture": "https://www.picsum.photos/id/8/260/200"
+		},
+		{
+			"id": 9,
+			"user_id": 2,
+			"name": "360",
+			"category": "rotations",
+			"description": "The 360 is a snowboarding trick where the rider rotates 360 degrees in the air.",
+			"picture": "https://www.picsum.photos/id/9/260/200"
+		},
+		{
+			"id": 10,
+			"user_id": 2,
+			"name": "540",
+			"category": "rotations",
+			"description": "The 540 is a snowboarding trick where the rider rotates 540 degrees in the air.",
+			"picture": "https://www.picsum.photos/id/10/260/200"
+		},
+		{
+			"id": 11,
+			"user_id": 2,
+			"name": "720",
+			"category": "rotations",
+			"description": "The 720 is a snowboarding trick where the rider rotates 720 degrees in the air.",
+			"picture": "https://www.picsum.photos/id/11/260/200"
+		},
+		{
+			"id": 12,
+			"user_id": 2,
+			"name": "900",
+			"category": "rotations",
+			"description": "The 900 is a snowboarding trick where the rider rotates 900 degrees in the air.",
+			"picture": "https://www.picsum.photos/id/12/260/200"
+		},
+		{
+			"id": 13,
+			"user_id": 2,
+			"name": "1080",
+			"category": "rotations",
+			"description": "The 1080 is a snowboarding trick where the rider rotates 1080 degrees in the air.",
+			"picture": "https://www.picsum.photos/id/13/260/200"
+		}
+	],
+	"medias": [
+		{
+			"id": 1,
+			"trick_id": 1,
+			"type": "video",
+			"media": "https://www.youtube.com/embed/1Q2Q3Q4Q5Q6"
+		},
+		{
+			"id": 1,
+			"trick_id": 1,
+			"type": "picture",
+			"media": "https://picsum.photos/id/1/260/200"
+		},
+		{
+			"id": 1,
+			"trick_id": 1,
+			"type": "picture",
+			"media": "https://picsum.photos/id/12/260/200"
+		},
+		{
+			"id": 1,
+			"trick_id": 1,
+			"type": "picture",
+			"media": "https://picsum.photos/id/13/260/200"
+		},
+		{
+			"id": 2,
+			"trick_id": 2,
+			"type": "video",
+			"media": "https://www.youtube.com/embed/2Q2Q3Q4Q5Q6"
+		},
+		{
+			"id": 1,
+			"trick_id": 1,
+			"type": "photo",
+			"media": "https://picsum.photos/id/11/260/200"
+		},
+		{
+			"id": 3,
+			"trick_id": 3,
+			"type": "video",
+			"media": "https://www.youtube.com/embed/3Q2Q3Q4Q5Q6"
+		},
+		{
+			"id": 1,
+			"trick_id": 1,
+			"type": "photo",
+			"media": "https://picsum.photos/id/14/260/200"
+		},
+		{
+			"id": 4,
+			"trick_id": 4,
+			"type": "video",
+			"media": "https://www.youtube.com/embed/4Q2Q3Q4Q5Q6"
+		},
+		{
+			"id": 1,
+			"trick_id": 1,
+			"type": "photo",
+			"media": "https://picsum.photos/id/15/260/200"
+		},
+		{
+			"id": 5,
+			"trick_id": 5,
+			"type": "video",
+			"media": "https://www.youtube.com/embed/5Q2Q3Q4Q5Q6"
+		},
+		{
+			"id": 5,
+			"trick_id": 5,
+			"type": "video",
+			"media": "https://www.youtube.com/embed/5Q2Q3Q4Q5Q6"
+		},
+		{
+			"id": 5,
+			"trick_id": 5,
+			"type": "video",
+			"media": "https://www.youtube.com/embed/5Q2Q3Q4Q5Q6"
+		},
+		{
+			"id": 5,
+			"trick_id": 5,
+			"type": "video",
+			"media": "https://www.youtube.com/embed/5Q2Q3Q4Q5Q6"
+		},
+		{
+			"id": 1,
+			"trick_id": 1,
+			"type": "photo",
+			"media": "https://picsum.photos/id/16/260/200"
+		},
+		{
+			"id": 6,
+			"trick_id": 6,
+			"type": "video",
+			"media": "https://www.youtube.com/embed/6Q2Q3Q4Q5Q6"
+		},
+		{
+			"id": 1,
+			"trick_id": 1,
+			"type": "photo",
+			"media": "https://picsum.photos/id/88/260/200"
+		},
+		{
+			"id": 7,
+			"trick_id": 7,
+			"type": "video",
+			"media": "https://www.youtube.com/embed/7Q2Q3Q4Q5Q6"
+		},
+		{
+			"id": 1,
+			"trick_id": 1,
+			"type": "photo",
+			"media": "https://picsum.photos/id/77/260/200"
+		},
+		{
+			"id": 8,
+			"trick_id": 8,
+			"type": "video",
+			"media": "https://www.youtube.com/embed/8Q2Q3Q4Q5Q6"
+		},
+		{
+			"id": 1,
+			"trick_id": 1,
+			"type": "photo",
+			"media": "https://picsum.photos/id/66/260/200"
+		},
+		{
+			"id": 9,
+			"trick_id": 9,
+			"type": "video",
+			"media": "https://www.youtube.com/embed/9Q2Q3Q4Q5Q6"
+		},
+		{
+			"id": 1,
+			"trick_id": 1,
+			"type": "photo",
+			"media": "https://picsum.photos/id/55/260/200"
+		},
+		{
+			"id": 10,
+			"trick_id": 10,
+			"type": "video",
+			"media": "https://www.youtube.com/embed/10Q2Q3Q4Q5Q6"
+		},
+		{
+			"id": 1,
+			"trick_id": 1,
+			"type": "photo",
+			"media": "https://picsum.photos/id/44/260/200"
+		},
+		{
+			"id": 11,
+			"trick_id": 11,
+			"type": "video",
+			"media": "https://www.youtube.com/embed/11Q2Q3Q4Q5Q6"
+		},
+		{
+			"id": 1,
+			"trick_id": 1,
+			"type": "photo",
+			"media": "https://picsum.photos/id/33/260/200"
+		},
+		{
+			"id": 12,
+			"trick_id": 12,
+			"type": "video",
+			"media": "https://www.youtube.com/embed/12Q2Q3Q4Q5Q6"
+		},
+		{
+			"id": 1,
+			"trick_id": 1,
+			"type": "photo",
+			"media": "https://picsum.photos/id/22/260/200"
+		},
+		{
+			"id": 13,
+			"trick_id": 13,
+			"type": "video",
+			"media": "https://www.youtube.com/embed/13Q2Q3Q4Q5Q6"
+		}
+	],
+	"comments": [
+		{
+			"id": 1,
+			"trick_id": 1,
+			"user_id": 2,
+			"comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc vel tincidunt lacinia, nunc nisl aliquam nisl, vitae aliquam nisl nisl sit amet lorem. Sed euismod, nunc vel tincidunt lacinia, nunc nisl aliquam nisl, vitae aliquam nisl nisl sit amet lorem. Sed euismod, nunc vel tincidunt lacinia, nunc nisl aliquam nisl, vitae aliquam nisl nisl sit amet lorem. Sed euismod, nunc vel tincidunt lacinia, nunc nisl aliquam nisl, vitae aliquam nisl nisl sit amet lorem. Sed euismod, nunc vel tincidunt lacinia, nunc nisl aliquam nisl, vitae aliquam nisl nisl sit amet lorem. Sed euismod, nunc vel tincidunt lacinia, nunc nisl aliquam nisl, vitae aliquam nisl nisl sit amet lorem. Sed euismod, nunc vel tincidunt lacinia, nunc nisl aliquam nisl, vitae aliquam nisl nisl sit amet lorem. Sed euismod, nunc vel tincidunt lacinia, nunc nisl aliquam nisl, vitae aliquam nisl nisl sit amet lorem. Sed euismod, nunc vel tincidunt lacinia, nunc nisl aliquam nisl, vitae aliquam nisl nisl sit amet lorem. Sed euismod, nunc vel tincidunt lacinia, nunc nisl aliquam nisl, vitae aliquam nisl nisl sit amet lorem. Sed euismod, nunc vel tincidunt lacinia, nunc nisl aliquam nisl, vitae aliquam nisl nisl sit amet lorem. Sed euismod, nunc vel tincidunt lacinia, nunc nisl aliquam nisl, vitae aliquam nisl nisl sit amet lorem. Sed euismod, nunc vel tincidunt lacinia, nunc nisl aliquam nisl, vitae aliquam nisl nisl sit amet",
+			"created_at": "2020-05-08T00:00:00+00:00"
+		},
+		{
+			"id": 2,
+			"trick_id": 1,
+			"user_id": 2,
+			"comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc vel tincidunt lacinia, nunc nisl aliquam nisl, vitae aliquam nisl nisl sit amet lorem. Sed euismod, nunc vel tincidunt lacinia, nunc nisl aliquam nisl, vitae aliquam nisl nisl sit amet lorem. Sed euismod, nunc vel tincidunt lacinia, nunc nisl aliquam nisl, vitae aliquam nisl nisl sit amet lorem. Sed euismod, nunc vel tincidunt lacinia, nunc nisl aliquam nisl, vitae aliquam nisl nisl sit amet lorem. Sed euismod, nunc vel tincidunt lacinia, nunc nisl aliquam nisl, vitae aliquam nisl nisl sit amet lorem. Sed euismod, nunc vel tincidunt lacinia, nunc nisl aliquam nisl, vitae aliquam nisl nisl sit amet lorem. Sed euismod, nunc vel tincidunt lacinia, nunc nisl aliquam nisl, vitae aliquam nisl nisl sit amet lorem. Sed euismod, nunc vel tincidunt lacinia, nunc nisl aliquam nisl, vitae aliquam nisl nisl sit amet lorem. Sed euismod, nunc vel tincidunt lacinia, nunc nisl aliquam nisl, vitae aliquam nisl nisl sit amet lorem. Sed euismod, nunc vel tincidunt lacinia, nunc nisl aliquam nisl, vitae aliquam nisl nisl sit amet lorem. Sed euismod, nunc vel tincidunt lacinia, nunc nisl aliquam nisl, vitae aliquam nisl nisl sit amet lorem. Sed euismod, nunc vel tincidunt lacinia, nunc nisl aliquam nisl, vitae aliquam nisl nisl sit amet lorem. Sed euismod, nunc vel tincidunt lacinia, nunc nisl aliquam nisl, vitae aliquam nisl nisl sit amet",
+			"created_at": "2020-05-09T00:00:00+00:00"
+		},
+		{
+			"id": 3,
+			"trick_id": 5,
+			"user_id": 2,
+			"comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc vel tincidunt lacinia, nunc nisl aliquam nisl, vitae aliquam nisl nisl sit amet lorem. Sed euismod, nunc vel tincidunt lacinia, nunc nisl aliquam nisl, vitae aliquam nisl nisl sit amet lorem. Sed euismod, nunc vel tincidunt lacinia, nunc nisl aliquam nisl, vitae aliquam nisl nisl sit amet lorem. Sed euismod, nunc vel tincidunt lacinia, nunc nisl aliquam nisl, vitae aliquam nisl nisl sit amet lorem. Sed euismod, nunc vel tincidunt lacinia, nunc nisl aliquam nisl, vitae aliquam nisl nisl sit amet lorem. Sed euismod, nunc vel tincidunt lacinia, nunc nisl aliquam nisl, vitae aliquam nisl nisl sit amet lorem. Sed euismod, nunc vel tincidunt lacinia, nunc nisl aliquam nisl, vitae aliquam nisl nisl sit amet lorem. Sed euismod, nunc vel tincidunt lacinia, nunc nisl aliquam nisl, vitae aliquam nisl nisl sit amet lorem. Sed euismod, nunc vel tincidunt lacinia, nunc nisl aliquam nisl, vitae aliquam nisl nisl sit amet lorem. Sed euismod, nunc vel tincidunt lacinia, nunc nisl aliquam nisl, vitae aliquam nisl nisl sit amet lorem. Sed euismod, nunc vel tincidunt lacinia, nunc nisl aliquam nisl, vitae aliquam nisl nisl sit amet lorem. Sed euismod, nunc vel tincidunt lacinia, nunc nisl aliquam nisl, vitae aliquam nisl nisl sit amet lorem. Sed euismod, nunc vel tincidunt lacinia, nunc nisl aliquam nisl, vitae aliquam nisl nisl sit amet",
+			"created_at": "2020-05-10T00:00:00+00:00"
+		},
+		{
+			"id": 4,
+			"trick_id": 5,
+			"user_id": 2,
+			"comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc vel tincidunt lacinia, nunc nisl aliquam nisl, vitae aliquam nisl nisl sit amet lorem. Sed euismod, nunc vel tincidunt lacinia, nunc nisl aliquam nisl, vitae aliquam nisl nisl sit amet lorem. Sed euismod, nunc vel tincidunt lacinia, nunc nisl aliquam nisl, vitae aliquam nisl nisl sit amet lorem. Sed euismod, nunc vel tincidunt lacinia, nunc nisl aliquam nisl, vitae aliquam nisl nisl sit amet lorem. Sed euismod, nunc vel tincidunt lacinia, nunc nisl aliquam nisl, vitae aliquam nisl nisl sit amet lorem. Sed euismod, nunc vel tincidunt lacinia, nunc nisl aliquam nisl, vitae aliquam nisl nisl sit amet lorem. Sed euismod, nunc vel tincidunt lacinia, nunc nisl aliquam nisl, vitae aliquam nisl nisl sit amet lorem. Sed euismod, nunc vel tincidunt lacinia, nunc nisl aliquam nisl, vitae aliquam nisl nisl sit amet lorem. Sed euismod, nunc vel tincidunt lacinia, nunc nisl aliquam nisl, vitae aliquam nisl nisl sit amet lorem. Sed euismod, nunc vel tincidunt lacinia, nunc nisl aliquam nisl, vitae aliquam nisl nisl sit amet lorem. Sed euismod, nunc vel tincidunt lacinia, nunc nisl aliquam nisl, vitae aliquam nisl nisl sit amet lorem. Sed euismod, nunc vel tincidunt lacinia, nunc nisl aliquam nisl, vitae aliquam nisl nisl sit amet lorem. Sed euismod, nunc vel tincidunt lacinia, nunc nisl aliquam nisl, vitae aliquam nisl nisl sit amet",
+			"created_at": "2020-10-01T00:00:00+00:00"
+		}
+	],
+	"users": [
+		{
+			"id": 2,
+			"username": "admin",
+			"email": "admin@localhost",
+			"password": "$argon2id$v=19$m=65536",
+			"role": "admin",
+			"created_at": "2020-05-09T00:00:00+00:00"
+		},
+		{
+			"id": 3,
+			"username": "user",
+			"email": "user@localhost",
+			"password": "$argon2id$v=19$m=65536",
+			"role": "user",
+			"created_at": "2020-05-09T00:00:00+00:00"
+		}
+	]
+}
