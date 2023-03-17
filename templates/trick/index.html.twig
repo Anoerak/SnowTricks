@@ -1,0 +1,45 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+	{{ trick.name }}
+{% endblock %}
+
+{% block body %}
+	{# We display all the details about the trick #}
+	<div class="container">
+		<h2 class="title">{{ trick.name }}</h2>
+		<div
+			class="trick">
+			{# We display a slideshow with the pictures and videos #}
+			<div class="trick__slideshow">
+				<div class="slideshow">
+					{% for media in medias %}
+						{% if (media.type == 'picture') and (media.userId == trick.id) %}
+							<div class="slideshow__image">
+								<img src="{{ picture.path }}" alt="{{ trick.name }}"/>
+							</div>
+						{% endif %}
+
+						{% if (media.type == 'video') and (media.userId == trick.id) %}
+							<div class="slideshow__image">
+								<iframe src="{{ picture.path }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+							</div>
+						{% endif %}
+					{% endfor %}
+				</div>
+			</div>
+
+
+			{# We display the description of the trick #}
+			<div class="trick__content">
+				<h3 class="trick__title">
+					{{ trick.name }}
+				</h3>
+				<p class="trick__description">
+					{{ trick.description }}
+				</p>
+				<a href="{{ path('app_trick', { id: trick.id }) }}" class="button">Read more</a>
+			</div>
+		</div>
+	</div>
+{% endblock %}

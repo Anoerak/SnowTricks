@@ -1,0 +1,10 @@
+{% extends "base.html.twig" %} {% block title %}SnowTricks - Signin{% endblock %} {% block body %}
+<section id="signin">
+	<h1>Signin</h1>
+	{{ form_start(form) }}
+	{{ form_widget(form) }}
+	<span class="form-error"></span>
+	<button type="submit" class="btn btn-primary">Se connecter</button>
+	{{ form_end(form) }}
+</section>
+{% endblock %}
