@@ -14,7 +14,7 @@ class HomeController extends AbstractController
     public function index(TrickRepository $repo): Response
     {
         // We get the first 8 Tricks
-        $tricks = $repo->findBy([], ['id' => 'ASC'], 8, 0);
+        $tricks = $repo->findBy([], ['createdAt' => 'DESC'], 8, 0);
 
         // We get how many rows are in this table
         $tricksCount = $repo->count([]);

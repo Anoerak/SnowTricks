@@ -16,3 +16,4 @@ import './styles/app.scss';
 
 import '../templates/components/header/header.js';
 import '../templates/home/display_tricks/display_tricks.js';
+import '../templates/components/carousel/carousel.js';

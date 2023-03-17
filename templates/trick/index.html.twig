@@ -6,40 +6,57 @@
 
 {% block body %}
 	{# We display all the details about the trick #}
-	<div class="container">
+	<section id="trick_details" class="container">
 		<h2 class="title">{{ trick.name }}</h2>
-		<div
-			class="trick">
-			{# We display a slideshow with the pictures and videos #}
-			<div class="trick__slideshow">
-				<div class="slideshow">
-					{% for media in medias %}
-						{% if (media.type == 'picture') %}
-							<div class="slideshow__image">
-								<img src="{{ media.path }}" alt="{{ trick.name }}"/>
-							</div>
-						{% endif %}
-
-						{% if (media.type == 'video') %}
-							<div class="slideshow__image">
-								<iframe src="{{ media.path }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-							</div>
-						{% endif %}
-					{% endfor %}
-				</div>
-			</div>
-
-
-			{# We display the description of the trick #}
-			<div class="trick__content">
-				<h3 class="trick__title">
-					{{ trick.name }}
-				</h3>
-				<p class="trick__description">
-					{{ trick.description }}
-				</p>
-				<a href="{{ path('app_trick', { id: trick.id }) }}" class="button">Read more</a>
-			</div>
+		{# We insert a carousel to display the medias #}
+		{% block carousel %}
+			{% include "components/carousel/carousel.html.twig" %}
+		{% endblock %}
+		{# We display the description of the trick #}
+		<div class="trick__content">
+			<h3 class="trick__title">
+				{{ trick.name }}
+			</h3>
+			<p class="trick__description">
+				{{ trick.description }}
+			</p>
 		</div>
-	</div>
+		{# We insert a line to separate the blocks #}
+		<span class="separator"></span>
+		<div
+			class="trick__comments">
+			{# We display all the comments for this tricks, from the most recent to the older #}
+			<h3 class="trick__comments__title">Comments Section</h3>
+			{% for comment in comments %}
+				<div class="trick__comments__comment">
+					<div class="trick__comments__comment__header">
+						<div
+							class="trick__comments__comment__header__author">
+							{# We get the username of the user_id of this comment #}
+							{{ comment.user.username }}
+						</div>
+						<div class="trick__comments__comment__header__date">
+							{{ comment.createdAt|date('Y/m/d') }}
+						</div>
+					</div>
+					<div class="trick__comments__comment__content">
+						{{ comment.comment }}
+					</div>
+				</div>
+			{% endfor %}
+			{# If not "user" or "admin", we don't display the 'add a comment' section #}
+			{% if is_granted('ROLE_USER') or is_granted('ROLE_ADMIN') %}
+				{# We insert a line to separate the blocks #}
+				<span class="separator"></span>
+				{# We display the form to add a comment #}
+				<div class="trick__comments__form">
+					<h3 class="trick__comments__form__title">Add a comment</h3>
+					{{ form_start(form) }}
+					{{ form_widget(form) }}
+					<button type="submit" class="btn btn-primary">Post</button>
+					{{ form_end(form) }}
+				</div>
+			{% endif %}
+		</div>
+	</section>
 {% endblock %}

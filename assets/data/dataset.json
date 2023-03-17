@@ -123,76 +123,94 @@
 	],
 	"medias": [
 		{
+			"trick_name": "360",
 			"type": "video",
-			"media": "https://www.youtube.com/watch?v=2-fzMLISbH4"
+			"media": "https://www.youtube.com/embed/6gFsbU3GWF0"
 		},
 		{
+			"trick_name": "360",
 			"type": "picture",
-			"media": "https://cdn.pixabay.com/photo/2015/02/09/14/02/snowboard-629900_960_720.jpg"
+			"media": "../build/images/360.84fda9f5.jpg"
 		},
 		{
+			"trick_name": "Backflip",
 			"type": "video",
-			"media": "https://www.youtube.com/watch?v=cdjJuxf4A4Y"
+			"media": "https://www.youtube.com/embed/_8TBfD5VPnM"
 		},
 		{
+			"trick_name": "Backflip",
 			"type": "picture",
-			"media": "https://cdn.pixabay.com/photo/2015/02/09/14/02/snowboard-629901_960_720.jpg"
+			"media": "../build/images/backflip.3404734a.jpg"
 		},
 		{
+			"trick_name": "Method",
 			"type": "video",
-			"media": "https://www.youtube.com/watch?v=wU04g6f-1W8"
+			"media": "https://www.youtube.com/embed/ZWZGE9yp5hA"
 		},
 		{
+			"trick_name": "Method",
 			"type": "picture",
-			"media": "https://cdn.pixabay.com/photo/2017/03/29/21/13/snowboard-2181831_960_720.jpg"
+			"media": "../build/images/method.e451b551.jpg"
 		},
 		{
+			"trick_name": "Tail grab",
 			"type": "video",
-			"media": "https://www.youtube.com/watch?v=Vq3mYfD7y-Q"
+			"media": "https://www.youtube.com/embed/gbjwHZDaJLE"
 		},
 		{
+			"trick_name": "Tail grab",
 			"type": "picture",
-			"media": "https://cdn.pixabay.com/photo/2018/01/11/23/47/snowboarder-3076788_960_720.jpg"
+			"media": "../build/images/tail_grab.e36dc3e6.jpg"
 		},
 		{
+			"trick_name": "Tail grab",
 			"type": "video",
-			"media": "https://www.youtube.com/watch?v=sY5UzF7XoJ4"
+			"media": "https://www.youtube.com/embed/id8VKl9RVQw"
 		},
 		{
+			"trick_name": "Tail grab",
 			"type": "picture",
-			"media": "https://cdn.pixabay.com/photo/2016/01/08/11/57/snowboard-1120731_960_720.jpg"
+			"media": "../build/images/Tail_grab2.b30fa9ae.jpg"
 		},
 		{
+			"trick_name": "Cab 540",
 			"type": "video",
-			"media": "https://www.youtube.com/watch?v=5GtH5v5aDkM"
+			"media": "https://www.youtube.com/embed/IYJv66_Usys"
 		},
 		{
+			"trick_name": "Cab 540",
 			"type": "picture",
-			"media": "https://cdn.pixabay.com/photo/2018/01/11/23/47/snowboarder-3076788_960_720.jpg"
+			"media": "../build/images/cab_540.fa21b21a.jpg"
 		},
 		{
+			"trick_name": "Frontside lipslide",
 			"type": "video",
-			"media": "https://www.youtube.com/watch?v=8zdA0ikmSho"
+			"media": "https://www.youtube.com/embed/LSVn5aI56aU"
 		},
 		{
+			"trick_name": "Frontside lipslide",
 			"type": "picture",
-			"media": "https://cdn.pixabay.com/photo/2017/03/29/21/13/snowboard-2181831_960_720.jpg"
+			"media": "../build/images/frontside_lipslide.b6c09bb7.jpg"
 		},
 		{
+			"trick_name": "Backside 270 on",
 			"type": "video",
-			"media": "https://www.youtube.com/watch?v=56sb2gJQBlc"
+			"media": "https://www.youtube.com/embed/orD3GNRTJAc"
 		},
 		{
+			"trick_name": "Nose grab",
 			"type": "picture",
-			"media": "https://cdn.pixabay.com/photo/2015/02/09/14/02/snowboard-629902_960_720.jpg"
+			"media": "../build/images/nose_grab.8e4ea2ce.jpg"
 		},
 		{
+			"trick_name": "Nose grab",
 			"type": "video",
-			"media": "https://www.youtube.com/watch?v=OQ2ijIuMxOg"
+			"media": "https://www.youtube.com/embed/gZFWW4Vus-Q"
 		},
 		{
+			"trick_name": "Nose grab",
 			"type": "picture",
-			"media": "https://cdn.pixabay.com/photo/2015/12/09/17/03/snowboarding-1081317"
+			"media": "../build/images/nose_grab2.68650839.jpg"
 		}
 	],
 	"comments": [
