@@ -4,28 +4,28 @@
 			"username": "johndoe",
 			"email": "johndoe@example.com",
 			"password": "password123",
-			"roles": ["admin", "user"],
+			"roles": ["ROLE_ADMIN", "ROLE_USER"],
 			"created_at": "2022-01-01T12:00:00Z"
 		},
 		{
 			"username": "janedoe",
 			"email": "janedoe@example.com",
 			"password": "password456",
-			"roles": ["user"],
+			"roles": ["ROLE_USER"],
 			"created_at": "2022-01-02T13:00:00Z"
 		},
 		{
 			"username": "bobsmith",
 			"email": "bobsmith@example.com",
 			"password": "password789",
-			"roles": ["admin"],
+			"roles": ["ROLE_ADMIN"],
 			"created_at": "2022-01-03T14:00:00Z"
 		},
 		{
 			"username": "sarahlee",
 			"email": "sarahlee@example.com",
 			"password": "passwordabc",
-			"roles": ["user"],
+			"roles": ["ROLE_USER"],
 			"created_at": "2022-01-04T15:00:00Z"
 		}
 	],

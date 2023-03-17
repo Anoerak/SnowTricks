@@ -22,6 +22,14 @@ section#trick_details {
 		// Style the form fields
 		#form {
 			margin-bottom: 20px;
+			ul li,
+			ul li::marker {
+				color: $text-error;
+				list-style-type: '🤯';
+			}
+			ul:first-of-type + input {
+				border: solid 1px $text-error;
+			}
 
 			label {
 				display: block;
