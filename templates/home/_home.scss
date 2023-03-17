@@ -52,12 +52,10 @@
 	.arrow {
 		svg {
 			position: absolute;
-			right: 1rem;
-			bottom: 1rem;
+			right: 0;
 			width: 100px;
 			height: 100px;
 			color: $extra-light-blue;
-			margin-top: 50px;
 			transition: all 0.75s ease-in-out;
 
 			&:hover {
@@ -68,17 +66,19 @@
 }
 
 .tricks {
-	min-height: 100vh;
+	// min-height: 100vh;
 	margin: 2rem 0;
 	.arrow {
+		display: flex;
 		svg {
-			position: absolute;
-			right: 1rem;
-			bottom: -105vh;
+			position: relative;
+			display: inline-block;
+			bottom: 0;
+			right: 0;
+			margin-left: auto;
 			width: 100px;
 			height: 100px;
 			color: $extra-light-blue;
-			margin-top: 50px;
 			transition: all 0.75s ease-in-out;
 			rotate: 180deg;
 

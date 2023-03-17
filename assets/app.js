@@ -15,3 +15,4 @@ import './styles/app.scss';
 // import './bootstrap';
 
 import '../templates/components/header/header.js';
+import '../templates/home/display_tricks/display_tricks.js';

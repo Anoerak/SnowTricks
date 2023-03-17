@@ -14,15 +14,15 @@
 			<div class="trick__slideshow">
 				<div class="slideshow">
 					{% for media in medias %}
-						{% if (media.type == 'picture') and (media.userId == trick.id) %}
+						{% if (media.type == 'picture') %}
 							<div class="slideshow__image">
-								<img src="{{ picture.path }}" alt="{{ trick.name }}"/>
+								<img src="{{ media.path }}" alt="{{ trick.name }}"/>
 							</div>
 						{% endif %}
 
-						{% if (media.type == 'video') and (media.userId == trick.id) %}
+						{% if (media.type == 'video') %}
 							<div class="slideshow__image">
-								<iframe src="{{ picture.path }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+								<iframe src="{{ media.path }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 							</div>
 						{% endif %}
 					{% endfor %}
