@@ -25,19 +25,7 @@
 		}
 
 		.button {
-			display: inline-block;
-			padding: 10px 20px;
-			background-color: $extra-light-blue;
-			border-radius: 4px;
-			color: $blue;
-			font-size: 1.5rem;
-			text-decoration: none;
-			transition: all 0.3s ease-in-out;
-
-			&:hover {
-				background-color: $light-blue;
-				color: $white;
-			}
+			@include a-button;
 		}
 		.disclaimer {
 			margin-top: 2rem;

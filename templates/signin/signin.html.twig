@@ -1,11 +1,6 @@
 {% extends "base.html.twig" %} {% block title %}SnowTricks - Signin{% endblock %} {% block body %}
-<section id="signin">
-	<h1>Signin</h1>
-	{# {{ form_start(form) }}
-	{{ form_widget(form) }}
-	<span class="form-error"></span>
-	<button type="submit" class="btn btn-primary">Se connecter</button>
-	{{ form_end(form) }} #}
+	<section id="signin">
+		<h1>Signin</h1>
 
 		<form action="{{ path('app_signin') }}" method="post">
 			<div id="form">
@@ -19,9 +14,8 @@
 				</div>
 				<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 			</div>
-		<button type="submit" class="btn btn-primary">Login</button>
-	</form>
-
-
-</section>
+			<button type="submit" class="btn btn-primary">Login</button>
+		</form>
+		
+	</section>
 {% endblock %}

@@ -13,7 +13,21 @@
 					<p class="trick__description">
 						{{ trick.description }}
 					</p>
-					<a href="{{ path('app_trick', { id: trick.id }) }}" class="button">Read more</a>
+					<div class="trick__bottom">
+						{% if not app.user %}
+							<a href="{{ path('app_trick', { id: trick.id }) }}" class="read__more">Read more</a>
+							{% else %}
+							<a href="{{ path('app_trick', { id: trick.id }) }}" class="read__more">Read more</a>
+							<div class="trick__commands">
+								<a href="{{ path('app_trick_edit', { id: trick.id }) }}" class="button edit">
+									<i class="fa-solid fa-pencil"></i>
+								</a>
+								<a id="{{ trick.id }}" class="button delete delete_trick_button">
+									<i class="fa-regular fa-trash-can"></i>
+								</a>
+							</div>
+						{% endif %}
+					</div>
 				</div>
 			</div>
 		{% endfor %}

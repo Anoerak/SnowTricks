@@ -19,7 +19,7 @@ class HomeController extends AbstractController
         // We get how many rows are in this table
         $tricksCount = $repo->count([]);
 
-        return $this->render('home/index.html.twig', [
+        return $this->render('home/home.html.twig', [
             'controller_name' => 'HomeController',
             'tricks' => $tricks,
             'tricksCount' => $tricksCount,
@@ -32,7 +32,7 @@ class HomeController extends AbstractController
         // We get the next 9 Tricks
         $tricks = $repo->findBy([], ['id' => 'ASC'], 9, $lastTrickIndex);
 
-        return $this->render('home/display_tricks/more.html.twig', [
+        return $this->render('home/display_tricks/display_more_tricks.html.twig', [
             'controller_name' => 'HomeController',
             'tricks' => $tricks,
         ]);

@@ -1,0 +1,46 @@
+@mixin btn-primary {
+	display: block;
+	width: 100%;
+	padding: 10px;
+	background-color: $primary-button-blue;
+	color: $white;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+
+	&:hover {
+		background-color: $primary-button-blue-hover;
+	}
+}
+
+@mixin btn-cancel {
+	display: block;
+	width: 100%;
+	padding: 10px;
+	background-color: $text-error;
+	color: $white;
+	border: none;
+	border-radius: 4px;
+	margin: 0.5rem 0;
+	cursor: pointer;
+
+	&:hover {
+		background-color: $cancel-button-red-hover;
+	}
+}
+
+@mixin a-button {
+	display: inline-block;
+	padding: 10px 20px;
+	background-color: $extra-light-blue;
+	border-radius: 4px;
+	color: $blue;
+	font-size: 1.5rem;
+	text-decoration: none;
+	transition: all 0.3s ease-in-out;
+
+	&:hover {
+		background-color: $light-blue;
+		color: $white;
+	}
+}

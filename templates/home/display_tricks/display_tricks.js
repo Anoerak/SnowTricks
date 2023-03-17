@@ -2,7 +2,7 @@
 const headTitle = document.head.querySelector('title').innerHTML;
 
 if (headTitle.includes('Home')) {
-	console.log('url: ');
+	// We grab the display-more_button and add an event listener.
 	const displayMoreButton = document.getElementById('display-more_button');
 	displayMoreButton.addEventListener('click', displayMoreTricks);
 

@@ -3,15 +3,12 @@
 namespace App\Controller;
 
 use App\Entity\User;
-
+use App\Form\SignupType;
 use Doctrine\ORM\EntityManagerInterface;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\EmailType;
-use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -32,28 +29,7 @@ class SignupController extends AbstractController
     {
         $user = new User();
 
-        $form = $this->createFormBuilder($user)
-            ->add('username', TextType::class, [
-                'attr' => [
-                    'placeholder' => 'Username',
-                ],
-            ])
-            ->add('email', EmailType::class, [
-                'attr' => [
-                    'placeholder' => 'Email',
-                ],
-            ])
-            ->add('password', PasswordType::class, [
-                'attr' => [
-                    'placeholder' => 'Password',
-                ],
-            ])
-            ->add('confirm_password', PasswordType::class, [
-                'attr' => [
-                    'placeholder' => 'Confirm password',
-                ],
-            ])
-            ->getForm();
+        $form = $this->createForm(SignupType::class, $user);
 
         $form->handleRequest($request);
 
@@ -70,7 +46,7 @@ class SignupController extends AbstractController
             return $this->redirectToRoute('app_signin');
         }
 
-        return $this->render('signup/index.html.twig', [
+        return $this->render('signup/signup.html.twig', [
             'controller_name' => 'SignupController',
             'form' => $form->createView(),
         ]);

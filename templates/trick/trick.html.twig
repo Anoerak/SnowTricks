@@ -52,8 +52,10 @@
 				<div class="trick__comments__form">
 					<h3 class="trick__comments__form__title">Add a comment</h3>
 					{{ form_start(form) }}
-					{{ form_widget(form) }}
-					<button type="submit" class="btn btn-primary">Post</button>
+					<div id="form">
+						{{ form_widget(form) }}
+						<button type="submit" class="btn btn-primary">Post</button>
+					</div>
 					{{ form_end(form) }}
 				</div>
 			{% endif %}
