@@ -27,6 +27,7 @@
 		.button {
 			@include a-button;
 		}
+
 		.disclaimer {
 			margin-top: 2rem;
 			color: $text-light;
@@ -56,6 +57,15 @@
 .tricks {
 	// min-height: 100vh;
 	margin: 2rem 0;
+	.button__add {
+		display: flex !important;
+		align-items: center;
+		justify-content: center;
+		@include a-button;
+		padding: 10px;
+		font-size: 1rem;
+		max-height: 2rem;
+	}
 	.arrow {
 		display: flex;
 		svg {

@@ -1,5 +1,9 @@
 <div id="tricks_count_{{ tricksCount }}" class="container">
 	<h2 class="title">Latest tricks</h2>
+	{# Button to add a new trick for ADMIN and USER only #}
+	{% if app.user %}
+		<a href="{{ path('app_trick_new' ) }}" class="button__add">Add a new trick</a>
+	{% endif %}
 	<div id="tricks_list" class="tricks">
 		{% for trick in tricks %}
 			<div id="trick_{{ trick.id }}" class="trick">
