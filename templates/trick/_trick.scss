@@ -61,6 +61,9 @@ section#trick_details {
 					font-weight: 400;
 					margin-bottom: 0.5rem;
 				}
+				.fas.fa-trash-alt {
+					color: $text-error;
+				}
 			}
 			.trick__comments__comment__content {
 				font-size: 1rem;

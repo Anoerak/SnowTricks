@@ -34,9 +34,17 @@
 							class="trick__comments__comment__header__author">
 							{# We get the username of the user_id of this comment #}
 							{{ comment.user.username }}
+							{# If ROLE_ADMIN is granted, we display the delete icon #}
+							{% if is_granted('ROLE_ADMIN') %}
+								<a href="{{ path('app_comment_delete', {id:comment.id})}}" class="trick__comments__comment__delete">
+									<i class="fas fa-trash-alt"></i>
+								</a>
+							{% endif %}
 						</div>
 						<div class="trick__comments__comment__header__date">
-							{{ comment.createdAt|date('Y/m/d') }}
+							{# posted on day d month Y at hh:mm #}
+							{{ comment.createdAt|date('D d M Y H:i:s')}}
+							{# {{ comment.createdAt|date('Y/m/d') }} #}
 						</div>
 					</div>
 					<div class="trick__comments__comment__content">
