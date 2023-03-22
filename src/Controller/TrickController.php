@@ -11,11 +11,7 @@ use App\Form\EditTrickType;
 
 use App\Service\FileUploader;
 
-use function PHPUnit\Framework\isEmpty;
-use function PHPUnit\Framework\throwException;
-
 use Doctrine\ORM\EntityManagerInterface;
-
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -57,6 +53,18 @@ class TrickController extends AbstractController
             'medias' => $medias,
             'comments' => $comments,
             'form' => $form->createView(),
+        ]);
+    }
+
+    #[Route('/trick/category/{category}', name: 'app_trick_category')]
+    public function category(string $category, EntityManagerInterface $manager): Response
+    {
+        $tricks = $manager->getRepository(Trick::class)->findBy(['category' => $category]);
+
+        return $this->render('trick/category/trick_category.html.twig', [
+            'controller_name' => 'TrickController',
+            'tricks' => $tricks,
+            'category' => $category,
         ]);
     }
 
@@ -108,7 +116,7 @@ class TrickController extends AbstractController
             $entityManagerInterface->persist($trick);
             $entityManagerInterface->flush();
 
-            return $this->redirectToRoute('app_home');
+            return $this->redirectToRoute('app_trick', ['id' => $trick->getId()]);
         }
 
         return $this->render('trick/add/add_trick.html.twig', [
@@ -129,6 +137,40 @@ class TrickController extends AbstractController
 
 
         if ($form->isSubmitted() && $form->isValid()) {
+            if (!empty($form->get('name')->getData())) {
+                $trick->setName($form->get('name')->getData());
+            }
+            if (!empty($form->get('description')->getData())) {
+                $trick->setDescription($form->get('description')->getData());
+            }
+            if (!empty($form->get('category')->getData())) {
+                $trick->setCategory($form->get('category')->getData());
+            }
+            // We take care of the main_picture if it has been changed
+            if (!empty($form->get('main_picture')->getData())) {
+                $mainPicture = $form->get('main_picture')->getData();
+                $fileName = $fileUploader->upload($mainPicture);
+                $trick->setMainPicture($fileName);
+            }
+            // Then we deal with the medias collection
+            if (!empty($form->get('medias')->getData())) {
+                $datas = $form->get('medias')->getData();
+                $fileName = $fileUploader->upload($datas);
+                $media = new Media();
+                $media->setPath($fileName);
+                $media->setTrick($trick);
+                // We find the extension to set the type
+                $extension = pathinfo($fileName, PATHINFO_EXTENSION);
+                if ($extension === 'mp4' || $extension === 'webm' || $extension === 'ogg') {
+                    $media->setType('video');
+                } elseif ($extension === 'png' || $extension === 'jpg' || $extension === 'jpeg') {
+                    $media->setType('picture');
+                } else {
+                    throw new \Exception('The file extension is not supported');
+                }
+
+                $entityManagerInterface->persist($media);
+            }
 
 
 

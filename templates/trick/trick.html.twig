@@ -8,6 +8,12 @@
 	{# We display all the details about the trick #}
 	<section id="trick_details" class="container">
 		<h2 class="title">{{ trick.name }}</h2>
+		{# We add a category tag #}
+		<div class="trick__category">
+			<a href="{{ path('app_trick_category', {category: trick.category}) }}" class="trick__category__tag">
+				{{ trick.category }}
+			</a>
+		</div>
 		{# We insert a carousel to display the medias #}
 		{% block carousel %}
 			{% include "components/carousel/carousel.html.twig" %}
@@ -41,7 +47,8 @@
 								</a>
 							{% endif %}
 						</div>
-						<div class="trick__comments__comment__header__date">
+						<div
+							class="trick__comments__comment__header__date">
 							{# posted on day d month Y at hh:mm #}
 							{{ comment.createdAt|date('D d M Y H:i:s')}}
 							{# {{ comment.createdAt|date('Y/m/d') }} #}
