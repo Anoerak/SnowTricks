@@ -1,19 +1,32 @@
 {% extends "base.html.twig" %}
 
 {% block title %}
-	Edit {{ trick.name }}
+	Edit
+	{{ trick.name }}
 {% endblock %}
 
 {% block body %}
-<section id="edit_trick">
-	<h2 class="title">Edition Mode for {{ trick.name }}</h2>
-	{{ form_start(form) }}
+	<section id="trick_edition">
+		<h2 class="title">Edition Mode for
+			{{ trick.name }}</h2>
+		{{ form_start(form) }}
 		<div id="form">
 			{{ form_widget(form) }}
+			{# For each medias, we display a thumbnail with a crox to remove it from the collection  #}
+			<h3>Remove a media from this collection</h3>
+			<div class="medias__gallery">
+				{% for media in medias %}
+					<div class="media">
+						<img src="{{ asset('uploads/' ~ media.path) }}" alt="{{ trick.name }}">
+						<a href="{{ path('app_trick_delete_media', {'id': trick.id, 'media_id': media.id} ) }}" class="remove__media">X</a>
+
+					</div>
+				{% endfor %}
+			</div>
 			<button type="submit" class="btn btn-primary">Edit</button>
 			<button type="reset" class="btn btn-cancel">Cancel</button>
 		</div>
-	{{ form_end(form) }}
-	
-</section>
+		{{ form_end(form) }}
+
+	</section>
 {% endblock %}
