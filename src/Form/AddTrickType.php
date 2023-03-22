@@ -4,7 +4,9 @@ namespace App\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Validator\Constraints\File;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
@@ -36,11 +38,48 @@ class AddTrickType extends AbstractType
                     'placeholder' => 'Category of the Trick',
                 ],
             ])
-            ->add('main_picture', TextType::class, [
+            ->add('main_picture', FileType::class, [
                 'label' => 'Main Picture',
                 'attr' => [
                     'value' => null,
-                    'placeholder' => 'Main Picture of the Trick',
+                    'placeholder' => $options['data']->getMainPicture(),
+                    'name' => 'main_picture',
+                ],
+                'required' => false,
+                'mapped' => false,
+                'constraints' => [
+                    new File([
+                        'maxSize' => '10M',
+                        'mimeTypes' => [
+                            'image/jpeg',
+                            'image/png',
+                            'image/jpg'
+                        ],
+                        'mimeTypesMessage' => 'Please upload a valid image',
+                    ])
+                ],
+            ])
+            ->add('medias', FileType::class, [
+                'label' => 'Medias Collection',
+                'attr' => [
+                    'value' => null,
+                    'name' => 'medias',
+                ],
+                'required' => false,
+                'mapped' => false,
+                'constraints' => [
+                    new File([
+                        'maxSize' => '10M',
+                        'mimeTypes' => [
+                            'image/jpeg',
+                            'image/png',
+                            'image/jpg',
+                            'video/mp4',
+                            'video/ogg',
+                            'video/webm',
+                        ],
+                        'mimeTypesMessage' => 'Please upload a valid image',
+                    ])
                 ],
             ]);
     }

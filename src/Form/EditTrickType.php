@@ -5,10 +5,12 @@ namespace App\Form;
 use App\Entity\Trick;
 
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Validator\Constraints\File;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 class EditTrickType extends AbstractType
 {
@@ -20,29 +22,73 @@ class EditTrickType extends AbstractType
                 'attr' => [
                     'value' => null,
                     'placeholder' => $options['data']->getName(),
+                    'name' => 'name',
                 ],
+                'required' => false,
             ])
             ->add('description', TextareaType::class, [
                 'label' => 'Description',
+                'mapped' => false,
                 'attr' => [
                     'value' => null,
                     'placeholder' => $options['data']->getDescription(),
                     'rows' => '10',
                     'cols' => '50',
+                    'name' => 'description',
                 ],
+                'required' => false,
             ])
             ->add('category', TextType::class, [
                 'label' => 'Category',
                 'attr' => [
                     'value' => null,
                     'placeholder' => $options['data']->getCategory(),
+                    'name' => 'category',
                 ],
+                'required' => false,
             ])
-            ->add('main_picture', TextType::class, [
+            ->add('main_picture', FileType::class, [
                 'label' => 'Main Picture',
                 'attr' => [
                     'value' => null,
                     'placeholder' => $options['data']->getMainPicture(),
+                    'name' => 'main_picture',
+                ],
+                'required' => false,
+                'mapped' => false,
+                'constraints' => [
+                    new File([
+                        'maxSize' => '10M',
+                        'mimeTypes' => [
+                            'image/jpeg',
+                            'image/png',
+                            'image/jpg'
+                        ],
+                        'mimeTypesMessage' => 'Please upload a valid image',
+                    ])
+                ],
+            ])
+            ->add('pictures', FileType::class, [
+                'label' => 'Medias Collection',
+                'attr' => [
+                    'value' => null,
+                    'name' => 'pictures',
+                ],
+                'required' => false,
+                'mapped' => false,
+                'constraints' => [
+                    new File([
+                        'maxSize' => '10M',
+                        'mimeTypes' => [
+                            'image/jpeg',
+                            'image/png',
+                            'image/jpg',
+                            'video/mp4',
+                            'video/ogg',
+                            'video/webm',
+                        ],
+                        'mimeTypesMessage' => 'Please upload a valid image',
+                    ])
                 ],
             ]);
     }
