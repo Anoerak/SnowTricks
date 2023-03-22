@@ -26,11 +26,12 @@ class HomeController extends AbstractController
         ]);
     }
 
-    #[Route('/load-more-tricks/{lastTrickIndex}', name: 'app_load_more_tricks')]
-    public function loadMoreTricks(TrickRepository $repo, $lastTrickIndex): Response
+    #[Route('/load-more-tricks/{lastTrickIndex}/{tricksMarker}', name: 'app_load_more_tricks')]
+    public function loadMoreTricks(TrickRepository $repo, $lastTrickIndex, $tricksMarker): Response
     {
+        $tricksMarker = $tricksMarker < 4 ? $tricksMarker : 4;
         // We get the next 9 Tricks
-        $tricks = $repo->findBy([], ['id' => 'ASC'], 9, $lastTrickIndex);
+        $tricks = $repo->findBy([], ['id' => 'ASC'], $tricksMarker, $lastTrickIndex);
 
         return $this->render('home/display_tricks/display_more_tricks.html.twig', [
             'controller_name' => 'HomeController',

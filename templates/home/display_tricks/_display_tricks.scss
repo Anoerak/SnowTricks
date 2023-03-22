@@ -1,4 +1,5 @@
-section#tricks .container {
+section#tricks .container,
+section#trick_category {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;

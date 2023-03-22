@@ -13,13 +13,22 @@ if (headTitle.includes('Home')) {
 	// We get the number of tricks displayed on screen
 	function getLastTrickNumber() {
 		let tricksArray = document.getElementsByClassName('trick');
-		let lastTrickNumber = parseInt(tricksArray.length);
+		let lastTrickNumber = parseInt(tricksArray.length) - 1;
 		return lastTrickNumber;
+	}
+
+	// We get the sum of trick available in the database
+	function getTricksCount() {
+		let tricksCount = document.getElementById('tricks').firstElementChild.id.replace('tricks_count_', '');
+		let displayedTricksCount = parseInt(document.getElementsByClassName('trick').length);
+		let tricksMarker = parseInt(tricksCount) - displayedTricksCount;
+		return tricksMarker;
 	}
 
 	// We query for more tricks
 	function getMoreTricks(lastTrickIndex) {
-		let url = 'https://127.0.0.1:8000/load-more-tricks/' + lastTrickIndex;
+		let url = 'https://127.0.0.1:8000/load-more-tricks/' + lastTrickIndex + '/' + getTricksCount();
+		console.log(url);
 		fetch(url)
 			.then(function (response) {
 				return response.text();
@@ -34,10 +43,12 @@ if (headTitle.includes('Home')) {
 				// We check if there an id 'tricks_count_' + lastTrickIndex in the tricks list
 				// If there is no id 'tricks_count_' + lastTrickIndex, it means that there is more tricks to display
 				// So we add the load more button
-				if (!document.getElementById('tricks_count_' + getLastTrickNumber())) {
+				if (!document.getElementById('tricks_count_' + parseInt(getLastTrickNumber() + 1))) {
 					// We insert the load more button at the end of the tricks list
 					tricks.insertAdjacentHTML('beforeend', loadMoreButton.outerHTML);
 				}
+				const displayMoreButton = document.getElementById('display-more_button');
+				displayMoreButton.addEventListener('click', displayMoreTricks);
 			})
 			.catch(function (error) {
 				console.log(error);

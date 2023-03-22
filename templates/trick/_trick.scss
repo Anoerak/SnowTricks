@@ -11,6 +11,24 @@ section#trick_details {
 		font-weight: 700;
 		margin-bottom: 1rem;
 	}
+	.trick__category {
+		.trick__category__tag {
+			font-size: 0.8rem;
+			font-weight: 700;
+			margin-right: 0.5rem;
+			color: $white;
+			background-color: $blue;
+			padding: 0.5rem 0.75rem;
+			border-radius: 1rem;
+			transition: all 0.2s ease-in-out;
+			&:hover {
+				color: $blue;
+				background-color: $extra-light-blue;
+				font-weight: 500;
+			}
+		}
+		margin-bottom: 1rem;
+	}
 	.trick {
 		.trick__slideshow {
 			.slideshow {

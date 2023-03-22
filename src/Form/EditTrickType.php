@@ -19,19 +19,19 @@ class EditTrickType extends AbstractType
         $builder
             ->add('name', TextType::class, [
                 'label' => 'Name',
+                'mapped' => false,
                 'attr' => [
-                    'value' => null,
-                    'placeholder' => $options['data']->getName(),
+                    // 'value' => null,
+                    'value' => $options['data']->getName(),
                     'name' => 'name',
                 ],
                 'required' => false,
             ])
             ->add('description', TextareaType::class, [
                 'label' => 'Description',
-                'mapped' => false,
                 'attr' => [
-                    'value' => null,
-                    'placeholder' => $options['data']->getDescription(),
+                    // 'value' => null,
+                    'value' => $options['data']->getDescription(),
                     'rows' => '10',
                     'cols' => '50',
                     'name' => 'description',
@@ -40,9 +40,10 @@ class EditTrickType extends AbstractType
             ])
             ->add('category', TextType::class, [
                 'label' => 'Category',
+                'mapped' => false,
                 'attr' => [
-                    'value' => null,
-                    'placeholder' => $options['data']->getCategory(),
+                    // 'value' => null,
+                    'value' => $options['data']->getCategory(),
                     'name' => 'category',
                 ],
                 'required' => false,
@@ -68,11 +69,11 @@ class EditTrickType extends AbstractType
                     ])
                 ],
             ])
-            ->add('pictures', FileType::class, [
+            ->add('medias', FileType::class, [
                 'label' => 'Medias Collection',
                 'attr' => [
                     'value' => null,
-                    'name' => 'pictures',
+                    'name' => 'medias',
                 ],
                 'required' => false,
                 'mapped' => false,
