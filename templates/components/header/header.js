@@ -1,7 +1,8 @@
+// We select the elements we need.
 let dropdowns = document.querySelectorAll('.navbar .dropdown-toggler');
 let dropdownIsOpen = false;
 
-// Handle dropdown menues
+// We handle dropdown menus
 if (dropdowns.length) {
 	dropdowns.forEach((dropdown) => {
 		dropdown.addEventListener('click', (event) => {
@@ -20,7 +21,7 @@ if (dropdowns.length) {
 	});
 }
 
-// Handle closing dropdowns if a user clicked the body
+// We add an event listener to the window to close the dropdowns when the user clicks outside of them.
 window.addEventListener('mouseup', (event) => {
 	if (dropdownIsOpen) {
 		dropdowns.forEach((dropdownButton) => {
@@ -38,7 +39,7 @@ window.addEventListener('mouseup', (event) => {
 	}
 });
 
-// Open links in mobiles
+// We handle small screens
 function handleSmallScreens() {
 	document.querySelector('.navbar-toggler').addEventListener('click', () => {
 		let navbarMenu = document.querySelector('.navbar-menu');

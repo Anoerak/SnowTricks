@@ -1,11 +1,14 @@
 {% extends "base.html.twig" %}
 
 {% block title %}
-	{{ category }}
+	Category - {{ category }}
 {% endblock %}
 
 {% block body %}
 	<section id="trick_category" class="container">
+		{% block delete_modal %}
+			{% include "components/modals/delete_trick_confirmation.html.twig" %}
+		{% endblock %}
 		<h2 class="title">Category
 			{{ category }}</h2>
 		<div class="trick__category">

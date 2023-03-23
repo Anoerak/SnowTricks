@@ -69,18 +69,28 @@ section#trick_details {
 		}
 		.trick__comments__comment {
 			.trick__comments__comment__header {
-				.trick__comments__comment__header__author {
-					font-size: 1rem;
-					font-weight: 700;
-					margin-bottom: 0.25rem;
+				display: flex;
+				flex-direction: row;
+				.trick__comments__comment__header__profile__picture {
+					width: 40px;
+					height: 40px;
+					border-radius: 100%;
+					margin-right: 0.5rem;
 				}
-				.trick__comments__comment__header__date {
-					font-size: 0.8rem;
-					font-weight: 400;
-					margin-bottom: 0.5rem;
-				}
-				.fas.fa-trash-alt {
-					color: $text-error;
+				.trick__comments__comment__header__informations {
+					.trick__comments__comment__header__author {
+						font-size: 1rem;
+						font-weight: 700;
+						margin-bottom: 0.25rem;
+					}
+					.trick__comments__comment__header__date {
+						font-size: 0.8rem;
+						font-weight: 400;
+						margin-bottom: 0.5rem;
+					}
+					.fas.fa-trash-alt {
+						color: $text-error;
+					}
 				}
 			}
 			.trick__comments__comment__content {

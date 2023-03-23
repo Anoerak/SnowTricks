@@ -17,14 +17,22 @@ class MediaFixtures extends Fixture implements DependentFixtureInterface
 {
     public function load(ObjectManager $manager): void
     {
-        // We load the JSON file
+        /*
+			|-----------------------------------
+			| We load the JSON file
+			|-----------------------------------
+		*/
         $json = file_get_contents('./assets/data/dataset.json');
         $encoders = [new JsonEncoder()];
         $normalizers = [new ObjectNormalizer()];
         $serializer = new Serializer($normalizers, $encoders);
         $data = $serializer->decode($json, 'json');
 
-        // We create the medias based on the medias in the JSON file and attribute a random trick from the array of tricks
+        /*
+			|-----------------------------------
+			| We create the medias based on the medias in the JSON file and attribute a random trick from the array of tricks
+			|-----------------------------------
+		*/
         foreach ($data['medias'] as $media) {
             $newMedia = new Media();
             $newMedia->setPath($media['media'])

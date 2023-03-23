@@ -2,15 +2,18 @@
 let carouselTest = document.getElementsByClassName('carousel__container');
 
 if (carouselTest.length > 0) {
+	// We select the elements we need
 	let display = document.querySelector('[data-display]');
 	let imgs = document.querySelectorAll('[data-img]');
 	let leftBtn = document.querySelector('[data-btn-left]');
 	let rightBtn = document.querySelector('[data-btn-right]');
 	let imgSlider = document.querySelector('[data-img-container ]');
 
+	// We create the container based on the tagName
 	let new_img = imgs[0].tagName === 'VIDEO' ? document.createElement('iframe') : document.createElement('img');
 	new_img.src = imgs[0].src;
 
+	// We style the container
 	mediaStylingFunction = (media) => {
 		if (media.tagName === 'IFRAME') {
 			media.id = 'displayed_media';
@@ -29,6 +32,7 @@ if (carouselTest.length > 0) {
 
 	let left = 0;
 
+	// We add event listeners to the buttons
 	rightBtn.addEventListener('click', function next() {
 		if (left <= imgs.length - 2) {
 			left++;
@@ -49,6 +53,7 @@ if (carouselTest.length > 0) {
 		}
 	});
 
+	// We add event listeners to the images and add logic to display the selected image
 	imgs.forEach((img) => {
 		img.addEventListener('click', function (e) {
 			let new_media = this.tagName === 'VIDEO' ? document.createElement('iframe') : document.createElement('img');

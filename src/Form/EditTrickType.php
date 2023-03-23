@@ -11,6 +11,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Validator\Constraints\All;
 
 class EditTrickType extends AbstractType
 {
@@ -21,7 +22,6 @@ class EditTrickType extends AbstractType
                 'label' => 'Name',
                 'mapped' => false,
                 'attr' => [
-                    // 'value' => null,
                     'value' => $options['data']->getName(),
                     'name' => 'name',
                 ],
@@ -30,7 +30,6 @@ class EditTrickType extends AbstractType
             ->add('description', TextareaType::class, [
                 'label' => 'Description',
                 'attr' => [
-                    // 'value' => null,
                     'value' => $options['data']->getDescription(),
                     'rows' => '10',
                     'cols' => '50',
@@ -42,7 +41,6 @@ class EditTrickType extends AbstractType
                 'label' => 'Category',
                 'mapped' => false,
                 'attr' => [
-                    // 'value' => null,
                     'value' => $options['data']->getCategory(),
                     'name' => 'category',
                 ],
@@ -71,25 +69,29 @@ class EditTrickType extends AbstractType
             ])
             ->add('medias', FileType::class, [
                 'label' => 'Medias Collection',
+                'required' => false,
+                'mapped' => false,
+                'multiple' => true,
+                'data_class' => null,
                 'attr' => [
                     'value' => null,
                     'name' => 'medias',
                 ],
-                'required' => false,
-                'mapped' => false,
                 'constraints' => [
-                    new File([
-                        'maxSize' => '10M',
-                        'mimeTypes' => [
-                            'image/jpeg',
-                            'image/png',
-                            'image/jpg',
-                            'video/mp4',
-                            'video/ogg',
-                            'video/webm',
-                        ],
-                        'mimeTypesMessage' => 'Please upload a valid image',
-                    ])
+                    new All([
+                        new File([
+                            'maxSize' => '10M',
+                            'mimeTypes' => [
+                                'image/jpeg',
+                                'image/png',
+                                'image/jpg',
+                                'video/mp4',
+                                'video/ogg',
+                                'video/webm',
+                            ],
+                            'mimeTypesMessage' => 'Please upload a valid image',
+                        ]),
+                    ]),
                 ],
             ]);
     }
