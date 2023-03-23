@@ -5,12 +5,14 @@ namespace App\Form;
 use App\Entity\Trick;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Validator\Constraints\File;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Validator\Constraints\All;
 
 class EditTrickType extends AbstractType
 {
@@ -71,25 +73,29 @@ class EditTrickType extends AbstractType
             ])
             ->add('medias', FileType::class, [
                 'label' => 'Medias Collection',
+                'required' => false,
+                'mapped' => false,
+                'multiple' => true,
+                'data_class' => null,
                 'attr' => [
                     'value' => null,
                     'name' => 'medias',
                 ],
-                'required' => false,
-                'mapped' => false,
                 'constraints' => [
-                    new File([
-                        'maxSize' => '10M',
-                        'mimeTypes' => [
-                            'image/jpeg',
-                            'image/png',
-                            'image/jpg',
-                            'video/mp4',
-                            'video/ogg',
-                            'video/webm',
-                        ],
-                        'mimeTypesMessage' => 'Please upload a valid image',
-                    ])
+                    new All([
+                        new File([
+                            'maxSize' => '10M',
+                            'mimeTypes' => [
+                                'image/jpeg',
+                                'image/png',
+                                'image/jpg',
+                                'video/mp4',
+                                'video/ogg',
+                                'video/webm',
+                            ],
+                            'mimeTypesMessage' => 'Please upload a valid image',
+                        ]),
+                    ]),
                 ],
             ]);
     }

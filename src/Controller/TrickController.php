@@ -24,15 +24,10 @@ class TrickController extends AbstractController
     #[Route('/trick/{id}', name: 'app_trick')]
     public function index(Trick $trick, Request $request, EntityManagerInterface $entityManagerInterface): Response
     {
-        // We get the media for this trick
         $medias = $trick->getMedia();
-
-        // We get the comments for this trick
         $comments = $trick->getComments();
 
-        // We create the form we'll use to post a comment
         $form = $this->createForm(CommentType::class);
-
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -59,6 +54,7 @@ class TrickController extends AbstractController
     #[Route('/trick/category/{category}', name: 'app_trick_category')]
     public function category(string $category, EntityManagerInterface $manager): Response
     {
+        // We get all the tricks of the category
         $tricks = $manager->getRepository(Trick::class)->findBy(['category' => $category]);
 
         return $this->render('trick/category/trick_category.html.twig', [
@@ -73,11 +69,7 @@ class TrickController extends AbstractController
     {
         $trick = new Trick();
 
-        $form = $this->createForm(
-            AddTrickType::class,
-            $trick
-        );
-
+        $form = $this->createForm(AddTrickType::class, $trick);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -86,29 +78,27 @@ class TrickController extends AbstractController
             $fileName = $fileUploader->upload($mainPicture);
             $trick->setMainPicture($fileName);
             // Then we deal with the medias collection
-            $datas = $form->get('medias')->getData();
-
-            /*  I tried to use a foreach to loop through the medias collection but I couldn't get it to work because.
-                I need to pass an array of files to the upload method of the FileUploader service.
-            foreach ($medias as $media) {
-            */
-
-            $fileName = $fileUploader->upload($datas);
-            $media = new Media();
-            $media->setPath($fileName);
-            $media->setTrick($trick);
-            // We find the extension to set the type
-            $extension = pathinfo($fileName, PATHINFO_EXTENSION);
-            if ($extension === 'mp4' || $extension === 'webm' || $extension === 'ogg') {
-                $media->setType('video');
-            } elseif ($extension === 'png' || $extension === 'jpg' || $extension === 'jpeg') {
-                $media->setType('picture');
-            } else {
-                throw new \Exception('The file extension is not supported');
+            if (!empty($form->get('medias')->getData())) {
+                foreach ($form->get('medias')->getData() as $media) {
+                    $fileName = $fileUploader->upload($media);
+                    $media = new Media();
+                    $media->setPath($fileName);
+                    $media->setTrick($trick);
+                    // We find the extension to set the type
+                    $extension = pathinfo($fileName, PATHINFO_EXTENSION);
+                    if (
+                        $extension === 'mp4' || $extension === 'webm' || $extension === 'ogg'
+                    ) {
+                        $media->setType('video');
+                    } elseif ($extension === 'png' || $extension === 'jpg' || $extension === 'jpeg') {
+                        $media->setType('picture');
+                    } else {
+                        throw new \Exception('The file extension is not supported');
+                    }
+                    $entityManagerInterface->persist($media);
+                }
             }
 
-            $entityManagerInterface->persist($media);
-            // }
             $trick->setCreatedAt(new \DateTimeImmutable());
             $trick->setUser($this->getUser());
             $trick = $form->getData();
@@ -129,12 +119,10 @@ class TrickController extends AbstractController
     public function edit(Trick $trick, Request $request, EntityManagerInterface $entityManagerInterface, FileUploader $fileUploader): Response
     {
 
-        $form = $this->createForm(EditTrickType::class, $trick);
-
-        $form->handleRequest($request);
-
         $medias = $trick->getMedia();
 
+        $form = $this->createForm(EditTrickType::class, $trick);
+        $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             if (!empty($form->get('name')->getData())) {
@@ -152,27 +140,25 @@ class TrickController extends AbstractController
                 $fileName = $fileUploader->upload($mainPicture);
                 $trick->setMainPicture($fileName);
             }
-            // Then we deal with the medias collection
+            // Then we deal with the multiple files of the medias collection
             if (!empty($form->get('medias')->getData())) {
-                $datas = $form->get('medias')->getData();
-                $fileName = $fileUploader->upload($datas);
-                $media = new Media();
-                $media->setPath($fileName);
-                $media->setTrick($trick);
-                // We find the extension to set the type
-                $extension = pathinfo($fileName, PATHINFO_EXTENSION);
-                if ($extension === 'mp4' || $extension === 'webm' || $extension === 'ogg') {
-                    $media->setType('video');
-                } elseif ($extension === 'png' || $extension === 'jpg' || $extension === 'jpeg') {
-                    $media->setType('picture');
-                } else {
-                    throw new \Exception('The file extension is not supported');
+                foreach ($form->get('medias')->getData() as $media) {
+                    $fileName = $fileUploader->upload($media);
+                    $media = new Media();
+                    $media->setPath($fileName);
+                    $media->setTrick($trick);
+                    // We find the extension to set the type
+                    $extension = pathinfo($fileName, PATHINFO_EXTENSION);
+                    if ($extension === 'mp4' || $extension === 'webm' || $extension === 'ogg') {
+                        $media->setType('video');
+                    } elseif ($extension === 'png' || $extension === 'jpg' || $extension === 'jpeg') {
+                        $media->setType('picture');
+                    } else {
+                        throw new \Exception('The file extension is not supported');
+                    }
+                    $entityManagerInterface->persist($media);
                 }
-
-                $entityManagerInterface->persist($media);
             }
-
-
 
             $trick->setModifiedAt(new \DateTimeImmutable());
 

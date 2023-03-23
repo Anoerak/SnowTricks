@@ -16,9 +16,13 @@
 			<div class="medias__gallery">
 				{% for media in medias %}
 					<div class="media">
-						<img src="{{ asset('uploads/' ~ media.path) }}" alt="{{ trick.name }}">
+						{% if media.type == 'picture' %}
+							<img src="{{ asset(media.path) }}" alt="{{ trick.name }}">
+						{% else %}
+							<video src="{{ asset(media.path) }}" controls width="80px" height="80px" type="video">
+							</video>
+						{% endif %}
 						<a href="{{ path('app_trick_delete_media', {'id': trick.id, 'media_id': media.id} ) }}" class="remove__media">X</a>
-
 					</div>
 				{% endfor %}
 			</div>
