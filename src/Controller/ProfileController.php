@@ -43,8 +43,10 @@ class ProfileController extends AbstractController
                 $user->setProfilePicture($fileName);
             }
 
-            $password = $this->encoder->hashPassword($user, $user->getPassword());
-            $user->setPassword($password);
+            if (!empty($form->get('password')->getData()) && !empty($form->get('confirm_password')->getData())) {
+                $password = $this->encoder->hashPassword($user, $form->get('password')->getData());
+                $user->setPassword($password);
+            }
             $user->setModifiedAt(new \DateTimeImmutable());
 
             $entityManager->persist($user);

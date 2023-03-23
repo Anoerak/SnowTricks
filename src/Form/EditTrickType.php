@@ -93,6 +93,16 @@ class EditTrickType extends AbstractType
                         ]),
                     ]),
                 ],
+            ])
+            ->add('embed_video_links', TextType::class, [
+                'label' => 'Video Links',
+                'mapped' => false,
+                'attr' => [
+                    'value' => null,
+                    'name' => 'video_link',
+                    'placeholder' => 'https://www.youtube.com/watch?v=xxxxxxxxxxx'
+                ],
+                'required' => false,
             ]);
     }
 

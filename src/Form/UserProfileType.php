@@ -46,8 +46,10 @@ class UserProfileType extends AbstractType
                 PasswordType::class,
                 [
                     'label' => 'Password',
+                    'required' => false,
+                    'mapped' => false,
                     'attr' => [
-                        'value' => $options['data']->getPassword(),
+                        'placeholder' => 'New Password',
                         'name' => 'password',
                     ],
                     'required' => false,
@@ -58,8 +60,10 @@ class UserProfileType extends AbstractType
                 PasswordType::class,
                 [
                     'label' => 'Confirm password',
+                    'required' => false,
+                    'mapped' => false,
                     'attr' => [
-                        'value' => $options['data']->getPassword(),
+                        'placeholder' => 'New Password',
                         'name' => 'confirm_password',
                     ],
                     'required' => false,

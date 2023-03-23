@@ -5,7 +5,6 @@ namespace App\EventListener;
 use Symfony\Component\Security\Http\Event\LogoutEvent;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
-use Symfony\Component\Security\Http\Event\InteractiveLoginEvent;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 
@@ -18,17 +17,11 @@ class LogoutSubscriber extends AbstractController implements EventSubscriberInte
 
 	public static function getSubscribedEvents(): array
 	{
-		return [LogoutEvent::class => 'onLogout', InteractiveLoginEvent::class => 'onLogin'];
+		return [LogoutEvent::class => 'onLogout'];
 	}
 
 	public function onLogout(LogoutEvent $event): void
 	{
 		$this->addFlash('success', 'You\'re logged out');
-	}
-
-	// On login, we inform the user if it success.
-	public function onLogin(InteractiveLoginEvent $event): void
-	{
-		$this->addFlash('success', 'You\'re logged in');
 	}
 }
