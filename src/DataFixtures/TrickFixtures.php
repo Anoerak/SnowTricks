@@ -35,14 +35,22 @@ class TrickFixtures extends Fixture implements DependentFixtureInterface
 
     public function load(ObjectManager $manager): void
     {
-        // We load the JSON file
+        /*
+			|-----------------------------------
+			| We load the JSON file
+			|-----------------------------------
+		*/
         $json = file_get_contents('./assets/data/dataset.json');
         $encoders = [new JsonEncoder()];
         $normalizers = [new ObjectNormalizer()];
         $serializer = new Serializer($normalizers, $encoders);
         $data = $serializer->decode($json, 'json');
 
-        // We create the tricks based on the tricks in the JSON file and attribute a random user from the array of users
+        /*
+			|-----------------------------------
+			| We create the tricks based on the tricks in the JSON file and attribute a random user from the array of users
+			|-----------------------------------
+		*/
         foreach ($data['tricks'] as $trick) {
             $newTrick = new Trick();
             $newTrick->setName($trick['name'])

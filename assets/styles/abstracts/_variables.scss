@@ -1,5 +1,14 @@
+/*
+	|-----------------------------------
+	| Global variables
+	|-----------------------------------
+*/
+
 $font-family: 'Roboto', sans-serif;
 $font-size-base: 0.925rem;
+
+$danger: #dc3545;
+$success: #35dcc6;
 
 $white: #f7f7fc;
 $blue: #0d3d67;
@@ -7,14 +16,14 @@ $light-blue: #4d71a6;
 $extra-light-blue: #8eb8d1;
 
 $logo-blue: #0d6efd;
-$logo-red: #dc3545;
+$logo-red: $danger;
 
 $base-color: #66f;
 $text-dark: #3c4250;
 $text-dark-hover: #2c2f3a;
 $text-light: #a0a5b1;
 $text-error: $logo-red;
-$text-confirm: #35dcc6;
+$text-confirm: $success;
 $text-info: $logo-blue;
 
 $border-color: #eceef3;
@@ -24,3 +33,29 @@ $primary-button-blue-hover: #0069d9;
 
 $cancel-button-red: $text-error;
 $cancel-button-red-hover: #c82333;
+
+/*
+	|-----------------------------------
+	| Navbar menu variables
+	|-----------------------------------
+*/
+
+$navbar-body-color: #fff;
+// $navbar-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.035);
+$navbar-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+$navbar-padding-y: 1rem;
+$navbar-padding-x: 1.15rem;
+
+$navbar-link-hover: $base-color;
+$navbar-link-padding-y: 0.5rem;
+$navbar-link-padding-x: 1rem;
+
+$navbar-dropdown-padding-y: 0.5rem;
+$navbar-dropdown-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+$navbar-dropdown-radius: 0.75rem;
+
+$navbar-dropdown-item-padding-y: 0.25rem;
+$navbar-dropdown-item-padding-x: 1rem;
+
+$navbar-dropdown-separator-margin-y: 9px;
+$navbar-dropdown-separator-color: $border-color;

@@ -35,6 +35,20 @@ class SignupController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $user = $form->getData();
+
+            /*
+            |--------------------------------------------
+            | We check if there already is a user with this username
+            |--------------------------------------------
+            */
+            $userExists = $entityManager->getRepository(User::class)->findOneBy(['username' => $user->getUsername()]);
+            if ($userExists) {
+                $this->addFlash('danger', 'This username is already taken');
+                return $this->redirectToRoute('app_signup');
+            }
+
+
+
             $user->setCreatedAt(new \DateTimeImmutable());
             $user->setRoles(['ROLE_USER']);
             $password = $this->encoder->hashPassword($user, $user->getPassword());
@@ -43,7 +57,18 @@ class SignupController extends AbstractController
             $entityManager->persist($user);
             $entityManager->flush();
 
-            return $this->redirectToRoute('app_signin');
+            /*
+            |--------------------------------------------
+            | We check if the user has been created.
+            |--------------------------------------------
+            */
+            if ($user->getId()) {
+                $this->addFlash('success', 'You\'re signed up');
+                return $this->redirectToRoute('app_signin');
+            } else {
+                $this->addFlash('danger', 'Something went wrong');
+                return $this->redirectToRoute('app_signup');
+            }
         }
 
         return $this->render('signup/signup.html.twig', [

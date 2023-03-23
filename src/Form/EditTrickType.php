@@ -5,7 +5,6 @@ namespace App\Form;
 use App\Entity\Trick;
 
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Validator\Constraints\File;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -23,7 +22,6 @@ class EditTrickType extends AbstractType
                 'label' => 'Name',
                 'mapped' => false,
                 'attr' => [
-                    // 'value' => null,
                     'value' => $options['data']->getName(),
                     'name' => 'name',
                 ],
@@ -32,7 +30,6 @@ class EditTrickType extends AbstractType
             ->add('description', TextareaType::class, [
                 'label' => 'Description',
                 'attr' => [
-                    // 'value' => null,
                     'value' => $options['data']->getDescription(),
                     'rows' => '10',
                     'cols' => '50',
@@ -44,7 +41,6 @@ class EditTrickType extends AbstractType
                 'label' => 'Category',
                 'mapped' => false,
                 'attr' => [
-                    // 'value' => null,
                     'value' => $options['data']->getCategory(),
                     'name' => 'category',
                 ],

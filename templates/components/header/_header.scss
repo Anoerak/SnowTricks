@@ -1,25 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
-
-$navbar-body-color: #fff;
-// $navbar-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.035);
-$navbar-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-$navbar-padding-y: 1rem;
-$navbar-padding-x: 1.15rem;
-
-$navbar-link-hover: $base-color;
-$navbar-link-padding-y: 0.5rem;
-$navbar-link-padding-x: 1rem;
-
-$navbar-dropdown-padding-y: 0.5rem;
-$navbar-dropdown-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-$navbar-dropdown-radius: 0.75rem;
-
-$navbar-dropdown-item-padding-y: 0.25rem;
-$navbar-dropdown-item-padding-x: 1rem;
-
-$navbar-dropdown-separator-margin-y: 9px;
-$navbar-dropdown-separator-color: $border-color;
-
 a {
 	text-decoration: none;
 }
@@ -37,7 +15,11 @@ a {
 	}
 }
 
-// Start navbar
+/*
+	|-----------------------------------
+	| Start navbar
+	|-----------------------------------
+*/
 
 .navbar,
 .navbar > .container {
@@ -73,10 +55,10 @@ a {
 	}
 
 	/*
-  |-----------------------------------
-  | Start navbar logo or brand etc..
-  |-----------------------------------
-  */
+	|-----------------------------------
+	| Start navbar logo or brand etc..
+	|-----------------------------------
+*/
 	.navbar-header {
 		display: flex;
 		align-items: center;
@@ -120,10 +102,10 @@ a {
 	}
 
 	/*
-  |-----------------------------------
-  | Start navbar menu
-  |-----------------------------------
-  */
+	|-----------------------------------
+	| Start navbar menu
+	|-----------------------------------
+*/
 	.navbar-menu {
 		display: flex;
 		align-items: center;
@@ -303,7 +285,11 @@ a {
 	}
 }
 
-// Custom
+/*
+	|-----------------------------------
+	| Custom
+	|-----------------------------------
+*/
 .navbar .navbar-header > a span {
 	color: $base-color;
 }

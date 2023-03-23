@@ -48,21 +48,16 @@ if (headTitle.includes('Home') || headTitle.includes('Category')) {
 			let trickId = parseInt(trickToDelete);
 			let url = 'https://127.0.0.1:8000/trick/' + trickId + '/delete';
 			// We fetch the url and use the Symfony controller to delete the trick.
+			// We wait for the response and if it's ok, we close the modal.
 			fetch(url)
-				.then(function (response) {
-					return response.text();
+				.then((response) => {
+					if (response.ok) {
+						modal.style.display = 'none';
+					}
 				})
-				.then(function (html) {
-					// We remove the trick from the tricks list.
-					let trick = document.getElementById('trick_' + trickId);
-					trick.parentNode.removeChild(trick);
-					// We close the modal.
-					modal.style.display = 'none';
-					// We refresh the page.
-					location.reload();
-				})
-				.catch(function (error) {
-					console.log(error);
+				.then((data) => {
+					// We reload the page.
+					window.location.reload();
 				});
 		}
 	}

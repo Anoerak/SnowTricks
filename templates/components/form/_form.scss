@@ -11,7 +11,11 @@ section#trick_edition {
 	padding: 100px;
 	color: $blue;
 	min-height: calc(100vh - 582px);
-	// Style the form element
+	/*
+		|-----------------------------------
+		| Style the form element
+		|-----------------------------------
+	*/
 	form {
 		display: flex;
 		flex-direction: column;
@@ -22,7 +26,11 @@ section#trick_edition {
 		padding: 50px 75px;
 		border-radius: 15px;
 
-		// Style the form fields
+		/*
+			|-----------------------------------
+			| Style the form field
+			|-----------------------------------
+		*/
 		#form {
 			margin-bottom: 20px;
 			ul li,
@@ -58,7 +66,11 @@ section#trick_edition {
 			}
 		}
 
-		// Style the form buttons
+		/*
+			|-----------------------------------
+			| Style the form buttons
+			|-----------------------------------
+		*/
 		.btn.btn-primary {
 			@include btn-primary;
 		}
