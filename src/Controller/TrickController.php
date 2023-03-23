@@ -221,6 +221,19 @@ class TrickController extends AbstractController
                     $entityManagerInterface->persist($media);
                 }
             }
+            /*
+                |-----------------------------------
+                | And we check if there is a video link
+                |-----------------------------------
+            */
+            if (!empty($form->get('embed_video_links')->getData())) {
+                $videoLink = $form->get('embed_video_links')->getData();
+                $media = new Media();
+                $media->setPath($videoLink);
+                $media->setTrick($trick);
+                $media->setType('video');
+                $entityManagerInterface->persist($media);
+            }
 
             $trick->setModifiedAt(new \DateTimeImmutable());
 

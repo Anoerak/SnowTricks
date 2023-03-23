@@ -3,6 +3,9 @@ section#new_trick {
 	#edit_trick,
 	#add_trick {
 		margin-bottom: 1rem;
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
 	}
 	.medias__gallery {
 		width: 100%;
