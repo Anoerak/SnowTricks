@@ -1,0 +1,32 @@
+<div
+	class="trick">
+	{# We go through the media and display a slideshow with the pictures and videos #}
+	<div class="trick__media">
+		<div class='carousel__container'>
+			<div data-display class='display'></div>
+			<div class='img-select-container'>
+				<div data-img-container class='img-container'>
+					{% for media in medias %}
+						{% if media.type == 'picture' %}
+							<div data-img-box class='img'>
+								<img data-img src='{{ asset(media.path) }}'>
+							</div>
+						{% else %}
+							<div data-img-box class='img'>
+								<video data-img src="{{ asset(media.path) }}" width="80" height="80" type="video"></video>
+							</div>
+						{% endif %}
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class='buttons'>
+	<button data-btn-left>
+		<span class="material-icons">navigate_before</span>
+	</button>
+	<button data-btn-right>
+		<span class="material-icons">navigate_next</span>
+	</button>
+</div>

@@ -1,0 +1,70 @@
+section#signin,
+section#signup,
+section#contact,
+section#trick_details,
+section#user_profile,
+section#new_trick,
+section#trick_edition {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 100px;
+	color: $blue;
+	min-height: calc(100vh - 582px);
+	// Style the form element
+	form {
+		display: flex;
+		flex-direction: column;
+		max-width: 750px;
+		min-width: 350px;
+		margin-top: 30px;
+		background-color: $white;
+		padding: 50px 75px;
+		border-radius: 15px;
+
+		// Style the form fields
+		#form {
+			margin-bottom: 20px;
+			ul li,
+			ul li::marker {
+				color: $text-error;
+				list-style-type: '🤯';
+			}
+			ul:first-of-type + input {
+				border: solid 1px $text-error;
+			}
+
+			label {
+				display: block;
+				margin-bottom: 5px;
+				font-weight: 500;
+			}
+
+			input[type='text'],
+			input[type='email'],
+			input[type='password'],
+			textarea {
+				width: 100%;
+				padding: 10px;
+				border: 1px solid #ccc;
+				border-radius: 4px;
+				margin-bottom: 0.5rem;
+			}
+
+			.form-error {
+				color: red;
+				font-size: 12px;
+				margin: 15px 0;
+			}
+		}
+
+		// Style the form buttons
+		.btn.btn-primary {
+			@include btn-primary;
+		}
+
+		.btn.btn-cancel {
+			@include btn-cancel;
+		}
+	}
+}

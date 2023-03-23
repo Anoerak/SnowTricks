@@ -1,0 +1,182 @@
+section#tricks .container,
+section#trick_category {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin: 0 auto;
+	max-width: 1200px;
+	padding: 0 20px;
+	h2 {
+		font-size: 1.5rem;
+		margin: 0 0 2rem 0;
+		padding: 0;
+		color: $blue;
+	}
+	.tricks {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-content: flex-start;
+		margin: 0 auto;
+		max-width: 1200px;
+		padding: 0 20px;
+		gap: 20px;
+		.trick {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			margin: 0 auto;
+			max-width: 300px;
+			padding: 0 20px 20px 20px;
+			transition: all 0.3s ease-in-out;
+			box-shadow: 0 0 10px rgba(13, 61, 103, 0.2);
+			border-radius: 5px;
+			&:hover {
+				box-shadow: 0 0 10px rgba(13, 61, 103, 0.5);
+			}
+			.trick__image {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 200px;
+				width: 100%;
+				padding-top: 20px;
+				img {
+					height: 100%;
+					width: 100%;
+					object-fit: cover;
+					border-radius: 3.5px 3.5px 0 0;
+				}
+			}
+			.trick__content {
+				.trick__title {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					height: 50px;
+					width: 100%;
+					background-color: $blue;
+					color: $white;
+					font-size: 1.25rem;
+					font-weight: bold;
+					text-transform: uppercase;
+					text-align: center;
+				}
+				.trick__description {
+					display: -webkit-box;
+					-webkit-line-clamp: 3;
+					-webkit-box-orient: vertical;
+					height: 50px;
+					width: 100%;
+					background-color: $white;
+					color: $blue;
+					font-size: 0.7rem;
+					font-weight: normal;
+					text-transform: uppercase;
+					text-align: center;
+					overflow: hidden;
+					text-overflow: ellipsis;
+				}
+				.trick__bottom {
+					display: flex;
+					flex-direction: row;
+					align-items: flex-start;
+					justify-content: space-between;
+					.read__more {
+						cursor: pointer;
+						display: inline-block;
+						padding: 5px;
+						margin: 1rem 0 0 0;
+						background-color: $extra-light-blue;
+						border-radius: 4px;
+						color: $blue;
+						font-size: 0.75rem;
+						text-decoration: none;
+						transition: all 0.3s ease-in-out;
+						&:hover {
+							background-color: $blue;
+							color: $white;
+						}
+					}
+					.button {
+						cursor: pointer;
+						display: inline-block;
+						padding: 5px;
+						margin: 1rem 0 0 0;
+						background-color: $white;
+						border-radius: 4px;
+						color: $blue;
+						font-size: 0.75rem;
+						text-decoration: none;
+						box-shadow: 0 0 10px rgba(13, 61, 103, 0.2);
+						transition: all 0.3s ease-in-out;
+						&.edit {
+							&:hover {
+								background-color: $extra-light-blue;
+							}
+						}
+						&.delete {
+							&:hover {
+								background-color: $text-error;
+							}
+						}
+						&:hover {
+							background-color: $extra-light-blue;
+							box-shadow: 0 0 10px rgba(13, 61, 103, 0.5);
+						}
+					}
+				}
+			}
+		}
+		.trick__load__more {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: center;
+			max-height: 360px;
+			max-width: 300px;
+			background-color: $white;
+			color: $extra-light-blue;
+			margin: 0 auto;
+			padding: 0 20px 20px 20px;
+			font-size: 1.5rem;
+			font-weight: bold;
+			text-transform: uppercase;
+			text-align: center;
+			transition: all 0.3s ease-in-out;
+			box-shadow: 0 0 10px rgba(13, 61, 103, 0.2);
+			border-radius: 5px;
+			&:hover {
+				box-shadow: 0 0 10px rgba(13, 61, 103, 0.5);
+			}
+			.trick__title {
+				height: 50px;
+				width: 100%;
+				background-color: $blue;
+				border-radius: 0 0 3px 3px;
+				color: $white;
+				font-size: 1.5rem;
+				font-weight: bold;
+				text-transform: uppercase;
+			}
+			button {
+				display: inline-block;
+				padding: 5px;
+				margin: 1rem 0 0 0;
+				background-color: $extra-light-blue;
+				border-radius: 4px;
+				color: $blue;
+				font-size: 0.75rem;
+				text-decoration: none;
+				transition: all 0.3s ease-in-out;
+				outline: none;
+				border: none;
+				cursor: pointer;
+				&:hover {
+					background-color: $light-blue;
+					color: $white;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,88 @@
+.hero {
+	padding: 100px 0;
+
+	.container {
+		max-width: 960px;
+		margin: 0 auto;
+		text-align: center;
+		color: $blue;
+
+		.title {
+			font-size: 4rem;
+			font-weight: bold;
+			margin-bottom: 20px;
+		}
+
+		.subtitle {
+			font-size: 2rem;
+			margin-bottom: 40px;
+		}
+
+		.description {
+			font-size: 1.5rem;
+			line-height: 1.6;
+			margin-bottom: 40px;
+		}
+
+		.button {
+			@include a-button;
+		}
+
+		.disclaimer {
+			margin-top: 2rem;
+			color: $text-light;
+			font-weight: 100;
+			span {
+				color: $text-light;
+				font-weight: 400;
+			}
+		}
+	}
+	.arrow {
+		svg {
+			position: absolute;
+			right: 0;
+			width: 100px;
+			height: 100px;
+			color: $extra-light-blue;
+			transition: all 0.75s ease-in-out;
+
+			&:hover {
+				color: $blue;
+			}
+		}
+	}
+}
+
+.tricks {
+	// min-height: 100vh;
+	margin: 2rem 0;
+	.button__add {
+		display: flex !important;
+		align-items: center;
+		justify-content: center;
+		@include a-button;
+		padding: 10px;
+		font-size: 1rem;
+		max-height: 2rem;
+	}
+	.arrow {
+		display: flex;
+		svg {
+			position: relative;
+			display: inline-block;
+			bottom: 0;
+			right: 0;
+			margin-left: auto;
+			width: 100px;
+			height: 100px;
+			color: $extra-light-blue;
+			transition: all 0.75s ease-in-out;
+			rotate: 180deg;
+
+			&:hover {
+				color: $blue;
+			}
+		}
+	}
+}

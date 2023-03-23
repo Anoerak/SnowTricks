@@ -1,0 +1,53 @@
+<div id="tricks_count_{{ tricksCount }}" class="container">
+	<h2 class="title">Latest tricks</h2>
+	{# Button to add a new trick for ADMIN and USER only #}
+	{% if app.user %}
+		<a href="{{ path('app_trick_new' ) }}" class="button__add">Add a new trick</a>
+	{% endif %}
+	<div id="tricks_list" class="tricks">
+		{% for trick in tricks %}
+			<div id="trick_{{ trick.id }}" class="trick">
+				<div class="trick__image">
+					<img src="{{ trick.mainPicture }}" alt="{{ trick.name }}"/>
+				</div>
+				<div class="trick__content">
+					<h3 class="trick__title">
+						{{ trick.name }}
+					</h3>
+					<p class="trick__description">
+						{{ trick.description }}
+					</p>
+					<div class="trick__bottom">
+						{% if not app.user %}
+							<a href="{{ path('app_trick', { id: trick.id }) }}" class="read__more">Read more</a>
+							{% else %}
+							<a href="{{ path('app_trick', { id: trick.id }) }}" class="read__more">Read more</a>
+							<div class="trick__commands">
+								<a href="{{ path('app_trick_edit', { id: trick.id }) }}" class="button edit">
+									<i class="fa-solid fa-pencil"></i>
+								</a>
+								<a id="{{ trick.id }}" class="button delete delete_trick_button">
+									<i class="fa-regular fa-trash-can"></i>
+								</a>
+							</div>
+						{% endif %}
+					</div>
+				</div>
+			</div>
+		{% endfor %}
+
+		<div id="load_more_card" class="trick__load__more">
+			<h3 class=""></h3>
+			<p class="trick__description">
+				Want to see more tricks??
+			</p>
+			<button id="display-more_button">Click Here</button>
+		</div>
+
+	</div>
+</div>
+<a href="#home" class="arrow">
+	<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+		<path d="M8 10l4 4 4-4"/>
+	</svg>
+</a>

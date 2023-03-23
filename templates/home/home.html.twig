@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+{% block title %}SnowTricks - Home
+{% endblock %}
+{% block body %}
+	<section class="hero">
+		{% block delete_modal %}
+			{% include "components/modals/delete_trick_confirmation.html.twig" %}
+		{% endblock %}
+		<div class="container">
+			<h1 class="title">Welcome to SnowTricks</h1>
+			<p class="subtitle">Your ultimate resource for everything snowboarding!</p>
+			<img src="{{ asset('build/images/snowtricks_home.eab6ed2d.jpg') }}" alt="snowboarder in the air"/>
+			<p class="description">
+				Our website is dedicated to providing you with the latest news, tips, and tricks for mastering the slopes
+				and performing jaw-dropping stunts on your snowboard. Whether you're a seasoned pro or just getting started,
+				we have something for everyone, with articles, videos, and tutorials covering all aspects of snowboarding,
+				from basic techniques to advanced freestyle maneuvers.
+			</p>
+			<a href="{{ path('app_signup') }}" class="button">Join our community</a>
+			<p class="disclaimer">
+				<span>Disclaimer:</span>
+				All the texts are fictitious and originate from the OpenAI ChatGPT API.
+			</p>
+		</div>
+		<a href="#tricks" class="arrow">
+			<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+				<path d="M8 10l4 4 4-4"/>
+			</svg>
+		</a>
+	</section>
+
+	<section id="tricks" class="tricks">
+		{% block tricks %}
+			{% include "home/display_tricks/display_tricks.html.twig" %}
+		{% endblock %}
+	</section>
+
+{% endblock %}

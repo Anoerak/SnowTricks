@@ -1,0 +1,67 @@
+<header id="home">
+	<nav class="navbar">
+		<div class="container">
+			<div class="navbar-header">
+				<button title="Menu" class="navbar-toggler" data-toggle="open-navbar1">
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
+				<a href="{{ path('app_home') }}">
+					<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 400 400">
+						<rect fill="#0d3d67" width="100%" height="100%"/>
+						<g transform="translate(100, 100)">
+							<path fill="#fff" d="M50 0 L0 100 L100 100 Z"/>
+							<path fill="#8eb8d1" d="M50 20 L20 80 L80 80 Z"/>
+							<circle cx="50" cy="115" r="15" fill="#fff"/>
+						</g>
+						<text x="50%" y="300" text-anchor="middle" font-size="40" font-weight="bold" fill="#fff">
+							SnowTricks
+						</text>
+					</svg>
+				</a>
+			</div>
+
+			<div class="navbar-menu" id="open-navbar1">
+				<ul class="navbar-nav">
+					<li class="{{ app.request.attributes.get('_route') == 'app_home' ? 'active' : '' }}">
+						<a href="{{ path('app_home') }}">Home</a>
+					</li>
+					<li class="">
+						<a href="{{ path('app_home') }}#tricks">Tricks</a>
+					</li>
+					<li class="{{ app.request.attributes.get('_route') == 'app_about' ? 'active' : '' }}">
+						<a href="{{ path('app_about') }}">About</a>
+					</li>
+					<li class="{{ app.request.attributes.get('_route') == 'app_contact' ? 'active' : '' }}">
+						<a href="{{ path('app_contact') }}">Contact</a>
+					</li>
+					{% if not app.user %}
+					<li class="{{ app.request.attributes.get('_route') == 'app_signin' ? 'active' : '' }}">
+						<a href="{{ path('app_signin') }}">Signin</a>
+					</li>
+					<li class="signup {{ app.request.attributes.get('_route') == 'app_signup' ? 'active' : '' }}">
+						<a class="signup" href="{{ path('app_signup') }}">Signup</a>
+					</li>
+					{% else %}
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+							{{ app.user.username }}
+							<span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li>
+								<a href="{{ path('app_profile') }}">Profile</a>
+							</li>
+							<li>
+								<a href="{{ path('app_logout') }}">Logout</a>
+							</li>
+						</ul>
+					</li>
+					{% endif %}
+					
+				</ul>
+			</div>
+		</div>
+	</nav>
+</header>

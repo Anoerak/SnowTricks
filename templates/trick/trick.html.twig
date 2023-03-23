@@ -1,0 +1,79 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+	{{ trick.name }}
+{% endblock %}
+
+{% block body %}
+	{# We display all the details about the trick #}
+	<section id="trick_details" class="container">
+		<h2 class="title">{{ trick.name }}</h2>
+		{# We add a category tag #}
+		<div class="trick__category">
+			<a href="{{ path('app_trick_category', {category: trick.category}) }}" class="trick__category__tag">
+				{{ trick.category }}
+			</a>
+		</div>
+		{# We insert a carousel to display the medias #}
+		{% block carousel %}
+			{% include "components/carousel/carousel.html.twig" %}
+		{% endblock %}
+		{# We display the description of the trick #}
+		<div class="trick__content">
+			<h3 class="trick__title">
+				{{ trick.name }}
+			</h3>
+			<p class="trick__description">
+				{{ trick.description }}
+			</p>
+		</div>
+		{# We insert a line to separate the blocks #}
+		<span class="separator"></span>
+		<div
+			class="trick__comments">
+			{# We display all the comments for this tricks, from the most recent to the older #}
+			<h3 class="trick__comments__title">Comments Section</h3>
+			{% for comment in comments %}
+				<div class="trick__comments__comment">
+					<div class="trick__comments__comment__header">
+						<div
+							class="trick__comments__comment__header__author">
+							{# We get the username of the user_id of this comment #}
+							{{ comment.user.username }}
+							{# If ROLE_ADMIN is granted, we display the delete icon #}
+							{% if is_granted('ROLE_ADMIN') %}
+								<a href="{{ path('app_comment_delete', {id:comment.id})}}" class="trick__comments__comment__delete">
+									<i class="fas fa-trash-alt"></i>
+								</a>
+							{% endif %}
+						</div>
+						<div
+							class="trick__comments__comment__header__date">
+							{# posted on day d month Y at hh:mm #}
+							{{ comment.createdAt|date('D d M Y H:i:s')}}
+							{# {{ comment.createdAt|date('Y/m/d') }} #}
+						</div>
+					</div>
+					<div class="trick__comments__comment__content">
+						{{ comment.comment }}
+					</div>
+				</div>
+			{% endfor %}
+			{# If not "user" or "admin", we don't display the 'add a comment' section #}
+			{% if is_granted('ROLE_USER') or is_granted('ROLE_ADMIN') %}
+				{# We insert a line to separate the blocks #}
+				<span class="separator"></span>
+				{# We display the form to add a comment #}
+				<div class="trick__comments__form">
+					<h3 class="trick__comments__form__title">Add a comment</h3>
+					{{ form_start(form) }}
+					<div id="form">
+						{{ form_widget(form) }}
+						<button type="submit" class="btn btn-primary">Post</button>
+					</div>
+					{{ form_end(form) }}
+				</div>
+			{% endif %}
+		</div>
+	</section>
+{% endblock %}

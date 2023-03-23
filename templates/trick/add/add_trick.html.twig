@@ -1,0 +1,19 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+	New Trick
+{% endblock %}
+
+{% block body %}
+<section id="new_trick">
+	<h2 class="title">Add a New Trick</h2>
+	{{ form_start(form) }}
+		<div id="form">
+			{{ form_widget(form) }}
+			<button type="submit" class="btn btn-primary">Add</button>
+			<button type="reset" class="btn btn-cancel">Cancel</button>
+		</div>
+	{{ form_end(form) }}
+	
+</section>
+{% endblock %}
