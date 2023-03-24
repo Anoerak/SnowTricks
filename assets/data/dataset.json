@@ -5,6 +5,7 @@
 			"email": "johndoe@example.com",
 			"password": "password123",
 			"roles": ["ROLE_ADMIN", "ROLE_USER"],
+			"profile_picture": "build/images/user_profile/default_profile_picture.fb6d3bd5.png",
 			"created_at": "2022-01-01T12:00:00Z"
 		},
 		{
@@ -12,6 +13,7 @@
 			"email": "janedoe@example.com",
 			"password": "password456",
 			"roles": ["ROLE_USER"],
+			"profile_picture": "build/images/user_profile/default_profile_picture.fb6d3bd5.png",
 			"created_at": "2022-01-02T13:00:00Z"
 		},
 		{
@@ -19,6 +21,7 @@
 			"email": "bobsmith@example.com",
 			"password": "password789",
 			"roles": ["ROLE_ADMIN"],
+			"profile_picture": "build/images/user_profile/default_profile_picture.fb6d3bd5.png",
 			"created_at": "2022-01-03T14:00:00Z"
 		},
 		{
@@ -26,6 +29,7 @@
 			"email": "sarahlee@example.com",
 			"password": "passwordabc",
 			"roles": ["ROLE_USER"],
+			"profile_picture": "build/images/user_profile/default_profile_picture.fb6d3bd5.png",
 			"created_at": "2022-01-04T15:00:00Z"
 		}
 	],

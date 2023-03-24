@@ -5,7 +5,9 @@
 # https://symfony.com/doc/current/best_practices.html#use-parameters-for-application-configuration
 parameters:
     pictures_directory: '%kernel.project_dir%/public/build/images'
+    profile_pictures_directory: '%kernel.project_dir%/public/build/images/user_profile'
     pictures_path: 'build/images/'
+    profile_pictures_path: 'build/images/user_profile/'
 
 services:
     # default configuration for services in *this* file
@@ -29,3 +31,5 @@ services:
         arguments:
             $targetDirectory: '%pictures_directory%'
             $picturePath: '%pictures_path%'
+            $profilePictureTargetDirectory: '%profile_pictures_directory%'
+            $profilePicturePath: '%profile_pictures_path%'

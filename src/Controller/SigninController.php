@@ -13,8 +13,12 @@ class SigninController extends AbstractController
     public function signin(AuthenticationUtils $authenticationUtils): Response
     {
         $error = $authenticationUtils->getLastAuthenticationError();
+        if ($error) {
+            $this->addFlash('danger', $error->getMessageKey());
+        }
 
         $lastUsername = $authenticationUtils->getLastUsername();
+
 
         return $this->render('signin/signin.html.twig', [
             'controller_name' => 'SigninController',

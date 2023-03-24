@@ -23,12 +23,23 @@
 	</head>
 
 	<body>
+		{% for message in app.flashes('danger') %}
+			<div class="alert alert-danger">
+				{{ message }}
+			</div>
+		{% endfor %}
+		{% for message in app.flashes('success') %}
+			<div class="alert alert-success">
+				{{ message }}
+			</div>
+		{% endfor %}
 		{# We place the Header component here #}
 		{% block header %}
 			{% include 'components/header/header.html.twig' %}
 		{% endblock header %}
 		{# We place the Body component here #}
-		{% block body %}{% endblock %}
+		{% block body %}
+		{% endblock %}
 		{# We place the footer component here #}
 		{% block footer %}
 			{% include 'components/footer/footer.html.twig' %}

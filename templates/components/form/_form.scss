@@ -4,14 +4,19 @@ section#contact,
 section#trick_details,
 section#user_profile,
 section#new_trick,
-section#trick_edition {
+section#trick_edition,
+section#reset_password {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	padding: 100px;
 	color: $blue;
 	min-height: calc(100vh - 582px);
-	// Style the form element
+	/*
+		|-----------------------------------
+		| Style the form element
+		|-----------------------------------
+	*/
 	form {
 		display: flex;
 		flex-direction: column;
@@ -22,7 +27,11 @@ section#trick_edition {
 		padding: 50px 75px;
 		border-radius: 15px;
 
-		// Style the form fields
+		/*
+			|-----------------------------------
+			| Style the form field
+			|-----------------------------------
+		*/
 		#form {
 			margin-bottom: 20px;
 			ul li,
@@ -58,7 +67,11 @@ section#trick_edition {
 			}
 		}
 
-		// Style the form buttons
+		/*
+			|-----------------------------------
+			| Style the form buttons
+			|-----------------------------------
+		*/
 		.btn.btn-primary {
 			@include btn-primary;
 		}

@@ -11,26 +11,42 @@ class FileUploader
 	public function __construct(
 		private $targetDirectory,
 		private $picturePath,
+		private $profilePictureTargetDirectory,
+		private $profilePicturePath,
 		private SluggerInterface $slugger,
 	) {
 	}
 
-	public function upload(UploadedFile $file)
+	public function upload(UploadedFile $file, string $type)
 	{
 		$originalFilename = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
 		$safeFilename = transliterator_transliterate('Any-Latin; Latin-ASCII; [^A-Za-z0-9_] remove; Lower()', $originalFilename);
 		$fileName = $safeFilename . '-' . uniqid() . '.' . $file->guessExtension();
 
 		try {
-			$file->move(
-				$this->getTargetDirectory(),
-				$fileName
-			);
+			if ($type == 'profile') {
+				$file->move(
+					$this->getProfilePictureTargetDirectory(),
+					$fileName
+				);
+			} else {
+				$file->move(
+					$this->getTargetDirectory(),
+					$fileName
+				);
+			}
 		} catch (FileException $e) {
-			// ... handle exception if something happens during file upload
+			/*
+			|-----------------------------------
+			| handle exception if something happens during file upload
+			|-----------------------------------
+		*/
 		}
-
-		$directPath = $this->getPicturePath() . $fileName;
+		if ($type == 'profile') {
+			$directPath = $this->getProfilePicturePath() . $fileName;
+		} else {
+			$directPath = $this->getPicturePath() . $fileName;
+		}
 
 		return $directPath;
 	}
@@ -43,5 +59,15 @@ class FileUploader
 	public function getPicturePath()
 	{
 		return $this->picturePath;
+	}
+
+	public function getProfilePictureTargetDirectory()
+	{
+		return $this->profilePictureTargetDirectory;
+	}
+
+	public function getProfilePicturePath()
+	{
+		return $this->profilePicturePath;
 	}
 }

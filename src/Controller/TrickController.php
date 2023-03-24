@@ -51,10 +51,16 @@ class TrickController extends AbstractController
         ]);
     }
 
+
+
     #[Route('/trick/category/{category}', name: 'app_trick_category')]
     public function category(string $category, EntityManagerInterface $manager): Response
     {
-        // We get all the tricks of the category
+        /*
+			|-----------------------------------
+			| We get all the tricks of the category
+			|-----------------------------------
+		*/
         $tricks = $manager->getRepository(Trick::class)->findBy(['category' => $category]);
 
         return $this->render('trick/category/trick_category.html.twig', [
@@ -63,6 +69,8 @@ class TrickController extends AbstractController
             'category' => $category,
         ]);
     }
+
+
 
     #[Route('/new/trick', name: 'app_trick_new')]
     public function new(Request $request, EntityManagerInterface $entityManagerInterface, FileUploader $fileUploader): Response
@@ -73,18 +81,47 @@ class TrickController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            // We take care of the main_picture
+            /*
+                |-----------------------------------
+                | We check if the name of this trick already exists in the database
+                |-----------------------------------
+            */
+            $trickName = $form->get('name')->getData();
+            $trickExists = $entityManagerInterface->getRepository(Trick::class)->findOneBy(['name' => $trickName]);
+            if ($trickExists) {
+                $this->addFlash('danger', 'This trick already exists');
+                return $this->redirectToRoute('app_trick_new');
+            }
+
+            /*
+                |-----------------------------------
+                | We take care of the main_picture
+                |-----------------------------------
+            */
             $mainPicture = $form->get('main_picture')->getData();
-            $fileName = $fileUploader->upload($mainPicture);
-            $trick->setMainPicture($fileName);
-            // Then we deal with the medias collection
+            if (!empty($mainPicture)) {
+                $fileName = $fileUploader->upload($mainPicture, 'media');
+                $trick->setMainPicture($fileName);
+            } else {
+                $this->addFlash('danger', 'You must add a main picture');
+                return $this->redirectToRoute('app_trick_new');
+            }
+            /*
+			|-----------------------------------
+			| Then we deal with the medias collection
+			|-----------------------------------
+		    */
             if (!empty($form->get('medias')->getData())) {
                 foreach ($form->get('medias')->getData() as $media) {
-                    $fileName = $fileUploader->upload($media);
+                    $fileName = $fileUploader->upload($media, 'media');
                     $media = new Media();
                     $media->setPath($fileName);
                     $media->setTrick($trick);
-                    // We find the extension to set the type
+                    /*
+                        |-----------------------------------
+                        | We find the extension to set the type
+                        |-----------------------------------
+                    */
                     $extension = pathinfo($fileName, PATHINFO_EXTENSION);
                     if (
                         $extension === 'mp4' || $extension === 'webm' || $extension === 'ogg'
@@ -106,13 +143,26 @@ class TrickController extends AbstractController
             $entityManagerInterface->persist($trick);
             $entityManagerInterface->flush();
 
-            return $this->redirectToRoute('app_trick', ['id' => $trick->getId()]);
+            /*
+            |---------------------------------------------
+            | We check if the new trick has been added
+            |---------------------------------------------
+            */
+            $trickExists = $entityManagerInterface->getRepository(Trick::class)->findOneBy(['name' => $trickName]);
+            if ($trickExists) {
+                $this->addFlash('success', 'The trick has been added');
+                return $this->redirectToRoute('app_trick', ['id' => $trick->getId()]);
+            } else {
+                $this->addFlash('danger', 'The trick has not been added');
+                return $this->redirectToRoute('app_trick_new');
+            }
         }
 
         return $this->render('trick/add/add_trick.html.twig', [
             'form' => $form->createView(),
         ]);
     }
+
 
 
     #[Route('/trick/{id}/edit', name: 'app_trick_edit')]
@@ -134,20 +184,32 @@ class TrickController extends AbstractController
             if (!empty($form->get('category')->getData())) {
                 $trick->setCategory($form->get('category')->getData());
             }
-            // We take care of the main_picture if it has been changed
+            /*
+                |-----------------------------------
+                | We take care of the main_picture if it has been changed
+                |-----------------------------------
+            */
             if (!empty($form->get('main_picture')->getData())) {
                 $mainPicture = $form->get('main_picture')->getData();
-                $fileName = $fileUploader->upload($mainPicture);
+                $fileName = $fileUploader->upload($mainPicture, 'media');
                 $trick->setMainPicture($fileName);
             }
-            // Then we deal with the multiple files of the medias collection
+            /*
+                |-----------------------------------
+                | Then we deal with the multiple files of the medias collection
+                |-----------------------------------
+            */
             if (!empty($form->get('medias')->getData())) {
                 foreach ($form->get('medias')->getData() as $media) {
-                    $fileName = $fileUploader->upload($media);
+                    $fileName = $fileUploader->upload($media, 'media');
                     $media = new Media();
                     $media->setPath($fileName);
                     $media->setTrick($trick);
-                    // We find the extension to set the type
+                    /*
+                        |-----------------------------------
+                        | We find the extension to set the type
+                        |-----------------------------------
+		            */
                     $extension = pathinfo($fileName, PATHINFO_EXTENSION);
                     if ($extension === 'mp4' || $extension === 'webm' || $extension === 'ogg') {
                         $media->setType('video');
@@ -158,6 +220,19 @@ class TrickController extends AbstractController
                     }
                     $entityManagerInterface->persist($media);
                 }
+            }
+            /*
+                |-----------------------------------
+                | And we check if there is a video link
+                |-----------------------------------
+            */
+            if (!empty($form->get('embed_video_links')->getData())) {
+                $videoLink = $form->get('embed_video_links')->getData();
+                $media = new Media();
+                $media->setPath($videoLink);
+                $media->setTrick($trick);
+                $media->setType('video');
+                $entityManagerInterface->persist($media);
             }
 
             $trick->setModifiedAt(new \DateTimeImmutable());
@@ -175,23 +250,52 @@ class TrickController extends AbstractController
         ]);
     }
 
+
+
     #[Route('/trick/{id}/delete', name: 'app_trick_delete')]
     public function delete(Trick $trick, EntityManagerInterface $entityManagerInterface): Response
     {
+        $trickName = $trick->getName();
+
         $entityManagerInterface->remove($trick);
         $entityManagerInterface->flush();
 
-        return $this->redirectToRoute('app_home');
+        // We check if the tricks has been deleted
+        $trickExists = $entityManagerInterface->getRepository(Trick::class)->findOneBy(['name' => $trickName]);
+        if (!$trickExists) {
+            $this->addFlash('success', 'The trick has been deleted');
+            return $this->redirectToRoute('app_home', ['_fragment' => 'tricks']);
+        } else {
+            $this->addFlash('danger', 'The trick has not been deleted');
+            return $this->redirectToRoute('app_trick', ['id' => $trick->getId()]);
+        }
+        return $this->redirectToRoute('app_home', ['_fragment' => 'tricks']);
     }
+
+
 
     #[Route('/trick/{id}/delete/media/{media_id}', name: 'app_trick_delete_media')]
     public function deleteMedia(Trick $trick, $media_id, EntityManagerInterface $entityManagerInterface): Response
     {
-        // We Get the media based on the id passed through the url
+        /*
+			|-----------------------------------
+			| We Get the media based on the id passed through the url
+			|-----------------------------------
+		*/
         $media = $entityManagerInterface->getRepository(Media::class)->find($media_id);
 
         $entityManagerInterface->remove($media);
         $entityManagerInterface->flush();
+
+        // we check if the media has been deleted.
+        $mediaExists = $entityManagerInterface->getRepository(Media::class)->find($media_id);
+        if (!$mediaExists) {
+            $this->addFlash('success', 'The media has been deleted');
+            return $this->redirectToRoute('app_trick_edit', ['id' => $trick->getId()]);
+        } else {
+            $this->addFlash('danger', 'The media has not been deleted');
+            return $this->redirectToRoute('app_trick_edit', ['id' => $trick->getId()]);
+        }
 
         return $this->redirectToRoute('app_trick_edit', ['id' => $trick->getId()]);
     }

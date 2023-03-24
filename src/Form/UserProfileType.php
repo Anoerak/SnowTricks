@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\User;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
@@ -15,6 +16,15 @@ class UserProfileType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
+            ->add('profile_picture', FileType::class, [
+                'label' => 'Profile Picture',
+                'required' => false,
+                'mapped' => false,
+                'attr' => [
+                    'value' => $options['data']->getProfilePicture(),
+                    'name' => 'profile_picture'
+                ]
+            ])
             ->add('username', TextType::class, [
                 'label' => 'Username',
                 'attr' => [
@@ -36,8 +46,10 @@ class UserProfileType extends AbstractType
                 PasswordType::class,
                 [
                     'label' => 'Password',
+                    'required' => false,
+                    'mapped' => false,
                     'attr' => [
-                        'value' => $options['data']->getPassword(),
+                        'placeholder' => 'New Password',
                         'name' => 'password',
                     ],
                     'required' => false,
@@ -48,8 +60,10 @@ class UserProfileType extends AbstractType
                 PasswordType::class,
                 [
                     'label' => 'Confirm password',
+                    'required' => false,
+                    'mapped' => false,
                     'attr' => [
-                        'value' => $options['data']->getPassword(),
+                        'placeholder' => 'New Password',
                         'name' => 'confirm_password',
                     ],
                     'required' => false,

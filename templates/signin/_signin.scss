@@ -1,0 +1,14 @@
+section#signin {
+	.btn.btn-reset {
+		background-color: $danger;
+		color: $white;
+		margin: 1rem;
+		padding: 0.5rem;
+		border-radius: 5px;
+		text-align: center;
+		transition: all 0.3s ease-in-out;
+		&:hover {
+			background-color: $cancel-button-red-hover;
+		}
+	}
+}

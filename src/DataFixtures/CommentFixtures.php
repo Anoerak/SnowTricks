@@ -19,14 +19,22 @@ class CommentFixtures extends Fixture implements DependentFixtureInterface
 {
     public function load(ObjectManager $manager): void
     {
-        // We load the JSON file
+        /*
+			|-----------------------------------
+			| We load the JSON file
+			|-----------------------------------
+		*/
         $json = file_get_contents('./assets/data/dataset.json');
         $encoders = [new JsonEncoder()];
         $normalizers = [new ObjectNormalizer()];
         $serializer = new Serializer($normalizers, $encoders);
         $data = $serializer->decode($json, 'json');
 
-        // We create the comments based on the comments in the JSON file and attribute a random Trick from the array of Tricks and random User from the Users array
+        /*
+			|-----------------------------------
+			| We create the comments based on the comments in the JSON file and attribute a random Trick from the array of Tricks and random User from the Users array
+			|-----------------------------------
+		*/
         foreach ($data['comments'] as $comment) {
             $newComment = new Comment();
             $newComment->setComment($comment['comment'])

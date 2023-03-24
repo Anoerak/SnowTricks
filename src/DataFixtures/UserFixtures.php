@@ -27,14 +27,22 @@ class UserFixtures extends Fixture
 
     public function load(ObjectManager $manager): void
     {
-        // We load the JSON file
+        /*
+            |-----------------------------------
+            | We load the JSON file
+            |-----------------------------------
+		*/
         $json = file_get_contents('./assets/data/dataset.json');
         $encoders = [new JsonEncoder()];
         $normalizers = [new ObjectNormalizer()];
         $serializer = new Serializer($normalizers, $encoders);
         $data = $serializer->decode($json, 'json');
 
-        // We create the users based on the users in the JSON file
+        /*
+			|-----------------------------------
+			| We create the users based on the users in the JSON file
+			|-----------------------------------
+		*/
         foreach ($data['users'] as $user) {
             $newUser = new User();
             $password = $this->encoder->hashPassword($newUser, $user['password']);
@@ -42,6 +50,7 @@ class UserFixtures extends Fixture
                 ->setEmail($user['email'])
                 ->setPassword($password)
                 ->setRoles($user['roles'])
+                ->setProfilePicture($user['profile_picture'])
                 ->setCreatedAt(new \DateTimeImmutable());
 
             $manager->persist($newUser);

@@ -1,0 +1,8 @@
+section#reset_email_sent {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 100px;
+	color: $blue;
+	min-height: calc(100vh - 582px);
+}
