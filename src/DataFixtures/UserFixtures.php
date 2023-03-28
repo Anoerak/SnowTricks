@@ -51,6 +51,7 @@ class UserFixtures extends Fixture
                 ->setPassword($password)
                 ->setRoles($user['roles'])
                 ->setProfilePicture($user['profile_picture'])
+                ->setIsVerified(true)
                 ->setCreatedAt(new \DateTimeImmutable());
 
             $manager->persist($newUser);
