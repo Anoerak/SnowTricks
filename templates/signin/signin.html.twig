@@ -18,7 +18,8 @@
 				<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 			</div>
 			<button type="submit" class="btn btn-primary">Login</button>
-			<a href="#" class="btn btn-reset">Reset your password</a>
+			<a href="{{ path('app_forgot_password_request')}}" class="btn btn-reset">Reset your password</a>
+
 		</form>
 
 	</section>
