@@ -226,14 +226,31 @@ class TrickController extends AbstractController
                 | And we check if there is a video link
                 |-----------------------------------
             */
-            if (!empty($form->get('embed_video_links')->getData())) {
-                $videoLink = $form->get('embed_video_links')->getData();
-                $media = new Media();
-                $media->setPath($videoLink);
-                $media->setTrick($trick);
-                $media->setType('video');
-                $entityManagerInterface->persist($media);
-            }
+            // We get all the fields
+            $videoLinkArray = $form->all();
+            // We loop through it and extract the data for each field name starting with 'embed_video_links'
+            // foreach ($videoLinkArray as $key => $value) {
+            //     if ($key === 'embed_video_links') {
+            //         $videoLink = $value->getData();
+            //         $media = new Media();
+            //         $media->setPath($videoLink);
+            //         $media->setTrick($trick);
+            //         $media->setType('video');
+            //         $entityManagerInterface->persist($media);
+            //     }
+            // }
+
+            var_dump($videoLinkArray);
+            die;
+
+            // if (!empty($form->get('embed_video_links')->getData())) {
+            //     $videoLink = $form->get('embed_video_links')->getData();
+            //     $media = new Media();
+            //     $media->setPath($videoLink);
+            //     $media->setTrick($trick);
+            //     $media->setType('video');
+            //     $entityManagerInterface->persist($media);
+            // }
 
             $trick->setModifiedAt(new \DateTimeImmutable());
 
