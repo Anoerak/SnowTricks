@@ -21,7 +21,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class TrickController extends AbstractController
 {
-    #[Route('/trick/{id}', name: 'app_trick')]
+    #[Route('/trick/{slug}', name: 'app_trick')]
     public function index(Trick $trick, Request $request, EntityManagerInterface $entityManagerInterface): Response
     {
         $medias = $trick->getMedia();
@@ -39,7 +39,7 @@ class TrickController extends AbstractController
             $entityManagerInterface->persist($comment);
             $entityManagerInterface->flush();
 
-            return $this->redirectToRoute('app_trick', ['id' => $trick->getId()]);
+            return $this->redirectToRoute('app_trick', ['slug' => $trick->getSlug()]);
         }
 
         return $this->render('trick/trick.html.twig', [
@@ -123,9 +123,7 @@ class TrickController extends AbstractController
                         |-----------------------------------
                     */
                     $extension = pathinfo($fileName, PATHINFO_EXTENSION);
-                    if (
-                        $extension === 'mp4' || $extension === 'webm' || $extension === 'ogg'
-                    ) {
+                    if ($extension === 'mp4' || $extension === 'webm' || $extension === 'ogg') {
                         $media->setType('video');
                     } elseif ($extension === 'png' || $extension === 'jpg' || $extension === 'jpeg') {
                         $media->setType('picture');
@@ -133,6 +131,23 @@ class TrickController extends AbstractController
                         throw new \Exception('The file extension is not supported');
                     }
                     $entityManagerInterface->persist($media);
+                }
+            }
+            /*
+                |-----------------------------------
+                | And we check if there are video links, if so, we loop through the array and  add the value to the database.
+                |-----------------------------------
+            */
+            $videoLinks = $form->get('embed_video_links')->getData();
+            if (!empty($videoLinks)) {
+                foreach ($videoLinks as $videoLink) {
+                    if (!empty($videoLink)) {
+                        $media = new Media();
+                        $media->setPath($videoLink);
+                        $media->setTrick($trick);
+                        $media->setType('video');
+                        $entityManagerInterface->persist($media);
+                    }
                 }
             }
 
@@ -151,7 +166,7 @@ class TrickController extends AbstractController
             $trickExists = $entityManagerInterface->getRepository(Trick::class)->findOneBy(['name' => $trickName]);
             if ($trickExists) {
                 $this->addFlash('success', 'The trick has been added');
-                return $this->redirectToRoute('app_trick', ['id' => $trick->getId()]);
+                return $this->redirectToRoute('app_trick', ['slug' => $trick->getSlug()]);
             } else {
                 $this->addFlash('danger', 'The trick has not been added');
                 return $this->redirectToRoute('app_trick_new');
@@ -165,7 +180,7 @@ class TrickController extends AbstractController
 
 
 
-    #[Route('/trick/{id}/edit', name: 'app_trick_edit')]
+    #[Route('/trick/{slug}/edit', name: 'app_trick_edit')]
     public function edit(Trick $trick, Request $request, EntityManagerInterface $entityManagerInterface, FileUploader $fileUploader): Response
     {
 
@@ -223,41 +238,28 @@ class TrickController extends AbstractController
             }
             /*
                 |-----------------------------------
-                | And we check if there is a video link
+                | And we check if there are video links, if so, we loop through the array and  add the value to the database.
                 |-----------------------------------
             */
-            // We get all the fields
-            $videoLinkArray = $form->all();
-            // We loop through it and extract the data for each field name starting with 'embed_video_links'
-            // foreach ($videoLinkArray as $key => $value) {
-            //     if ($key === 'embed_video_links') {
-            //         $videoLink = $value->getData();
-            //         $media = new Media();
-            //         $media->setPath($videoLink);
-            //         $media->setTrick($trick);
-            //         $media->setType('video');
-            //         $entityManagerInterface->persist($media);
-            //     }
-            // }
-
-            var_dump($videoLinkArray);
-            die;
-
-            // if (!empty($form->get('embed_video_links')->getData())) {
-            //     $videoLink = $form->get('embed_video_links')->getData();
-            //     $media = new Media();
-            //     $media->setPath($videoLink);
-            //     $media->setTrick($trick);
-            //     $media->setType('video');
-            //     $entityManagerInterface->persist($media);
-            // }
+            $videoLinks = $form->get('embed_video_links')->getData();
+            if (!empty($videoLinks)) {
+                foreach ($videoLinks as $videoLink) {
+                    if (!empty($videoLink)) {
+                        $media = new Media();
+                        $media->setPath($videoLink);
+                        $media->setTrick($trick);
+                        $media->setType('video');
+                        $entityManagerInterface->persist($media);
+                    }
+                }
+            }
 
             $trick->setModifiedAt(new \DateTimeImmutable());
 
             $entityManagerInterface->persist($trick);
             $entityManagerInterface->flush();
 
-            return $this->redirectToRoute('app_trick', ['id' => $trick->getId()]);
+            return $this->redirectToRoute('app_trick', ['slug' => $trick->getSlug()]);
         }
 
         return $this->render('trick/edit/edit_trick.html.twig', [
@@ -269,7 +271,7 @@ class TrickController extends AbstractController
 
 
 
-    #[Route('/trick/{id}/delete', name: 'app_trick_delete')]
+    #[Route('/trick/{slug}/delete', name: 'app_trick_delete')]
     public function delete(Trick $trick, EntityManagerInterface $entityManagerInterface): Response
     {
         $trickName = $trick->getName();
@@ -284,14 +286,14 @@ class TrickController extends AbstractController
             return $this->redirectToRoute('app_home', ['_fragment' => 'tricks']);
         } else {
             $this->addFlash('danger', 'The trick has not been deleted');
-            return $this->redirectToRoute('app_trick', ['id' => $trick->getId()]);
+            return $this->redirectToRoute('app_trick', ['slug' => $trick->getSlug()]);
         }
         return $this->redirectToRoute('app_home', ['_fragment' => 'tricks']);
     }
 
 
 
-    #[Route('/trick/{id}/delete/media/{media_id}', name: 'app_trick_delete_media')]
+    #[Route('/trick/{slug}/delete/media/{media_id}', name: 'app_trick_delete_media')]
     public function deleteMedia(Trick $trick, $media_id, EntityManagerInterface $entityManagerInterface): Response
     {
         /*
@@ -308,12 +310,12 @@ class TrickController extends AbstractController
         $mediaExists = $entityManagerInterface->getRepository(Media::class)->find($media_id);
         if (!$mediaExists) {
             $this->addFlash('success', 'The media has been deleted');
-            return $this->redirectToRoute('app_trick_edit', ['id' => $trick->getId()]);
+            return $this->redirectToRoute('app_trick_edit', ['slug' => $trick->getSlug()]);
         } else {
             $this->addFlash('danger', 'The media has not been deleted');
-            return $this->redirectToRoute('app_trick_edit', ['id' => $trick->getId()]);
+            return $this->redirectToRoute('app_trick_edit', ['slug' => $trick->getSlug()]);
         }
 
-        return $this->redirectToRoute('app_trick_edit', ['id' => $trick->getId()]);
+        return $this->redirectToRoute('app_trick_edit', ['slug' => $trick->getSlug()]);
     }
 }

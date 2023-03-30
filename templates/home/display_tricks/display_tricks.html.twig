@@ -19,14 +19,14 @@
 					</p>
 					<div class="trick__bottom">
 						{% if not app.user %}
-							<a href="{{ path('app_trick', { id: trick.id }) }}" class="read__more">Read more</a>
-							{% else %}
-							<a href="{{ path('app_trick', { id: trick.id }) }}" class="read__more">Read more</a>
+							<a href="{{ path('app_trick', { slug: trick.slug }) }}" class="read__more">Read more</a>
+						{% else %}
+							<a href="{{ path('app_trick', { slug: trick.slug }) }}" class="read__more">Read more</a>
 							<div class="trick__commands">
-								<a href="{{ path('app_trick_edit', { id: trick.id }) }}" class="button edit">
+								<a href="{{ path('app_trick_edit', { slug: trick.slug }) }}" class="button edit">
 									<i class="fa-solid fa-pencil"></i>
 								</a>
-								<a id="{{ trick.id }}" class="button delete delete_trick_button">
+								<a id="{{ trick.slug }}" class="button delete delete_trick_button">
 									<i class="fa-regular fa-trash-can"></i>
 								</a>
 							</div>

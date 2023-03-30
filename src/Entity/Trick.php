@@ -2,11 +2,12 @@
 
 namespace App\Entity;
 
-use App\Repository\TrickRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\TrickRepository;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
+use Gedmo\Mapping\Annotation\Slug;
 
 #[ORM\Entity(repositoryClass: TrickRepository::class)]
 class Trick
@@ -43,6 +44,10 @@ class Trick
 
     #[ORM\OneToMany(mappedBy: 'trick', targetEntity: Media::class, orphanRemoval: true)]
     private Collection $media;
+
+    #[ORM\Column(length: 255, unique: true)]
+    #[Slug(fields: ['name'], updatable: false, unique: true, unique_base: 'category', separator: '-')]
+    private ?string $slug = null;
 
     public function __construct()
     {
@@ -195,6 +200,18 @@ class Trick
                 $medium->setTrick(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(string $slug): self
+    {
+        $this->slug = $slug;
 
         return $this;
     }

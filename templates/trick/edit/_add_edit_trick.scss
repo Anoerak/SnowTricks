@@ -18,7 +18,7 @@ section#new_trick {
 				position: relative;
 				> div {
 					width: 104%;
-					> .video__link__added {
+					.video__link__added {
 						width: 90%;
 					}
 				}
@@ -26,18 +26,19 @@ section#new_trick {
 				#add-video-link-button {
 					position: absolute;
 					right: -1rem;
-					top: 1.5rem;
+					top: 1.55rem;
 					width: 2rem;
 					height: 2rem;
-					background-color: $blue;
+					background-color: $extra-light-blue;
+					color: $blue;
 					border: none;
 					outline: none;
 					border-radius: 5px;
 					transition: all 0.2s ease-in-out;
 					cursor: pointer;
 					&:hover {
-						background-color: $extra-light-blue;
-						color: $blue;
+						background-color: $blue;
+						color: $white;
 					}
 				}
 				.video__link__added__container {
@@ -58,7 +59,7 @@ section#new_trick {
 						cursor: pointer;
 						&:hover {
 							background-color: $cancel-button-red-hover;
-							color: $blue;
+							color: $white;
 						}
 					}
 				}
