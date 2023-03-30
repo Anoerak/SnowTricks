@@ -2,15 +2,18 @@
 
 namespace App\Form;
 
-use PhpParser\Parser\Multiple;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+
+use Symfony\Component\Validator\Constraints\All;
 use Symfony\Component\Validator\Constraints\File;
+
 use Symfony\Component\OptionsResolver\OptionsResolver;
+
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
-use Symfony\Component\Validator\Constraints\All;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 
 class AddTrickType extends AbstractType
 {
@@ -86,6 +89,24 @@ class AddTrickType extends AbstractType
                         ]),
                     ]),
                 ],
+            ])
+            ->add('embed_video_links', CollectionType::class, [
+                'label' => 'Video Links',
+                'mapped' => false,
+                'entry_type' => TextType::class,
+                'data' => [null],
+                'entry_options' => [
+                    'label' => false,
+                    'attr' => [
+                        'value' => null,
+                        'name' => 'video_link',
+                        'placeholder' => 'https://www.youtube.com/watch?v=xxxxxxxxxxx',
+                        'class' => 'video__link__added'
+                    ],
+                ],
+                'allow_add' => true,
+                'allow_delete' => true,
+                'by_reference' => false,
             ]);
     }
 

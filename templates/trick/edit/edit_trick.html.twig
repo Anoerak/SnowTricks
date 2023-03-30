@@ -16,10 +16,9 @@
 			{{ form_row(form.category)}}
 			{{ form_row(form.main_picture)}}
 			{{ form_row(form.medias)}}
-			{# {{ form_widget(form) }} #}
 			<div id="add-video-links" class="add__video__links">
-				{{ form_row(form.embed_video_links)}}
 				<button id="add-video-link-button" type="button">+</button>
+				{{ form_row(form.embed_video_links)}}
 			</div>
 			<h3>Remove a media from this collection</h3>
 			<div class="medias__gallery">
@@ -38,6 +37,5 @@
 			<button type="reset" class="btn btn-cancel">Cancel</button>
 		</div>
 		{{ form_end(form) }}
-
 	</section>
 {% endblock %}

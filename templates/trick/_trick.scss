@@ -10,8 +10,12 @@ section#trick_details {
 		font-size: 1.5rem;
 		font-weight: 700;
 		margin-bottom: 1rem;
+		width: 100%;
+		text-align: center;
 	}
 	.trick__category {
+		width: 100%;
+		text-align: center;
 		.trick__category__tag {
 			font-size: 0.8rem;
 			font-weight: 700;
@@ -30,6 +34,7 @@ section#trick_details {
 		margin-bottom: 1rem;
 	}
 	.trick {
+		width: 100%;
 		.trick__slideshow {
 			.slideshow {
 				.slideshow__image {
@@ -51,6 +56,9 @@ section#trick_details {
 				margin-bottom: 1rem;
 			}
 		}
+	}
+	.buttons {
+		width: 100%;
 	}
 	.separator,
 	.trick__comments.separator {
