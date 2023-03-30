@@ -45,8 +45,7 @@ if (headTitle.includes('Home') || headTitle.includes('Category')) {
 		function deleteTrick() {
 			// We grab the trick.id from the delete_button and pass it to the url.
 			let trickToDelete = document.getElementById('delete_button').getAttribute('data-trick-id');
-			let trickId = parseInt(trickToDelete);
-			let url = 'https://127.0.0.1:8000/trick/' + trickId + '/delete';
+			let url = 'https://127.0.0.1:8000/trick/' + trickToDelete + '/delete';
 			// We fetch the url and use the Symfony controller to delete the trick.
 			// We wait for the response and if it's ok, we close the modal.
 			fetch(url)

@@ -58,6 +58,7 @@ class TrickFixtures extends Fixture implements DependentFixtureInterface
                 ->setCategory($trick['category'])
                 ->setMainPicture($trick['main_picture'])
                 ->setCreatedAt(new \DateTimeImmutable())
+                // ->setSlug($trick['slug'])
                 ->setUser($manager->getRepository(User::class)->findOneBy(['username' => (UserFixtures::USERS[rand(0, 3)])]));
 
             $manager->persist($newTrick);

@@ -18,6 +18,6 @@ class CommentController extends AbstractController
         $entityManagerInterface->remove($comment);
         $entityManagerInterface->flush();
 
-        return $this->redirectToRoute('app_trick', ['id' => $comment->getTrick()->getId()]);
+        return $this->redirectToRoute('app_trick', ['slug' => $comment->getTrick()->getSlug()]);
     }
 }

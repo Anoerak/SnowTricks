@@ -38,91 +38,106 @@
 			"name": "360",
 			"category": "Rotations",
 			"description": "A trick where the rider spins 360 degrees in the air.",
-			"main_picture": "build/images/360.84fda9f5.jpg"
+			"main_picture": "build/images/360.84fda9f5.jpg",
+			"slug": "360"
 		},
 		{
 			"name": "Backflip",
 			"category": "Flips",
 			"description": "A trick where the rider flips backwards in the air.",
-			"main_picture": "build/images/backflip.3404734a.jpg"
+			"main_picture": "build/images/backflip.3404734a.jpg",
+			"slug": "Backflip"
 		},
 		{
 			"name": "Frontside 180",
 			"category": "Rotations",
 			"description": "A trick where the rider spins 180 degrees in the air while facing forward.",
-			"main_picture": "build/images/frontside_180.684629e4.jpg"
+			"main_picture": "build/images/frontside_180.684629e4.jpg",
+			"slug": "Frontside_180"
 		},
 		{
 			"name": "Tail grab",
 			"category": "Grabs",
 			"description": "A trick where the rider grabs the tail of the snowboard while in the air.",
-			"main_picture": "build/images/tail_grab.e36dc3e6.jpg"
+			"main_picture": "build/images/tail_grab.e36dc3e6.jpg",
+			"slug": "Tail_grab"
 		},
 		{
 			"name": "Nose grab",
 			"category": "Grabs",
 			"description": "A trick where the rider grabs the nose of the snowboard while in the air.",
-			"main_picture": "build/images/nose_grab.8e4ea2ce.jpg"
+			"main_picture": "build/images/nose_grab.8e4ea2ce.jpg",
+			"slug": "Nose_grab"
 		},
 		{
 			"name": "Method",
 			"category": "Grabs",
 			"description": "A trick where the rider grabs the heel edge with their back hand and the nose of the snowboard with their front hand.",
-			"main_picture": "build/images/method.e451b551.jpg"
+			"main_picture": "build/images/method.e451b551.jpg",
+			"slug": "Method"
 		},
 		{
 			"name": "Cab 540",
 			"category": "Rotations",
 			"description": "A trick where the rider spins 540 degrees in the air while riding switch.",
-			"main_picture": "build/images/cab_540.fa21b21a.jpg"
+			"main_picture": "build/images/cab_540.fa21b21a.jpg",
+			"slug": "Cab_540"
 		},
 		{
 			"name": "Frontside boardslide",
 			"category": "Slides",
 			"description": "A trick where the rider slides on the frontside edge of the snowboard.",
-			"main_picture": "build/images/frontside_boardslide.2f1b6cdb.jpg"
+			"main_picture": "build/images/frontside_boardslide.2f1b6cdb.jpg",
+			"slug": "Frontside_boardslide"
 		},
 		{
 			"name": "Backside lipslide",
 			"category": "Slides",
 			"description": "A trick where the rider slides on the backside edge of the snowboard.",
-			"main_picture": "build/images/backside_lipslide.d2c63ec4.jpg"
+			"main_picture": "build/images/backside_lipslide.d2c63ec4.jpg",
+			"slug": "Backside_lipslide"
 		},
 		{
 			"name": "Frontside 270 on",
 			"category": "Rotations",
 			"description": "A trick where the rider spins 270 degrees onto a rail or box.",
-			"main_picture": "build/images/backside_270_on.22a776be.jpg"
+			"main_picture": "build/images/backside_270_on.22a776be.jpg",
+			"slug": "Frontside_270_on"
 		},
 		{
 			"name": "Backside 180",
 			"category": "Rotations",
 			"description": "A trick where the rider spins 180 degrees in the air while riding switch.",
-			"main_picture": "build/images/backside_180.7a945834.jpg"
+			"main_picture": "build/images/backside_180.7a945834.jpg",
+			"slug": "Backside_180"
 		},
 		{
 			"name": "Frontside 360 shifty",
 			"category": "Rotations",
 			"description": "A trick where the rider spins 360 degrees in the air while shifting their body position.",
-			"main_picture": "build/images/frontside_360_shifty.ca9f9865.jpg"
+			"main_picture": "build/images/frontside_360_shifty.ca9f9865.jpg",
+			"slug": "Frontside_360_shifty"
 		},
 		{
 			"name": "Frontside 540",
 			"category": "Rotations",
 			"description": "A trick where the rider spins 540 degrees in the air while facing forward.",
-			"main_picture": "build/images/frontside_540.33aa78f9.jpg"
+			"main_picture": "build/images/frontside_540.33aa78f9.jpg",
+			"slug": "Frontside_540"
 		},
 		{
 			"name": "Backside 270 on",
 			"category": "Rotations",
 			"description": "A trick where the rider spins 270 degrees onto a rail or box while riding switch.",
-			"main_picture": "build/images/frontside_270_on.24e9cd00.jpg"
+			"main_picture": "build/images/frontside_270_on.24e9cd00.jpg",
+			"slug": "Backside_270_on"
 		},
 		{
 			"name": "Frontside lipslide",
 			"category": "Slides",
 			"description": "A trick where the rider slides on the frontside edge of the snowboard while perpendicular to the rail or box.",
-			"main_picture": "build/images/frontside_lipslide.b6c09bb7.jpg"
+			"main_picture": "build/images/frontside_lipslide.b6c09bb7.jpg",
+			"slug": "Frontside_lipslide"
 		}
 	],
 	"medias": [

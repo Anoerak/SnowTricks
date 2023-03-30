@@ -21,7 +21,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class TrickController extends AbstractController
 {
-    #[Route('/trick/{id}', name: 'app_trick')]
+    #[Route('/trick/{slug}', name: 'app_trick')]
     public function index(Trick $trick, Request $request, EntityManagerInterface $entityManagerInterface): Response
     {
         $medias = $trick->getMedia();
@@ -39,7 +39,7 @@ class TrickController extends AbstractController
             $entityManagerInterface->persist($comment);
             $entityManagerInterface->flush();
 
-            return $this->redirectToRoute('app_trick', ['id' => $trick->getId()]);
+            return $this->redirectToRoute('app_trick', ['slug' => $trick->getSlug()]);
         }
 
         return $this->render('trick/trick.html.twig', [
@@ -139,7 +139,6 @@ class TrickController extends AbstractController
                 |-----------------------------------
             */
             $videoLinks = $form->get('embed_video_links')->getData();
-            dump($videoLinks);
             if (!empty($videoLinks)) {
                 foreach ($videoLinks as $videoLink) {
                     if (!empty($videoLink)) {
@@ -167,7 +166,7 @@ class TrickController extends AbstractController
             $trickExists = $entityManagerInterface->getRepository(Trick::class)->findOneBy(['name' => $trickName]);
             if ($trickExists) {
                 $this->addFlash('success', 'The trick has been added');
-                return $this->redirectToRoute('app_trick', ['id' => $trick->getId()]);
+                return $this->redirectToRoute('app_trick', ['slug' => $trick->getSlug()]);
             } else {
                 $this->addFlash('danger', 'The trick has not been added');
                 return $this->redirectToRoute('app_trick_new');
@@ -181,7 +180,7 @@ class TrickController extends AbstractController
 
 
 
-    #[Route('/trick/{id}/edit', name: 'app_trick_edit')]
+    #[Route('/trick/{slug}/edit', name: 'app_trick_edit')]
     public function edit(Trick $trick, Request $request, EntityManagerInterface $entityManagerInterface, FileUploader $fileUploader): Response
     {
 
@@ -260,7 +259,7 @@ class TrickController extends AbstractController
             $entityManagerInterface->persist($trick);
             $entityManagerInterface->flush();
 
-            return $this->redirectToRoute('app_trick', ['id' => $trick->getId()]);
+            return $this->redirectToRoute('app_trick', ['slug' => $trick->getSlug()]);
         }
 
         return $this->render('trick/edit/edit_trick.html.twig', [
@@ -272,7 +271,7 @@ class TrickController extends AbstractController
 
 
 
-    #[Route('/trick/{id}/delete', name: 'app_trick_delete')]
+    #[Route('/trick/{slug}/delete', name: 'app_trick_delete')]
     public function delete(Trick $trick, EntityManagerInterface $entityManagerInterface): Response
     {
         $trickName = $trick->getName();
@@ -287,14 +286,14 @@ class TrickController extends AbstractController
             return $this->redirectToRoute('app_home', ['_fragment' => 'tricks']);
         } else {
             $this->addFlash('danger', 'The trick has not been deleted');
-            return $this->redirectToRoute('app_trick', ['id' => $trick->getId()]);
+            return $this->redirectToRoute('app_trick', ['slug' => $trick->getSlug()]);
         }
         return $this->redirectToRoute('app_home', ['_fragment' => 'tricks']);
     }
 
 
 
-    #[Route('/trick/{id}/delete/media/{media_id}', name: 'app_trick_delete_media')]
+    #[Route('/trick/{slug}/delete/media/{media_id}', name: 'app_trick_delete_media')]
     public function deleteMedia(Trick $trick, $media_id, EntityManagerInterface $entityManagerInterface): Response
     {
         /*
@@ -311,12 +310,12 @@ class TrickController extends AbstractController
         $mediaExists = $entityManagerInterface->getRepository(Media::class)->find($media_id);
         if (!$mediaExists) {
             $this->addFlash('success', 'The media has been deleted');
-            return $this->redirectToRoute('app_trick_edit', ['id' => $trick->getId()]);
+            return $this->redirectToRoute('app_trick_edit', ['slug' => $trick->getSlug()]);
         } else {
             $this->addFlash('danger', 'The media has not been deleted');
-            return $this->redirectToRoute('app_trick_edit', ['id' => $trick->getId()]);
+            return $this->redirectToRoute('app_trick_edit', ['slug' => $trick->getSlug()]);
         }
 
-        return $this->redirectToRoute('app_trick_edit', ['id' => $trick->getId()]);
+        return $this->redirectToRoute('app_trick_edit', ['slug' => $trick->getSlug()]);
     }
 }
