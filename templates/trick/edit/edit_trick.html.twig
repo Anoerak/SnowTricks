@@ -29,7 +29,7 @@
 						{% else %}
 							<video src="{{ asset(media.path) }}" controls width="80px" height="80px" type="video"></video>
 						{% endif %}
-						<a href="{{ path('app_trick_delete_media', {'id': trick.id, 'media_id': media.id} ) }}" class="remove__media">X</a>
+						<a href="{{ path('app_trick_delete_media', {'slug': trick.slug, 'media_id': media.id} ) }}" class="remove__media">X</a>
 					</div>
 				{% endfor %}
 			</div>
