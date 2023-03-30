@@ -123,9 +123,7 @@ class TrickController extends AbstractController
                         |-----------------------------------
                     */
                     $extension = pathinfo($fileName, PATHINFO_EXTENSION);
-                    if (
-                        $extension === 'mp4' || $extension === 'webm' || $extension === 'ogg'
-                    ) {
+                    if ($extension === 'mp4' || $extension === 'webm' || $extension === 'ogg') {
                         $media->setType('video');
                     } elseif ($extension === 'png' || $extension === 'jpg' || $extension === 'jpeg') {
                         $media->setType('picture');
@@ -133,6 +131,24 @@ class TrickController extends AbstractController
                         throw new \Exception('The file extension is not supported');
                     }
                     $entityManagerInterface->persist($media);
+                }
+            }
+            /*
+                |-----------------------------------
+                | And we check if there are video links, if so, we loop through the array and  add the value to the database.
+                |-----------------------------------
+            */
+            $videoLinks = $form->get('embed_video_links')->getData();
+            dump($videoLinks);
+            if (!empty($videoLinks)) {
+                foreach ($videoLinks as $videoLink) {
+                    if (!empty($videoLink)) {
+                        $media = new Media();
+                        $media->setPath($videoLink);
+                        $media->setTrick($trick);
+                        $media->setType('video');
+                        $entityManagerInterface->persist($media);
+                    }
                 }
             }
 
@@ -223,16 +239,20 @@ class TrickController extends AbstractController
             }
             /*
                 |-----------------------------------
-                | And we check if there is a video link
+                | And we check if there are video links, if so, we loop through the array and  add the value to the database.
                 |-----------------------------------
             */
-            if (!empty($form->get('embed_video_links')->getData())) {
-                $videoLink = $form->get('embed_video_links')->getData();
-                $media = new Media();
-                $media->setPath($videoLink);
-                $media->setTrick($trick);
-                $media->setType('video');
-                $entityManagerInterface->persist($media);
+            $videoLinks = $form->get('embed_video_links')->getData();
+            if (!empty($videoLinks)) {
+                foreach ($videoLinks as $videoLink) {
+                    if (!empty($videoLink)) {
+                        $media = new Media();
+                        $media->setPath($videoLink);
+                        $media->setTrick($trick);
+                        $media->setType('video');
+                        $entityManagerInterface->persist($media);
+                    }
+                }
             }
 
             $trick->setModifiedAt(new \DateTimeImmutable());

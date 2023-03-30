@@ -1,0 +1,111 @@
+section#trick_edition,
+section#new_trick {
+	form {
+		margin-bottom: 1rem;
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		> div {
+			display: flex;
+			flex-direction: column;
+			gap: 1rem;
+			#add-video-links {
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+				justify-content: space-between;
+				gap: 0.5rem;
+				position: relative;
+				> div {
+					width: 104%;
+					.video__link__added {
+						width: 90%;
+					}
+				}
+
+				#add-video-link-button {
+					position: absolute;
+					right: -1rem;
+					top: 1.55rem;
+					width: 2rem;
+					height: 2rem;
+					background-color: $extra-light-blue;
+					color: $blue;
+					border: none;
+					outline: none;
+					border-radius: 5px;
+					transition: all 0.2s ease-in-out;
+					cursor: pointer;
+					&:hover {
+						background-color: $blue;
+						color: $white;
+					}
+				}
+				.video__link__added__container {
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					> input {
+						margin: 0;
+					}
+					.remove__video__link__button {
+						width: 1.75rem;
+						height: 1.75rem;
+						background-color: $cancel-button-red;
+						border: none;
+						outline: none;
+						border-radius: 100%;
+						transition: all 0.2s ease-in-out;
+						cursor: pointer;
+						&:hover {
+							background-color: $cancel-button-red-hover;
+							color: $white;
+						}
+					}
+				}
+			}
+			.medias__gallery {
+				width: 100%;
+				transition: 0.3s ease;
+				padding: 0.5rem;
+				display: flex;
+				gap: 25px;
+				.media {
+					position: relative;
+					width: 80px;
+					flex-shrink: 0;
+					height: 80px;
+					overflow: visible;
+					border-radius: 5px;
+					transition: 0.2s ease;
+					&:hover {
+						box-shadow: rgba(246, 128, 128, 0.25) 0px 13px 27px -5px,
+							rgba(246, 161, 161, 0.3) 0px 8px 16px -8px;
+						transform: translateY(-5px);
+					}
+					img,
+					video {
+						width: 100%;
+						height: 100%;
+						border-radius: 5px;
+						object-fit: cover;
+					}
+					.remove__media {
+						position: absolute;
+						top: -10px;
+						right: -10px;
+						background-color: rgba(255, 0, 0, 0.5);
+						color: white;
+						border-radius: 100%;
+						padding: 0.25rem 0.5rem;
+						transition: 0.2s ease;
+						font-weight: 500;
+						&:hover {
+							background-color: rgba(255, 0, 0, 0.8);
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -11,7 +11,15 @@
 			{{ trick.name }}</h2>
 		{{ form_start(form) }}
 		<div id="form">
-			{{ form_widget(form) }}
+			{{ form_row(form.name)}}
+			{{ form_row(form.description)}}
+			{{ form_row(form.category)}}
+			{{ form_row(form.main_picture)}}
+			{{ form_row(form.medias)}}
+			<div id="add-video-links" class="add__video__links">
+				<button id="add-video-link-button" type="button">+</button>
+				{{ form_row(form.embed_video_links)}}
+			</div>
 			<h3>Remove a media from this collection</h3>
 			<div class="medias__gallery">
 				{% for media in medias %}
@@ -19,8 +27,7 @@
 						{% if media.type == 'picture' %}
 							<img src="{{ asset(media.path) }}" alt="{{ trick.name }}">
 						{% else %}
-							<video src="{{ asset(media.path) }}" controls width="80px" height="80px" type="video">
-							</video>
+							<video src="{{ asset(media.path) }}" controls width="80px" height="80px" type="video"></video>
 						{% endif %}
 						<a href="{{ path('app_trick_delete_media', {'id': trick.id, 'media_id': media.id} ) }}" class="remove__media">X</a>
 					</div>
@@ -30,6 +37,5 @@
 			<button type="reset" class="btn btn-cancel">Cancel</button>
 		</div>
 		{{ form_end(form) }}
-
 	</section>
 {% endblock %}

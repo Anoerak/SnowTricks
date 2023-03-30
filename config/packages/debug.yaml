@@ -2,4 +2,13 @@ when@dev:
     debug:
         # Forwards VarDumper Data clones to a centralized server allowing to inspect dumps on CLI or in your browser.
         # See the "server:dump" command to start a new server.
-        dump_destination: "tcp://%env(VAR_DUMPER_SERVER)%"
+        dump_destination: 'tcp://%env(VAR_DUMPER_SERVER)%'
+        # When using the server:dump command, you can use the following options to control the output:
+        # - format: html, cli, or text
+        # - server: the server address
+        # - connection: the server connection (one of tcp, udp, or ssl)
+        # - port: the server port
+        # - max_depth: the maximum depth of nested structures
+        # - max_items_per_depth: the maximum number of items per depth
+        # - max_string_length: the maximum string length
+        # - file_link_format: the IDE link format
