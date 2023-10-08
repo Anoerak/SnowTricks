@@ -95,7 +95,8 @@ class __TwigTemplate_363232e03c13e14cef2b7e21c3ffaf88 extends Template
                 echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_trick", ["slug" => twig_get_attribute($this->env, $this->source, $context["trick"], "slug", [], "any", false, false, false, 22)]), "html", null, true);
                 echo "\" class=\"read__more\">Read more</a>
 \t\t\t\t\t\t";
-            } else {
+            } elseif (((twig_get_attribute($this->env, $this->source,             // line 23
+(isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 23, $this->source); })()), "user", [], "any", false, false, false, 23) == twig_get_attribute($this->env, $this->source, $context["trick"], "user", [], "any", false, false, false, 23)) || $this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN"))) {
                 // line 24
                 echo "\t\t\t\t\t\t\t<a href=\"";
                 echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_trick", ["slug" => twig_get_attribute($this->env, $this->source, $context["trick"], "slug", [], "any", false, false, false, 24)]), "html", null, true);
@@ -163,7 +164,7 @@ class __TwigTemplate_363232e03c13e14cef2b7e21c3ffaf88 extends Template
 
     public function getDebugInfo()
     {
-        return array (  129 => 38,  120 => 34,  112 => 29,  106 => 26,  100 => 24,  94 => 22,  92 => 21,  86 => 18,  80 => 15,  71 => 11,  65 => 9,  61 => 8,  58 => 7,  52 => 5,  49 => 4,  43 => 1,);
+        return array (  130 => 38,  121 => 34,  113 => 29,  107 => 26,  101 => 24,  99 => 23,  94 => 22,  92 => 21,  86 => 18,  80 => 15,  71 => 11,  65 => 9,  61 => 8,  58 => 7,  52 => 5,  49 => 4,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -190,7 +191,7 @@ class __TwigTemplate_363232e03c13e14cef2b7e21c3ffaf88 extends Template
 \t\t\t\t\t<div class=\"trick__bottom\">
 \t\t\t\t\t\t{% if not app.user %}
 \t\t\t\t\t\t\t<a href=\"{{ path('app_trick', { slug: trick.slug }) }}\" class=\"read__more\">Read more</a>
-\t\t\t\t\t\t{% else %}
+\t\t\t\t\t\t{% elseif app.user == trick.user or is_granted('ROLE_ADMIN') %}
 \t\t\t\t\t\t\t<a href=\"{{ path('app_trick', { slug: trick.slug }) }}\" class=\"read__more\">Read more</a>
 \t\t\t\t\t\t\t<div class=\"trick__commands\">
 \t\t\t\t\t\t\t\t<a href=\"{{ path('app_trick_edit', { slug: trick.slug }) }}\" class=\"button edit\">

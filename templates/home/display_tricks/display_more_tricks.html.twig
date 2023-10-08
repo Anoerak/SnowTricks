@@ -13,7 +13,7 @@
 			<div class="trick__bottom">
 				{% if not app.user %}
 					<a href="{{ path('app_trick', { slug: trick.slug }) }}" class="read__more">Read more</a>
-				{% else %}
+				{% elseif app.user == trick.user or is_granted('ROLE_ADMIN') %}
 					<a href="{{ path('app_trick', { slug: trick.slug }) }}" class="read__more">Read more</a>
 					<div class="trick__commands">
 						<a href="{{ path('app_trick_edit', { slug: trick.slug }) }}" class="button edit">

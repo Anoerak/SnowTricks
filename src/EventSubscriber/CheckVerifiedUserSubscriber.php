@@ -9,7 +9,7 @@ use Symfony\Component\Security\Http\Event\CheckPassportEvent;
 
 class CheckVerifiedUserSubscriber implements EventSubscriberInterface
 {
-	public function onCheckPassport(CheckPassportEvent $event)
+	public function onCheckPassport(CheckPassportEvent $event): void
 	{
 		$passport = $event->getPassport();
 
@@ -23,7 +23,7 @@ class CheckVerifiedUserSubscriber implements EventSubscriberInterface
 			);
 		}
 	}
-	public static function getSubscribedEvents()
+	public static function getSubscribedEvents(): array
 	{
 		return [
 			CheckPassportEvent::class => ['onCheckPassport', -10],

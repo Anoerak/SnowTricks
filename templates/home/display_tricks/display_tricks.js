@@ -27,7 +27,7 @@ if (headTitle.includes('Home')) {
 
 	// We query for more tricks
 	function getMoreTricks(lastTrickIndex) {
-		let url = 'https://127.0.0.1:8000/load-more-tricks/' + lastTrickIndex + '/' + getTricksCount();
+		let url = 'https://localhost:8000/load-more-tricks/' + lastTrickIndex + '/' + getTricksCount();
 		console.log(url);
 		fetch(url)
 			.then(function (response) {

@@ -75,6 +75,12 @@ class TrickController extends AbstractController
     #[Route('/new/trick', name: 'app_trick_new')]
     public function new(Request $request, EntityManagerInterface $entityManagerInterface, FileUploader $fileUploader): Response
     {
+        // we check if the user is connected
+        if (!$this->getUser()) {
+            $this->addFlash('danger', 'You must be connected to add a trick');
+            return $this->redirectToRoute('app_signin');
+        }
+
         $trick = new Trick();
 
         $form = $this->createForm(AddTrickType::class, $trick);
@@ -183,6 +189,11 @@ class TrickController extends AbstractController
     #[Route('/trick/{slug}/edit', name: 'app_trick_edit')]
     public function edit(Trick $trick, Request $request, EntityManagerInterface $entityManagerInterface, FileUploader $fileUploader): Response
     {
+        // we check if the user is connected and if he is the author of the trick or if he is an admin
+        if (!$this->getUser() || ($this->getUser() !== $trick->getUser() && !$this->isGranted('ROLE_ADMIN'))) {
+            $this->addFlash('danger', 'Please register or signin');
+            return $this->redirectToRoute('app_signin');
+        }
 
         $medias = $trick->getMedia();
 
@@ -274,6 +285,12 @@ class TrickController extends AbstractController
     #[Route('/trick/{slug}/delete', name: 'app_trick_delete')]
     public function delete(Trick $trick, EntityManagerInterface $entityManagerInterface): Response
     {
+        // we check if the user is connected and if he is the author of the trick or if he is an admin
+        if (!$this->getUser() || ($this->getUser() !== $trick->getUser() && !$this->isGranted('ROLE_ADMIN'))) {
+            $this->addFlash('danger', 'Please register or signin');
+            return $this->redirectToRoute('app_signin');
+        }
+
         $trickName = $trick->getName();
 
         $entityManagerInterface->remove($trick);
@@ -296,6 +313,11 @@ class TrickController extends AbstractController
     #[Route('/trick/{slug}/delete/media/{media_id}', name: 'app_trick_delete_media')]
     public function deleteMedia(Trick $trick, $media_id, EntityManagerInterface $entityManagerInterface): Response
     {
+        // we check if the user is connected and if he is the author of the trick or if he is an admin
+        if (!$this->getUser() || ($this->getUser() !== $trick->getUser() && !$this->isGranted('ROLE_ADMIN'))) {
+            $this->addFlash('danger', 'Please register or signin');
+            return $this->redirectToRoute('app_signin');
+        }
         /*
 			|-----------------------------------
 			| We Get the media based on the id passed through the url
