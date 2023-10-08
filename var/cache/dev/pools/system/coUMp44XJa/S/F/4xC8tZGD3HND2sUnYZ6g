@@ -1,0 +1,3 @@
+<?php //App%255CController%255CCommentController%2523deleteComment
+
+return [PHP_INT_MAX, []];
