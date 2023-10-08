@@ -168,11 +168,21 @@ class __TwigTemplate_cf0f8a5a89e4f3a56ee30acb665e87b3 extends Template
         // line 35
         echo "\t\t\t</div>
 \t\t\t<button type=\"submit\" class=\"btn btn-primary\">Edit</button>
-\t\t\t<button type=\"reset\" class=\"btn btn-cancel\">Cancel</button>
+\t\t\t<a href=\"";
+        // line 37
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_trick", ["slug" => twig_get_attribute($this->env, $this->source, (isset($context["trick"]) || array_key_exists("trick", $context) ? $context["trick"] : (function () { throw new RuntimeError('Variable "trick" does not exist.', 37, $this->source); })()), "slug", [], "any", false, false, false, 37)]), "html", null, true);
+        echo "\" class=\"btn btn-cancel\">Cancel</a>
+\t\t\t<a href=\"";
+        // line 38
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_trick_delete", ["slug" => twig_get_attribute($this->env, $this->source, (isset($context["trick"]) || array_key_exists("trick", $context) ? $context["trick"] : (function () { throw new RuntimeError('Variable "trick" does not exist.', 38, $this->source); })()), "slug", [], "any", false, false, false, 38)]), "html", null, true);
+        echo "\" class=\"btn btn-delete\">
+\t\t\t\tDelete
+\t\t\t</a>
+
 \t\t</div>
 \t\t";
-        // line 39
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 39, $this->source); })()), 'form_end');
+        // line 43
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 43, $this->source); })()), 'form_end');
         echo "
 \t</section>
 ";
@@ -196,7 +206,7 @@ class __TwigTemplate_cf0f8a5a89e4f3a56ee30acb665e87b3 extends Template
 
     public function getDebugInfo()
     {
-        return array (  175 => 39,  169 => 35,  159 => 32,  153 => 30,  145 => 28,  143 => 27,  140 => 26,  136 => 25,  129 => 21,  123 => 18,  119 => 17,  115 => 16,  111 => 15,  107 => 14,  102 => 12,  98 => 11,  94 => 9,  84 => 8,  72 => 5,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  185 => 43,  177 => 38,  173 => 37,  169 => 35,  159 => 32,  153 => 30,  145 => 28,  143 => 27,  140 => 26,  136 => 25,  129 => 21,  123 => 18,  119 => 17,  115 => 16,  111 => 15,  107 => 14,  102 => 12,  98 => 11,  94 => 9,  84 => 8,  72 => 5,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -237,7 +247,11 @@ class __TwigTemplate_cf0f8a5a89e4f3a56ee30acb665e87b3 extends Template
 \t\t\t\t{% endfor %}
 \t\t\t</div>
 \t\t\t<button type=\"submit\" class=\"btn btn-primary\">Edit</button>
-\t\t\t<button type=\"reset\" class=\"btn btn-cancel\">Cancel</button>
+\t\t\t<a href=\"{{ path('app_trick', {'slug': trick.slug}) }}\" class=\"btn btn-cancel\">Cancel</a>
+\t\t\t<a href=\"{{ path('app_trick_delete', {'slug': trick.slug}) }}\" class=\"btn btn-delete\">
+\t\t\t\tDelete
+\t\t\t</a>
+
 \t\t</div>
 \t\t{{ form_end(form) }}
 \t</section>

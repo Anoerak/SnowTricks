@@ -9,6 +9,7 @@ $font-size-base: 0.925rem;
 
 $danger: #dc3545;
 $success: #35dcc6;
+$warning: #ffc107;
 
 $white: #f7f7fc;
 $blue: #0d3d67;
@@ -31,8 +32,11 @@ $border-color: #eceef3;
 $primary-button-blue: #007bff;
 $primary-button-blue-hover: #0069d9;
 
-$cancel-button-red: $text-error;
-$cancel-button-red-hover: #c82333;
+$cancel-button: $warning;
+$cancel-button-hover: #e0a800;
+
+$delete-button: $text-error;
+$delete-button-hover: #c82333;
 
 /*
 	|-----------------------------------

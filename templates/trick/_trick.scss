@@ -4,19 +4,84 @@ section#trick_details {
 	align-items: flex-start;
 	justify-content: flex-start;
 	min-height: 100vh;
-	padding: 0;
-	.title {
-		margin-top: 2rem;
-		font-size: 1.5rem;
-		font-weight: 700;
-		margin-bottom: 1rem;
+	margin: 0 1rem;
+
+	.title__container {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-evenly;
+		gap: 3rem;
 		width: 100%;
-		text-align: center;
+
+		span {
+			max-width: auto;
+			height: 100%;
+		}
+
+		.title {
+			margin-top: 2rem;
+			font-size: 1.5rem;
+			font-weight: 700;
+			margin-bottom: 1rem;
+			width: auto;
+			height: 100%;
+			text-align: center;
+		}
+
+		.trick__commands {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+			gap: 1rem;
+			width: auto;
+			height: 100%;
+
+			.button {
+				cursor: pointer;
+				display: inline-block;
+				padding: 5px;
+				margin: 1rem 0 0 0;
+				background-color: $white;
+				border-radius: 4px;
+				color: $blue;
+				font-size: 0.75rem;
+				text-decoration: none;
+				box-shadow: 0 0 10px rgba(13, 61, 103, 0.2);
+				transition: all 0.3s ease-in-out;
+
+				&.edit {
+					&:hover {
+						background-color: $extra-light-blue;
+					}
+				}
+
+				&.delete {
+					&:hover {
+						background-color: $text-error;
+					}
+				}
+
+				&:hover {
+					background-color: $extra-light-blue;
+					box-shadow: 0 0 10px rgba(13, 61, 103, 0.5);
+				}
+			}
+		}
 	}
+
 	.trick__category {
+		margin-top: 3rem;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
 		width: 100%;
 		text-align: center;
+
 		.trick__category__tag {
+			width: auto;
 			font-size: 0.8rem;
 			font-weight: 700;
 			margin-right: 0.5rem;
@@ -24,17 +89,21 @@ section#trick_details {
 			background-color: $blue;
 			padding: 0.5rem 0.75rem;
 			border-radius: 1rem;
-			transition: all 0.2s ease-in-out;
+			transition: all 0.3s ease-in-out;
+
 			&:hover {
 				color: $blue;
 				background-color: $extra-light-blue;
-				font-weight: 500;
+				// font-weight: 500;
 			}
 		}
+
 		margin-bottom: 1rem;
 	}
+
 	.trick {
 		width: 100%;
+
 		.trick__slideshow {
 			.slideshow {
 				.slideshow__image {
@@ -44,12 +113,14 @@ section#trick_details {
 				}
 			}
 		}
+
 		.trick__content {
 			.trick__title {
 				font-size: 1.5rem;
 				font-weight: 700;
 				margin-bottom: 1rem;
 			}
+
 			.trick__description {
 				font-size: 1rem;
 				font-weight: 400;
@@ -57,9 +128,11 @@ section#trick_details {
 			}
 		}
 	}
+
 	.buttons {
 		width: 100%;
 	}
+
 	.separator,
 	.trick__comments.separator {
 		display: block;
@@ -68,6 +141,7 @@ section#trick_details {
 		background-color: #ccc;
 		margin: 2rem 0 0 0;
 	}
+
 	.trick__comments {
 		.trick__comments__title {
 			font-size: 1.5rem;
@@ -75,40 +149,48 @@ section#trick_details {
 			margin-top: 2rem;
 			margin-bottom: 1rem;
 		}
+
 		.trick__comments__comment {
 			.trick__comments__comment__header {
 				display: flex;
 				flex-direction: row;
+
 				.trick__comments__comment__header__profile__picture {
 					width: 40px;
 					height: 40px;
 					border-radius: 100%;
 					margin-right: 0.5rem;
 				}
+
 				.trick__comments__comment__header__informations {
 					.trick__comments__comment__header__author {
 						font-size: 1rem;
 						font-weight: 700;
 						margin-bottom: 0.25rem;
 					}
+
 					.trick__comments__comment__header__date {
 						font-size: 0.8rem;
 						font-weight: 400;
 						margin-bottom: 0.5rem;
 					}
+
 					.fas.fa-trash-alt {
 						color: $text-error;
 					}
 				}
 			}
+
 			.trick__comments__comment__content {
 				font-size: 1rem;
 				font-weight: 400;
 				margin-bottom: 1rem;
 			}
 		}
+
 		.trick__comments__form {
 			margin: 2rem 0;
+
 			.form {
 				padding: 25px;
 			}

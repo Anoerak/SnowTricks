@@ -12,6 +12,7 @@ section#reset_password {
 	padding: 100px;
 	color: $blue;
 	min-height: calc(100vh - 582px);
+
 	/*
 		|-----------------------------------
 		| Style the form element
@@ -34,12 +35,14 @@ section#reset_password {
 		*/
 		#form {
 			margin-bottom: 20px;
+
 			ul li,
 			ul li::marker {
 				color: $text-error;
 				list-style-type: '🤯';
 			}
-			ul:first-of-type + input {
+
+			ul:first-of-type+input {
 				border: solid 1px $text-error;
 			}
 
@@ -78,6 +81,12 @@ section#reset_password {
 
 		.btn.btn-cancel {
 			@include btn-cancel;
+			text-align: center;
+		}
+
+		.btn.btn-delete {
+			@include btn-delete;
+			text-align: center;
 		}
 	}
 }

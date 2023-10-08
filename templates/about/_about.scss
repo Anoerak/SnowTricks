@@ -1,7 +1,7 @@
-.about {
+section.about {
 	padding: 100px;
 	color: $blue;
-	height: calc(100vh - 582px);
+	min-height: calc(100vh - 582px);
 
 	h2 {
 		font-size: 36px;

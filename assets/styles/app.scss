@@ -35,7 +35,11 @@ body {
 	font-family: $font-family;
 	font-size: $font-size-base;
 	margin: auto;
-	max-width: 1440p;
+
+	section {
+		max-width: 1440px;
+		margin: auto !important;
+	}
 
 	.alert {
 		position: fixed;

@@ -7,12 +7,19 @@
 {% block body %}
 	{# We display all the details about the trick #}
 	<section id="trick_details" class="container">
-		<h2 class="title">{{ trick.name }}</h2>
-		{# We add a category tag #}
-		<div class="trick__category">
-			<a href="{{ path('app_trick_category', {category: trick.category}) }}" class="trick__category__tag">
-				{{ trick.category }}
-			</a>
+		<div class="title__container">
+			<span></span>
+			<h2 class="title">{{ trick.name }}</h2>
+			{% if app.user == trick.user or is_granted('ROLE_ADMIN') %}
+				<div class="trick__commands">
+					<a href="{{ path('app_trick_edit', { slug: trick.slug }) }}" class="button edit">
+						<i class="fa-solid fa-pencil"></i>
+					</a>
+					<a href="{{ path('app_trick_delete', {'slug': trick.slug}) }}" class="button delete delete_trick_button">
+						<i class="fa-regular fa-trash-can"></i>
+					</a>
+				</div>
+			{% endif %}
 		</div>
 		{# We insert a carousel to display the medias #}
 		{% block carousel %}
@@ -27,12 +34,48 @@
 				{{ trick.description }}
 			</p>
 		</div>
+		{# We add a category tag #}
+		<div class="trick__category">
+			<a href="{{ path('app_trick_category', {category: trick.category}) }}" class="trick__category__tag">
+				{{ trick.category }}
+			</a>
+			{# We add tha date of creation #}
+			<div class="trick__category__tag">
+				Created
+				{{ trick.createdAt|date('D d M Y H:i:s')}}
+			</div>
+			{# If modified, we display the modification date #}
+			{% if trick.modifiedAt %}
+				<div class="trick__category__tag">
+					Modified
+					{{ trick.modifiedAt|date('D d M Y H:i:s')}}
+				</div>
+			{% endif %}
+		</div>
+
+
 		{# We insert a line to separate the blocks #}
 		<span class="separator"></span>
 		<div
 			class="trick__comments">
 			{# We display all the comments for this tricks, from the most recent to the older #}
 			<h3 class="trick__comments__title">Comments Section</h3>
+			{# If not "user" or "admin", we don't display the 'add a comment' section #}
+			{% if is_granted('ROLE_USER') or is_granted('ROLE_ADMIN') %}
+				{# We insert a line to separate the blocks #}
+				<span class="separator"></span>
+				{# We display the form to add a comment #}
+				<div class="trick__comments__form">
+					<h3 class="trick__comments__form__title">Add a comment</h3>
+					{{ form_start(form) }}
+					<div id="form">
+						{{ form_widget(form) }}
+						<button type="submit" class="btn btn-primary">Post</button>
+					</div>
+					{{ form_end(form) }}
+				</div>
+			{% endif %}
+
 			{% for comment in comments %}
 				<div class="trick__comments__comment">
 					<div class="trick__comments__comment__header">
@@ -57,21 +100,6 @@
 					</div>
 				</div>
 			{% endfor %}
-			{# If not "user" or "admin", we don't display the 'add a comment' section #}
-			{% if is_granted('ROLE_USER') or is_granted('ROLE_ADMIN') %}
-				{# We insert a line to separate the blocks #}
-				<span class="separator"></span>
-				{# We display the form to add a comment #}
-				<div class="trick__comments__form">
-					<h3 class="trick__comments__form__title">Add a comment</h3>
-					{{ form_start(form) }}
-					<div id="form">
-						{{ form_widget(form) }}
-						<button type="submit" class="btn btn-primary">Post</button>
-					</div>
-					{{ form_end(form) }}
-				</div>
-			{% endif %}
 		</div>
 	</section>
 {% endblock %}

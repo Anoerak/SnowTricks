@@ -7,8 +7,9 @@ section#signin {
 		border-radius: 5px;
 		text-align: center;
 		transition: all 0.3s ease-in-out;
+
 		&:hover {
-			background-color: $cancel-button-red-hover;
+			background-color: $cancel-button-hover;
 		}
 	}
 }
