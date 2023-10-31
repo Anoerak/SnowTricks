@@ -5,10 +5,12 @@ a {
 .container {
 	max-width: 1440px;
 	position: relative;
+
 	margin: {
 		left: 2rem;
 		right: 2rem;
 	}
+
 	padding: {
 		left: 15px;
 		right: 15px;
@@ -22,14 +24,16 @@ a {
 */
 
 .navbar,
-.navbar > .container {
+.navbar>.container {
 	width: 100%;
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: space-between;
+
 	@media (max-width: 768px) {
-		display: block;
+		display: flex;
+		margin: 0;
 	}
 }
 
@@ -43,12 +47,15 @@ a {
 		@media (min-width: 576px) {
 			max-width: 540px;
 		}
+
 		@media (min-width: 768px) {
 			max-width: 720px;
 		}
+
 		@media (min-width: 992px) {
 			max-width: 960px;
 		}
+
 		@media (min-width: 1200px) {
 			max-width: 1440px;
 		}
@@ -90,12 +97,13 @@ a {
 				background-color: lighten($text-dark, 35%);
 				display: block;
 			}
+
 			span:not(:last-child) {
 				margin-bottom: 0.2rem;
 			}
 		}
 
-		> a {
+		>a {
 			font-weight: 500;
 			color: $text-dark;
 		}
@@ -130,13 +138,16 @@ a {
 			padding-left: 0;
 			margin-bottom: 0;
 			list-style: none;
+
 			.dropdown {
 				position: relative;
+
 				&:hover {
 					.dropdown-menu {
 						display: block;
 					}
 				}
+
 				.dropdown-menu {
 					position: absolute;
 					top: 70%;
@@ -155,17 +166,21 @@ a {
 					border: 1px solid $navbar-dropdown-separator-color;
 					border-radius: $navbar-dropdown-radius;
 					box-shadow: $navbar-dropdown-shadow;
+
 					li {
 						display: block;
+
 						&:not(:last-child) {
 							border-bottom: 1px solid $navbar-dropdown-separator-color;
 						}
+
 						&.active {
-							> a {
+							>a {
 								color: $blue;
 							}
 						}
-						> a {
+
+						>a {
 							display: block;
 							padding: $navbar-dropdown-item-padding-y $navbar-dropdown-item-padding-x;
 							clear: both;
@@ -175,6 +190,7 @@ a {
 							white-space: nowrap;
 							background-color: transparent;
 							border: 0;
+
 							&:hover {
 								background-color: $blue;
 								color: $white;
@@ -191,42 +207,49 @@ a {
 				margin-top: 1rem;
 			}
 
-			> li {
+			>li {
 				&.signup {
 					a {
 						border-radius: 0.25rem;
 						background-color: $light-blue;
 						color: $white;
+
 						&:hover {
 							background-color: $extra-light-blue;
 							color: $blue;
 						}
 					}
 				}
-				> a {
+
+				>a {
 					color: $text-dark;
 					text-decoration: none;
 					display: inline-block;
 					border-radius: 0.25rem;
 					padding: $navbar-link-padding-y $navbar-link-padding-x;
 					transition: all 0.25s ease-in-out;
+
 					&:hover {
 						background-color: $blue;
 						color: $white;
 					}
+
 					@media (max-width: 768px) {
 						border-bottom: 1px solid $border-color;
 					}
 				}
+
 				&.active {
-					> a.signup {
+					>a.signup {
 						border-radius: 0.25rem;
 					}
-					> a {
+
+					>a {
 						color: $blue;
 						// We reduce the length of the border to make it look like a line
 						border-bottom: 2px solid $blue;
 						border-radius: 0;
+
 						&:hover {
 							color: $white;
 							border-radius: 0.25rem;
@@ -251,10 +274,12 @@ a {
 					z-index: 99999;
 					border-radius: $navbar-dropdown-radius;
 					display: none;
+
 					@media (max-width: 768px) {
 						position: relative;
 						box-shadow: none;
 					}
+
 					li {
 						a {
 							color: $text-dark;
@@ -262,19 +287,22 @@ a {
 							display: block;
 						}
 					}
+
 					&.show {
 						display: block !important;
 					}
 				}
 			}
 
-			.dropdown > .separator {
+			.dropdown>.separator {
 				height: 1px;
 				width: 100%;
+
 				margin: {
 					top: $navbar-dropdown-separator-margin-y;
 					bottom: $navbar-dropdown-separator-margin-y;
 				}
+
 				background-color: $navbar-dropdown-separator-color;
 			}
 		}
@@ -290,16 +318,18 @@ a {
 	| Custom
 	|-----------------------------------
 */
-.navbar .navbar-header > a span {
+.navbar .navbar-header>a span {
 	color: $base-color;
 }
 
 .navbar .navbar-header svg {
 	width: 150px;
 	height: 150px;
+
 	@media (max-width: 768px) {
 		width: 100px;
 		height: 100px;
 	}
+
 	border-radius: 100%;
 }

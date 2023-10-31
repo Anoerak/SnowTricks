@@ -1,6 +1,5 @@
 // We get the html head title
 const headTitle = document.head.querySelector('title').innerHTML;
-console.log(headTitle);
 
 if (headTitle.includes('Home') || headTitle.includes('Category')) {
 	// We grab the delete_trick_buttons.

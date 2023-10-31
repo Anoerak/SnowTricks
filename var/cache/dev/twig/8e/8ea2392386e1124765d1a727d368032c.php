@@ -50,35 +50,38 @@ class __TwigTemplate_141f76152e244d508ab68bb244b927c3 extends Template
 <html lang=\"en\">
 \t<head>
 \t\t<meta charset=\"UTF-8\"/>
+\t\t<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
+\t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+\t\t<meta content=\"text/html; charset=UTF-8; X-Content-Type-Options=nosniff\" http-equiv=\"Content-Type\"/>
 \t\t<title>
 \t\t\t";
-        // line 6
+        // line 9
         $this->displayBlock('title', $context, $blocks);
-        // line 8
+        // line 11
         echo "\t\t</title>
 \t\t<link href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" rel=\"stylesheet\">
 \t\t<link
 \t\trel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>\"/>
 \t\t";
-        // line 13
+        // line 16
         echo "\t\t";
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 18
+        // line 21
         echo "\t\t";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 23
+        // line 26
         echo "\t</head>
 
 \t<body>
 \t\t";
-        // line 26
+        // line 29
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 26, $this->source); })()), "flashes", [0 => "danger"], "method", false, false, false, 26));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 29, $this->source); })()), "flashes", [0 => "danger"], "method", false, false, false, 29));
         foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-            // line 27
+            // line 30
             echo "\t\t\t<div class=\"alert alert-danger\">
 \t\t\t\t";
-            // line 28
+            // line 31
             echo twig_escape_filter($this->env, $context["message"], "html", null, true);
             echo "
 \t\t\t</div>
@@ -87,15 +90,15 @@ class __TwigTemplate_141f76152e244d508ab68bb244b927c3 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 31
+        // line 34
         echo "\t\t";
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 31, $this->source); })()), "flashes", [0 => "success"], "method", false, false, false, 31));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 34, $this->source); })()), "flashes", [0 => "success"], "method", false, false, false, 34));
         foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-            // line 32
+            // line 35
             echo "\t\t\t<div class=\"alert alert-success\">
 \t\t\t\t";
-            // line 33
+            // line 36
             echo twig_escape_filter($this->env, $context["message"], "html", null, true);
             echo "
 \t\t\t</div>
@@ -104,22 +107,22 @@ class __TwigTemplate_141f76152e244d508ab68bb244b927c3 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 36
+        // line 39
         echo "\t\t";
-        // line 37
-        echo "\t\t";
-        $this->displayBlock('header', $context, $blocks);
         // line 40
         echo "\t\t";
-        // line 41
-        echo "\t\t";
-        $this->displayBlock('body', $context, $blocks);
+        $this->displayBlock('header', $context, $blocks);
         // line 43
         echo "\t\t";
         // line 44
         echo "\t\t";
+        $this->displayBlock('body', $context, $blocks);
+        // line 45
+        echo "\t\t";
+        // line 46
+        echo "\t\t";
         $this->displayBlock('footer', $context, $blocks);
-        // line 48
+        // line 50
         echo "\t</body>
 </html>
 ";
@@ -131,7 +134,7 @@ class __TwigTemplate_141f76152e244d508ab68bb244b927c3 extends Template
 
     }
 
-    // line 6
+    // line 9
     public function block_title($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -151,7 +154,7 @@ class __TwigTemplate_141f76152e244d508ab68bb244b927c3 extends Template
 
     }
 
-    // line 13
+    // line 16
     public function block_stylesheets($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -161,10 +164,10 @@ class __TwigTemplate_141f76152e244d508ab68bb244b927c3 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
 
-        // line 14
+        // line 17
         echo "\t\t\t";
         echo $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackLinkTags("app");
-        // line 16
+        // line 19
         echo "
 \t\t";
         
@@ -175,7 +178,7 @@ class __TwigTemplate_141f76152e244d508ab68bb244b927c3 extends Template
 
     }
 
-    // line 18
+    // line 21
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -185,10 +188,10 @@ class __TwigTemplate_141f76152e244d508ab68bb244b927c3 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 19
+        // line 22
         echo "\t\t\t";
         echo $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackScriptTags("app");
-        // line 21
+        // line 24
         echo "
 \t\t";
         
@@ -199,7 +202,7 @@ class __TwigTemplate_141f76152e244d508ab68bb244b927c3 extends Template
 
     }
 
-    // line 37
+    // line 40
     public function block_header($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -209,29 +212,9 @@ class __TwigTemplate_141f76152e244d508ab68bb244b927c3 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "header"));
 
-        // line 38
+        // line 41
         echo "\t\t\t";
-        $this->loadTemplate("components/header/header.html.twig", "base.html.twig", 38)->display($context);
-        // line 39
-        echo "\t\t";
-        
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
-
-        
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
-
-    }
-
-    // line 41
-    public function block_body($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
-
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
-
+        $this->loadTemplate("components/header/header.html.twig", "base.html.twig", 41)->display($context);
         // line 42
         echo "\t\t";
         
@@ -243,6 +226,24 @@ class __TwigTemplate_141f76152e244d508ab68bb244b927c3 extends Template
     }
 
     // line 44
+    public function block_body($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
+
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+    }
+
+    // line 46
     public function block_footer($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -252,10 +253,10 @@ class __TwigTemplate_141f76152e244d508ab68bb244b927c3 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "footer"));
 
-        // line 45
+        // line 47
         echo "\t\t\t";
-        $this->loadTemplate("components/footer/footer.html.twig", "base.html.twig", 45)->display($context);
-        // line 46
+        $this->loadTemplate("components/footer/footer.html.twig", "base.html.twig", 47)->display($context);
+        // line 48
         echo "\t\t";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -277,7 +278,7 @@ class __TwigTemplate_141f76152e244d508ab68bb244b927c3 extends Template
 
     public function getDebugInfo()
     {
-        return array (  259 => 46,  256 => 45,  246 => 44,  236 => 42,  226 => 41,  216 => 39,  213 => 38,  203 => 37,  192 => 21,  189 => 19,  179 => 18,  168 => 16,  165 => 14,  155 => 13,  135 => 6,  123 => 48,  120 => 44,  118 => 43,  115 => 41,  113 => 40,  110 => 37,  108 => 36,  99 => 33,  96 => 32,  91 => 31,  82 => 28,  79 => 27,  75 => 26,  70 => 23,  67 => 18,  64 => 13,  58 => 8,  56 => 6,  49 => 1,);
+        return array (  260 => 48,  257 => 47,  247 => 46,  229 => 44,  219 => 42,  216 => 41,  206 => 40,  195 => 24,  192 => 22,  182 => 21,  171 => 19,  168 => 17,  158 => 16,  138 => 9,  126 => 50,  123 => 46,  121 => 45,  118 => 44,  116 => 43,  113 => 40,  111 => 39,  102 => 36,  99 => 35,  94 => 34,  85 => 31,  82 => 30,  78 => 29,  73 => 26,  70 => 21,  67 => 16,  61 => 11,  59 => 9,  49 => 1,);
     }
 
     public function getSourceContext()
@@ -286,6 +287,9 @@ class __TwigTemplate_141f76152e244d508ab68bb244b927c3 extends Template
 <html lang=\"en\">
 \t<head>
 \t\t<meta charset=\"UTF-8\"/>
+\t\t<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
+\t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+\t\t<meta content=\"text/html; charset=UTF-8; X-Content-Type-Options=nosniff\" http-equiv=\"Content-Type\"/>
 \t\t<title>
 \t\t\t{% block title %}Welcome!
 \t\t\t{% endblock %}
@@ -322,8 +326,7 @@ class __TwigTemplate_141f76152e244d508ab68bb244b927c3 extends Template
 \t\t\t{% include 'components/header/header.html.twig' %}
 \t\t{% endblock header %}
 \t\t{# We place the Body component here #}
-\t\t{% block body %}
-\t\t{% endblock %}
+\t\t{% block body %}{% endblock %}
 \t\t{# We place the footer component here #}
 \t\t{% block footer %}
 \t\t\t{% include 'components/footer/footer.html.twig' %}
