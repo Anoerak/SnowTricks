@@ -101,12 +101,14 @@ class AddTrickType extends AbstractType
                         'value' => null,
                         'name' => 'video_link',
                         'placeholder' => 'https://www.youtube.com/watch?v=xxxxxxxxxxx',
-                        'class' => 'video__link__added'
+                        'class' => 'video__link__added',
                     ],
                 ],
                 'allow_add' => true,
                 'allow_delete' => true,
                 'by_reference' => false,
+                // Not required
+                'required' => false,
             ]);
     }
 

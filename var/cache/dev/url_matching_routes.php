@@ -18,6 +18,7 @@ return [
         '/contact' => [[['_route' => 'app_contact', '_controller' => 'App\\Controller\\ContactController::index'], null, null, null, false, false, null]],
         '/' => [[['_route' => 'app_home', '_controller' => 'App\\Controller\\HomeController::index'], null, null, null, false, false, null]],
         '/profile' => [[['_route' => 'app_profile', '_controller' => 'App\\Controller\\ProfileController::getProfile'], null, null, null, false, false, null]],
+        '/profile/delete' => [[['_route' => 'app_profile_delete', '_controller' => 'App\\Controller\\ProfileController::deleteProfile'], null, null, null, false, false, null]],
         '/reset-password' => [[['_route' => 'app_forgot_password_request', '_controller' => 'App\\Controller\\ResetPasswordController::request'], null, null, null, false, false, null]],
         '/reset-password/check-email' => [[['_route' => 'app_check_email', '_controller' => 'App\\Controller\\ResetPasswordController::checkEmail'], null, null, null, false, false, null]],
         '/signin' => [[['_route' => 'app_signin', '_controller' => 'App\\Controller\\SigninController::signin'], null, null, null, false, false, null]],
@@ -71,7 +72,7 @@ return [
         238 => [[['_route' => 'app_load_more_tricks', '_controller' => 'App\\Controller\\HomeController::loadMoreTricks'], ['lastTrickIndex', 'tricksMarker'], null, null, false, true, null]],
         282 => [[['_route' => 'app_reset_password', 'token' => null, '_controller' => 'App\\Controller\\ResetPasswordController::reset'], ['token'], null, null, false, true, null]],
         308 => [[['_route' => 'app_trick', '_controller' => 'App\\Controller\\TrickController::index'], ['slug'], null, null, false, true, null]],
-        333 => [[['_route' => 'app_trick_category', '_controller' => 'App\\Controller\\TrickController::category'], ['category'], null, null, false, true, null]],
+        333 => [[['_route' => 'app_trick_category', '_controller' => 'App\\Controller\\TrickController::category'], ['slug'], null, null, false, true, null]],
         357 => [[['_route' => 'app_trick_edit', '_controller' => 'App\\Controller\\TrickController::edit'], ['slug'], null, null, false, false, null]],
         374 => [[['_route' => 'app_trick_delete', '_controller' => 'App\\Controller\\TrickController::delete'], ['slug'], null, null, false, false, null]],
         397 => [

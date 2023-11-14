@@ -112,10 +112,15 @@ class __TwigTemplate_2874d1704e6ccef851cd257d1e48893c extends Template
         echo "
 \t\t\t<button type=\"submit\" class=\"btn btn-primary\">Submit</button>
 \t\t\t<button type=\"reset\" class=\"btn btn-cancel\">Cancel</button>
+\t\t\t<br/><br/>
+\t\t\t<a href=\"";
+        // line 19
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_profile_delete");
+        echo "\" class=\"btn btn-delete\">Delete account</a>
 \t\t</div>
 \t\t";
-        // line 19
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 19, $this->source); })()), 'form_end');
+        // line 21
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 21, $this->source); })()), 'form_end');
         echo "
 \t</section>
 ";
@@ -139,7 +144,7 @@ class __TwigTemplate_2874d1704e6ccef851cd257d1e48893c extends Template
 
     public function getDebugInfo()
     {
-        return array (  118 => 19,  111 => 15,  107 => 14,  102 => 12,  98 => 11,  93 => 8,  83 => 7,  71 => 4,  59 => 3,  36 => 1,);
+        return array (  123 => 21,  118 => 19,  111 => 15,  107 => 14,  102 => 12,  98 => 11,  93 => 8,  83 => 7,  71 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -161,6 +166,8 @@ class __TwigTemplate_2874d1704e6ccef851cd257d1e48893c extends Template
 \t\t\t{{ form_widget(form)}}
 \t\t\t<button type=\"submit\" class=\"btn btn-primary\">Submit</button>
 \t\t\t<button type=\"reset\" class=\"btn btn-cancel\">Cancel</button>
+\t\t\t<br/><br/>
+\t\t\t<a href=\"{{ path('app_profile_delete')}}\" class=\"btn btn-delete\">Delete account</a>
 \t\t</div>
 \t\t{{ form_end(form) }}
 \t</section>

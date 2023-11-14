@@ -1,0 +1,23 @@
+@media screen and (max-width: 776px) and (orientation: portrait) {
+	body {
+		section {
+			.trick__comments {
+				margin-right: auto;
+				padding: .5rem;
+
+				.trick__comments__comment {
+					padding: .5rem;
+					margin-bottom: 1rem;
+
+					.trick__comments__comment__header {
+						margin-bottom: .5rem;
+					}
+
+					.trick__comments__comment__content {
+						font-size: .9rem;
+					}
+				}
+			}
+		}
+	}
+}

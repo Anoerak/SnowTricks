@@ -42,7 +42,6 @@ class __TwigTemplate_9e3143b5c374f9331eb9e6466c529391 extends Template
         // line 1
         echo "// We get the html head title
 const headTitle = document.head.querySelector('title').innerHTML;
-console.log(headTitle);
 
 if (headTitle.includes('Home') || headTitle.includes('Category')) {
 \t// We grab the delete_trick_buttons.
@@ -126,7 +125,6 @@ if (headTitle.includes('Home') || headTitle.includes('Category')) {
     {
         return new Source("// We get the html head title
 const headTitle = document.head.querySelector('title').innerHTML;
-console.log(headTitle);
 
 if (headTitle.includes('Home') || headTitle.includes('Category')) {
 \t// We grab the delete_trick_buttons.

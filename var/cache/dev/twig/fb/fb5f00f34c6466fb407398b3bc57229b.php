@@ -106,53 +106,53 @@ class __TwigTemplate_1fb6282958b0c5efe996b90f7d1651c1 extends Template
         // line 39
         if ( !twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 39, $this->source); })()), "user", [], "any", false, false, false, 39)) {
             // line 40
-            echo "\t\t\t\t\t<li class=\"";
+            echo "\t\t\t\t\t\t<li class=\"";
             echo (((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 40, $this->source); })()), "request", [], "any", false, false, false, 40), "attributes", [], "any", false, false, false, 40), "get", [0 => "_route"], "method", false, false, false, 40) == "app_signin")) ? ("active") : (""));
             echo "\">
-\t\t\t\t\t\t<a href=\"";
+\t\t\t\t\t\t\t<a href=\"";
             // line 41
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_signin");
             echo "\">Signin</a>
-\t\t\t\t\t</li>
-\t\t\t\t\t<li class=\"signup ";
+\t\t\t\t\t\t</li>
+\t\t\t\t\t\t<li class=\"signup ";
             // line 43
             echo (((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 43, $this->source); })()), "request", [], "any", false, false, false, 43), "attributes", [], "any", false, false, false, 43), "get", [0 => "_route"], "method", false, false, false, 43) == "app_signup")) ? ("active") : (""));
             echo "\">
-\t\t\t\t\t\t<a class=\"signup\" href=\"";
+\t\t\t\t\t\t\t<a class=\"signup\" href=\"";
             // line 44
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_signup");
             echo "\">Signup</a>
-\t\t\t\t\t</li>
+\t\t\t\t\t\t</li>
 \t\t\t\t\t";
         } else {
             // line 47
-            echo "\t\t\t\t\t<li class=\"dropdown\">
-\t\t\t\t\t\t<a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">
-\t\t\t\t\t\t\t";
+            echo "\t\t\t\t\t\t<li class=\"dropdown\">
+\t\t\t\t\t\t\t<a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">
+\t\t\t\t\t\t\t\t";
             // line 49
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 49, $this->source); })()), "user", [], "any", false, false, false, 49), "username", [], "any", false, false, false, 49), "html", null, true);
             echo "
-\t\t\t\t\t\t\t<span class=\"caret\"></span>
-\t\t\t\t\t\t</a>
-\t\t\t\t\t\t<ul class=\"dropdown-menu\">
-\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t<a href=\"";
+\t\t\t\t\t\t\t\t<span class=\"caret\"></span>
+\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t<ul class=\"dropdown-menu\">
+\t\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t\t<a href=\"";
             // line 54
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_profile");
             echo "\">Profile</a>
-\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t<a href=\"";
+\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t\t<a href=\"";
             // line 57
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
             echo "\">Logout</a>
-\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t</ul>
-\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t</ul>
+\t\t\t\t\t\t</li>
 \t\t\t\t\t";
         }
         // line 62
-        echo "\t\t\t\t\t
+        echo "
 \t\t\t\t</ul>
 \t\t\t</div>
 \t\t</div>
@@ -223,29 +223,29 @@ class __TwigTemplate_1fb6282958b0c5efe996b90f7d1651c1 extends Template
 \t\t\t\t\t\t<a href=\"{{ path('app_contact') }}\">Contact</a>
 \t\t\t\t\t</li>
 \t\t\t\t\t{% if not app.user %}
-\t\t\t\t\t<li class=\"{{ app.request.attributes.get('_route') == 'app_signin' ? 'active' : '' }}\">
-\t\t\t\t\t\t<a href=\"{{ path('app_signin') }}\">Signin</a>
-\t\t\t\t\t</li>
-\t\t\t\t\t<li class=\"signup {{ app.request.attributes.get('_route') == 'app_signup' ? 'active' : '' }}\">
-\t\t\t\t\t\t<a class=\"signup\" href=\"{{ path('app_signup') }}\">Signup</a>
-\t\t\t\t\t</li>
+\t\t\t\t\t\t<li class=\"{{ app.request.attributes.get('_route') == 'app_signin' ? 'active' : '' }}\">
+\t\t\t\t\t\t\t<a href=\"{{ path('app_signin') }}\">Signin</a>
+\t\t\t\t\t\t</li>
+\t\t\t\t\t\t<li class=\"signup {{ app.request.attributes.get('_route') == 'app_signup' ? 'active' : '' }}\">
+\t\t\t\t\t\t\t<a class=\"signup\" href=\"{{ path('app_signup') }}\">Signup</a>
+\t\t\t\t\t\t</li>
 \t\t\t\t\t{% else %}
-\t\t\t\t\t<li class=\"dropdown\">
-\t\t\t\t\t\t<a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">
-\t\t\t\t\t\t\t{{ app.user.username }}
-\t\t\t\t\t\t\t<span class=\"caret\"></span>
-\t\t\t\t\t\t</a>
-\t\t\t\t\t\t<ul class=\"dropdown-menu\">
-\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t<a href=\"{{ path('app_profile') }}\">Profile</a>
-\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t<a href=\"{{ path('app_logout') }}\">Logout</a>
-\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t</ul>
-\t\t\t\t\t</li>
+\t\t\t\t\t\t<li class=\"dropdown\">
+\t\t\t\t\t\t\t<a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">
+\t\t\t\t\t\t\t\t{{ app.user.username }}
+\t\t\t\t\t\t\t\t<span class=\"caret\"></span>
+\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t<ul class=\"dropdown-menu\">
+\t\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t\t<a href=\"{{ path('app_profile') }}\">Profile</a>
+\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t\t<a href=\"{{ path('app_logout') }}\">Logout</a>
+\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t</ul>
+\t\t\t\t\t\t</li>
 \t\t\t\t\t{% endif %}
-\t\t\t\t\t
+
 \t\t\t\t</ul>
 \t\t\t</div>
 \t\t</div>

@@ -1,5 +1,6 @@
 @import '~/assets/styles/abstracts/variables.scss';
 @import '~/assets/styles/abstracts/mixins.scss';
+@import '~/assets/styles/components/components.scss';
 
 @import '~/templates/components/header/header.scss';
 @import '~/templates/components/footer/footer.scss';
@@ -10,6 +11,7 @@
 @import '~/templates/home/home.scss';
 @import '~/templates/home/display_tricks/display_tricks.scss';
 @import '~/templates/trick/trick.scss';
+@import '~/templates/comment/comment.scss';
 @import '~/templates/trick/edit/add_edit_trick.scss';
 @import '~/templates/trick/category/trick_category.scss';
 @import '~/templates/about/about.scss';
@@ -35,6 +37,7 @@ body {
 	font-family: $font-family;
 	font-size: $font-size-base;
 	margin: auto;
+	max-width: 1600px;
 
 	section {
 		max-width: 1440px;

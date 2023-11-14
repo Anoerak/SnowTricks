@@ -147,7 +147,7 @@ class __TwigTemplate_698b10e9e04c0e9708227a77fee025af extends Template
         echo "\t\t<div class=\"trick__category\">
 \t\t\t<a href=\"";
         // line 39
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_trick_category", ["category" => twig_get_attribute($this->env, $this->source, (isset($context["trick"]) || array_key_exists("trick", $context) ? $context["trick"] : (function () { throw new RuntimeError('Variable "trick" does not exist.', 39, $this->source); })()), "category", [], "any", false, false, false, 39)]), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_trick_category", ["slug" => twig_get_attribute($this->env, $this->source, (isset($context["trick"]) || array_key_exists("trick", $context) ? $context["trick"] : (function () { throw new RuntimeError('Variable "trick" does not exist.', 39, $this->source); })()), "category", [], "any", false, false, false, 39)]), "html", null, true);
         echo "\" class=\"trick__category__tag\">
 \t\t\t\t";
         // line 40
@@ -261,10 +261,11 @@ class __TwigTemplate_698b10e9e04c0e9708227a77fee025af extends Template
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t</div>
+
 \t\t\t\t\t<div class=\"trick__comments__comment__content\">
 \t\t\t\t\t\t";
-            // line 99
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "comment", [], "any", false, false, false, 99), "html", null, true);
+            // line 100
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "comment", [], "any", false, false, false, 100), "html", null, true);
             echo "
 \t\t\t\t\t</div>
 \t\t\t\t</div>
@@ -273,7 +274,7 @@ class __TwigTemplate_698b10e9e04c0e9708227a77fee025af extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['comment'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 103
+        // line 104
         echo "\t\t</div>
 \t</section>
 ";
@@ -320,7 +321,7 @@ class __TwigTemplate_698b10e9e04c0e9708227a77fee025af extends Template
 
     public function getDebugInfo()
     {
-        return array (  302 => 27,  299 => 26,  289 => 25,  277 => 103,  267 => 99,  259 => 94,  255 => 92,  247 => 88,  244 => 87,  240 => 85,  234 => 82,  230 => 80,  226 => 79,  223 => 78,  217 => 75,  211 => 72,  206 => 70,  202 => 68,  199 => 66,  197 => 65,  194 => 64,  191 => 62,  186 => 58,  181 => 54,  175 => 51,  171 => 49,  168 => 48,  163 => 45,  159 => 43,  154 => 40,  150 => 39,  147 => 38,  141 => 34,  135 => 31,  131 => 29,  129 => 28,  126 => 25,  123 => 23,  115 => 18,  109 => 15,  106 => 14,  104 => 13,  100 => 12,  95 => 9,  93 => 8,  83 => 7,  70 => 4,  60 => 3,  37 => 1,);
+        return array (  303 => 27,  300 => 26,  290 => 25,  278 => 104,  268 => 100,  259 => 94,  255 => 92,  247 => 88,  244 => 87,  240 => 85,  234 => 82,  230 => 80,  226 => 79,  223 => 78,  217 => 75,  211 => 72,  206 => 70,  202 => 68,  199 => 66,  197 => 65,  194 => 64,  191 => 62,  186 => 58,  181 => 54,  175 => 51,  171 => 49,  168 => 48,  163 => 45,  159 => 43,  154 => 40,  150 => 39,  147 => 38,  141 => 34,  135 => 31,  131 => 29,  129 => 28,  126 => 25,  123 => 23,  115 => 18,  109 => 15,  106 => 14,  104 => 13,  100 => 12,  95 => 9,  93 => 8,  83 => 7,  70 => 4,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -363,7 +364,7 @@ class __TwigTemplate_698b10e9e04c0e9708227a77fee025af extends Template
 \t\t</div>
 \t\t{# We add a category tag #}
 \t\t<div class=\"trick__category\">
-\t\t\t<a href=\"{{ path('app_trick_category', {category: trick.category}) }}\" class=\"trick__category__tag\">
+\t\t\t<a href=\"{{ path('app_trick_category', { 'slug': trick.category, }) }}\" class=\"trick__category__tag\">
 \t\t\t\t{{ trick.category }}
 \t\t\t</a>
 \t\t\t{# We add tha date of creation #}
@@ -422,6 +423,7 @@ class __TwigTemplate_698b10e9e04c0e9708227a77fee025af extends Template
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t</div>
+
 \t\t\t\t\t<div class=\"trick__comments__comment__content\">
 \t\t\t\t\t\t{{ comment.comment }}
 \t\t\t\t\t</div>

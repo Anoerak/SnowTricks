@@ -15,6 +15,8 @@
 			{{ form_widget(form)}}
 			<button type="submit" class="btn btn-primary">Submit</button>
 			<button type="reset" class="btn btn-cancel">Cancel</button>
+			<br/><br/>
+			<a href="{{ path('app_profile_delete')}}" class="btn btn-delete">Delete account</a>
 		</div>
 		{{ form_end(form) }}
 	</section>

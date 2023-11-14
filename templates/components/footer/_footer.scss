@@ -5,14 +5,15 @@ footer {
 	// position: fixed;
 	background: #fff;
 	width: 100%;
+	margin: auto;
 	bottom: 0;
 	left: 0;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
 	.content {
 		max-width: 1440px;
-		margin: 0;
-		padding: 30px 40px 40px 40px;
+		margin: auto;
+		padding: 30px 10px 40px 10px;
 
 		.top {
 			display: flex;

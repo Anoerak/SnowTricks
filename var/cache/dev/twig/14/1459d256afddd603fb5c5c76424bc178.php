@@ -40,8 +40,11 @@ class __TwigTemplate_334aeb3f544bee43b04ae92fcd723b7d extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "home/_home.scss"));
 
         // line 1
-        echo ".hero {
+        echo "@import './home_responsive.scss';
+
+.hero {
 \tpadding: 100px 0;
+\tposition: relative;
 
 \t.container {
 \t\tmax-width: 960px;
@@ -60,6 +63,12 @@ class __TwigTemplate_334aeb3f544bee43b04ae92fcd723b7d extends Template
 \t\t\tmargin-bottom: 40px;
 \t\t}
 
+\t\timg {
+\t\t\twidth: 100%;
+\t\t\tmax-width: 600px;
+\t\t\tmargin: 0 auto;
+\t\t}
+
 \t\t.description {
 \t\t\tfont-size: 1.5rem;
 \t\t\tline-height: 1.6;
@@ -74,18 +83,22 @@ class __TwigTemplate_334aeb3f544bee43b04ae92fcd723b7d extends Template
 \t\t\tmargin-top: 2rem;
 \t\t\tcolor: \$text-light;
 \t\t\tfont-weight: 100;
+
 \t\t\tspan {
 \t\t\t\tcolor: \$text-light;
 \t\t\t\tfont-weight: 400;
 \t\t\t}
 \t\t}
 \t}
+
 \t.arrow {
+\t\tposition: sticky;
+\t\tright: 0;
+\t\tbottom: 0;
+
 \t\tsvg {
-\t\t\tposition: absolute;
-\t\t\tright: 0;
-\t\t\twidth: 100px;
-\t\t\theight: 100px;
+\t\t\twidth: 50px;
+\t\t\theight: 50px;
 \t\t\tcolor: \$extra-light-blue;
 \t\t\ttransition: all 0.75s ease-in-out;
 
@@ -99,6 +112,7 @@ class __TwigTemplate_334aeb3f544bee43b04ae92fcd723b7d extends Template
 .tricks {
 \t// min-height: 100vh;
 \tmargin: 2rem 0;
+
 \t.button__add {
 \t\tdisplay: flex !important;
 \t\talign-items: center;
@@ -108,19 +122,23 @@ class __TwigTemplate_334aeb3f544bee43b04ae92fcd723b7d extends Template
 \t\tfont-size: 1rem;
 \t\tmax-height: 2rem;
 \t}
+
 \t.arrow {
-\t\tdisplay: flex;
+\t\tposition: sticky;
+\t\tright: 1rem;
+\t\tbottom: 0;
+
 \t\tsvg {
 \t\t\tposition: relative;
 \t\t\tdisplay: inline-block;
 \t\t\tbottom: 0;
 \t\t\tright: 0;
 \t\t\tmargin-left: auto;
-\t\t\twidth: 100px;
-\t\t\theight: 100px;
+\t\t\twidth: 50px;
+\t\t\theight: 50px;
 \t\t\tcolor: \$extra-light-blue;
 \t\t\ttransition: all 0.75s ease-in-out;
-\t\t\trotate: 180deg;
+\t\t\ttransform: rotate(180deg);
 
 \t\t\t&:hover {
 \t\t\t\tcolor: \$blue;
@@ -149,8 +167,11 @@ class __TwigTemplate_334aeb3f544bee43b04ae92fcd723b7d extends Template
 
     public function getSourceContext()
     {
-        return new Source(".hero {
+        return new Source("@import './home_responsive.scss';
+
+.hero {
 \tpadding: 100px 0;
+\tposition: relative;
 
 \t.container {
 \t\tmax-width: 960px;
@@ -169,6 +190,12 @@ class __TwigTemplate_334aeb3f544bee43b04ae92fcd723b7d extends Template
 \t\t\tmargin-bottom: 40px;
 \t\t}
 
+\t\timg {
+\t\t\twidth: 100%;
+\t\t\tmax-width: 600px;
+\t\t\tmargin: 0 auto;
+\t\t}
+
 \t\t.description {
 \t\t\tfont-size: 1.5rem;
 \t\t\tline-height: 1.6;
@@ -183,18 +210,22 @@ class __TwigTemplate_334aeb3f544bee43b04ae92fcd723b7d extends Template
 \t\t\tmargin-top: 2rem;
 \t\t\tcolor: \$text-light;
 \t\t\tfont-weight: 100;
+
 \t\t\tspan {
 \t\t\t\tcolor: \$text-light;
 \t\t\t\tfont-weight: 400;
 \t\t\t}
 \t\t}
 \t}
+
 \t.arrow {
+\t\tposition: sticky;
+\t\tright: 0;
+\t\tbottom: 0;
+
 \t\tsvg {
-\t\t\tposition: absolute;
-\t\t\tright: 0;
-\t\t\twidth: 100px;
-\t\t\theight: 100px;
+\t\t\twidth: 50px;
+\t\t\theight: 50px;
 \t\t\tcolor: \$extra-light-blue;
 \t\t\ttransition: all 0.75s ease-in-out;
 
@@ -208,6 +239,7 @@ class __TwigTemplate_334aeb3f544bee43b04ae92fcd723b7d extends Template
 .tricks {
 \t// min-height: 100vh;
 \tmargin: 2rem 0;
+
 \t.button__add {
 \t\tdisplay: flex !important;
 \t\talign-items: center;
@@ -217,19 +249,23 @@ class __TwigTemplate_334aeb3f544bee43b04ae92fcd723b7d extends Template
 \t\tfont-size: 1rem;
 \t\tmax-height: 2rem;
 \t}
+
 \t.arrow {
-\t\tdisplay: flex;
+\t\tposition: sticky;
+\t\tright: 1rem;
+\t\tbottom: 0;
+
 \t\tsvg {
 \t\t\tposition: relative;
 \t\t\tdisplay: inline-block;
 \t\t\tbottom: 0;
 \t\t\tright: 0;
 \t\t\tmargin-left: auto;
-\t\t\twidth: 100px;
-\t\t\theight: 100px;
+\t\t\twidth: 50px;
+\t\t\theight: 50px;
 \t\t\tcolor: \$extra-light-blue;
 \t\t\ttransition: all 0.75s ease-in-out;
-\t\t\trotate: 180deg;
+\t\t\ttransform: rotate(180deg);
 
 \t\t\t&:hover {
 \t\t\t\tcolor: \$blue;

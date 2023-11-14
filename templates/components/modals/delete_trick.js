@@ -44,7 +44,7 @@ if (headTitle.includes('Home') || headTitle.includes('Category')) {
 		function deleteTrick() {
 			// We grab the trick.id from the delete_button and pass it to the url.
 			let trickToDelete = document.getElementById('delete_button').getAttribute('data-trick-id');
-			let url = 'https://127.0.0.1:8000/trick/' + trickToDelete + '/delete';
+			let url = 'https://localhost:8000/trick/' + trickToDelete + '/delete';
 			// We fetch the url and use the Symfony controller to delete the trick.
 			// We wait for the response and if it's ok, we close the modal.
 			fetch(url)
@@ -54,8 +54,13 @@ if (headTitle.includes('Home') || headTitle.includes('Category')) {
 					}
 				})
 				.then((data) => {
-					// We reload the page.
-					window.location.reload();
+					if (headTitle.includes('Home')) {
+						// We reload the page.
+						window.location.reload();
+					} else {
+						// We redirect to the home page.
+						window.location.replace('https://localhost:8000/');
+					}
 				});
 		}
 	}

@@ -54,6 +54,7 @@ section#reset_password {
 \tpadding: 100px;
 \tcolor: \$blue;
 \tmin-height: calc(100vh - 582px);
+
 \t/*
 \t\t|-----------------------------------
 \t\t| Style the form element
@@ -76,12 +77,14 @@ section#reset_password {
 \t\t*/
 \t\t#form {
 \t\t\tmargin-bottom: 20px;
+
 \t\t\tul li,
 \t\t\tul li::marker {
 \t\t\t\tcolor: \$text-error;
 \t\t\t\tlist-style-type: '🤯';
 \t\t\t}
-\t\t\tul:first-of-type + input {
+
+\t\t\tul:first-of-type+input {
 \t\t\t\tborder: solid 1px \$text-error;
 \t\t\t}
 
@@ -120,6 +123,12 @@ section#reset_password {
 
 \t\t.btn.btn-cancel {
 \t\t\t@include btn-cancel;
+\t\t\ttext-align: center;
+\t\t}
+
+\t\t.btn.btn-delete {
+\t\t\t@include btn-delete;
+\t\t\ttext-align: center;
 \t\t}
 \t}
 }
@@ -158,6 +167,7 @@ section#reset_password {
 \tpadding: 100px;
 \tcolor: \$blue;
 \tmin-height: calc(100vh - 582px);
+
 \t/*
 \t\t|-----------------------------------
 \t\t| Style the form element
@@ -180,12 +190,14 @@ section#reset_password {
 \t\t*/
 \t\t#form {
 \t\t\tmargin-bottom: 20px;
+
 \t\t\tul li,
 \t\t\tul li::marker {
 \t\t\t\tcolor: \$text-error;
 \t\t\t\tlist-style-type: '🤯';
 \t\t\t}
-\t\t\tul:first-of-type + input {
+
+\t\t\tul:first-of-type+input {
 \t\t\t\tborder: solid 1px \$text-error;
 \t\t\t}
 
@@ -224,6 +236,12 @@ section#reset_password {
 
 \t\t.btn.btn-cancel {
 \t\t\t@include btn-cancel;
+\t\t\ttext-align: center;
+\t\t}
+
+\t\t.btn.btn-delete {
+\t\t\t@include btn-delete;
+\t\t\ttext-align: center;
 \t\t}
 \t}
 }

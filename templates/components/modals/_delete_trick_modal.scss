@@ -8,24 +8,28 @@
 	height: 100%;
 	overflow: auto;
 	background-color: rgba(0, 0, 0, 0.4);
+
 	.modal__content {
 		background-color: $white;
 		margin: 15% auto;
 		padding: 20px;
 		border: 1px solid $text-dark;
 		width: 80%;
+
 		.modal__header {
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
+
 			.modal__title {
 				font-size: 1.5rem;
 				font-weight: 600;
 				color: $text-dark;
 			}
+
 			.modal__close {
 				cursor: pointer;
-				@include btn-cancel;
+				@include btn-close;
 				display: flex;
 				align-items: center;
 				justify-content: center;
@@ -36,24 +40,29 @@
 				height: 2rem;
 			}
 		}
+
 		.modal__body {
 			margin-top: 20px;
+
 			.modal__text {
 				font-size: 1.2rem;
 				font-weight: 400;
 				color: $text-dark;
 			}
 		}
+
 		.modal__footer {
 			display: flex;
 			justify-content: flex-end;
 			margin-top: 20px;
-			.btn.btn-primary {
-				@include btn-cancel;
+
+			.btn.btn-delete {
+				@include btn-delete;
 				width: 4rem;
 				height: 2rem;
 				margin: 0.5rem;
 			}
+
 			.btn.btn-cancel {
 				@include btn-primary;
 				width: 4rem;

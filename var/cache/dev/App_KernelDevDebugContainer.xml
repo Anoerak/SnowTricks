@@ -25,6 +25,8 @@
       <parameter key="SymfonyCastsResetPasswordBundle">SymfonyCasts\Bundle\ResetPassword\SymfonyCastsResetPasswordBundle</parameter>
       <parameter key="SymfonyCastsVerifyEmailBundle">SymfonyCasts\Bundle\VerifyEmail\SymfonyCastsVerifyEmailBundle</parameter>
       <parameter key="StofDoctrineExtensionsBundle">Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle</parameter>
+      <parameter key="BabDevPagerfantaBundle">BabDev\PagerfantaBundle\BabDevPagerfantaBundle</parameter>
+      <parameter key="KnpPaginatorBundle">Knp\Bundle\PaginatorBundle\KnpPaginatorBundle</parameter>
     </parameter>
     <parameter key="kernel.bundles_metadata" type="collection">
       <parameter key="FrameworkBundle" type="collection">
@@ -90,6 +92,14 @@
       <parameter key="StofDoctrineExtensionsBundle" type="collection">
         <parameter key="path">/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/stof/doctrine-extensions-bundle/src</parameter>
         <parameter key="namespace">Stof\DoctrineExtensionsBundle</parameter>
+      </parameter>
+      <parameter key="BabDevPagerfantaBundle" type="collection">
+        <parameter key="path">/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/babdev/pagerfanta-bundle</parameter>
+        <parameter key="namespace">BabDev\PagerfantaBundle</parameter>
+      </parameter>
+      <parameter key="KnpPaginatorBundle" type="collection">
+        <parameter key="path">/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/knplabs/knp-paginator-bundle</parameter>
+        <parameter key="namespace">Knp\Bundle\PaginatorBundle</parameter>
       </parameter>
     </parameter>
     <parameter key="kernel.charset">UTF-8</parameter>
@@ -278,6 +288,11 @@
     <parameter key="stof_doctrine_extensions.listener.softdeleteable.class">Gedmo\SoftDeleteable\SoftDeleteableListener</parameter>
     <parameter key="stof_doctrine_extensions.listener.uploadable.class">Gedmo\Uploadable\UploadableListener</parameter>
     <parameter key="stof_doctrine_extensions.listener.reference_integrity.class">Gedmo\ReferenceIntegrity\ReferenceIntegrityListener</parameter>
+    <parameter key="knp_paginator.template.pagination">@KnpPaginator/Pagination/sliding.html.twig</parameter>
+    <parameter key="knp_paginator.template.filtration">@KnpPaginator/Pagination/filtration.html.twig</parameter>
+    <parameter key="knp_paginator.template.sortable">@KnpPaginator/Pagination/sortable_link.html.twig</parameter>
+    <parameter key="knp_paginator.page_range">5</parameter>
+    <parameter key="knp_paginator.page_limit">null</parameter>
     <parameter key="data_collector.templates" type="collection">
       <parameter key="data_collector.request" type="collection">
         <parameter>request</parameter>
@@ -1870,11 +1885,14 @@
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/security-core/Resources/translations/security.ar.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfonycasts/reset-password-bundle/src/Resources/translations/ResetPasswordBundle.ar.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfonycasts/verify-email-bundle/src/Resources/translations/VerifyEmailBundle.ar.xlf</argument>
+            <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/babdev/pagerfanta-bundle/translations/pagerfanta.ar.xliff</argument>
+            <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.ar.xliff</argument>
           </argument>
           <argument key="az" type="collection">
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/validator/Resources/translations/validators.az.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/form/Resources/translations/validators.az.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/security-core/Resources/translations/security.az.xlf</argument>
+            <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/babdev/pagerfanta-bundle/translations/pagerfanta.az.xliff</argument>
           </argument>
           <argument key="be" type="collection">
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/validator/Resources/translations/validators.be.xlf</argument>
@@ -1885,6 +1903,7 @@
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/validator/Resources/translations/validators.bg.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/form/Resources/translations/validators.bg.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/security-core/Resources/translations/security.bg.xlf</argument>
+            <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.bg.xliff</argument>
           </argument>
           <argument key="bs" type="collection">
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/validator/Resources/translations/validators.bs.xlf</argument>
@@ -1897,6 +1916,8 @@
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/security-core/Resources/translations/security.ca.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfonycasts/reset-password-bundle/src/Resources/translations/ResetPasswordBundle.ca.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfonycasts/verify-email-bundle/src/Resources/translations/VerifyEmailBundle.ca.xlf</argument>
+            <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/babdev/pagerfanta-bundle/translations/pagerfanta.ca.xliff</argument>
+            <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.ca.xliff</argument>
           </argument>
           <argument key="cs" type="collection">
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/validator/Resources/translations/validators.cs.xlf</argument>
@@ -1904,6 +1925,8 @@
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/security-core/Resources/translations/security.cs.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfonycasts/reset-password-bundle/src/Resources/translations/ResetPasswordBundle.cs.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfonycasts/verify-email-bundle/src/Resources/translations/VerifyEmailBundle.cs.xlf</argument>
+            <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/babdev/pagerfanta-bundle/translations/pagerfanta.cs.xliff</argument>
+            <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.cs.xliff</argument>
           </argument>
           <argument key="cy" type="collection">
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/validator/Resources/translations/validators.cy.xlf</argument>
@@ -1912,6 +1935,8 @@
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/validator/Resources/translations/validators.da.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/form/Resources/translations/validators.da.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/security-core/Resources/translations/security.da.xlf</argument>
+            <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/babdev/pagerfanta-bundle/translations/pagerfanta.da.xliff</argument>
+            <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.da.xliff</argument>
           </argument>
           <argument key="de" type="collection">
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/validator/Resources/translations/validators.de.xlf</argument>
@@ -1919,6 +1944,8 @@
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/security-core/Resources/translations/security.de.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfonycasts/reset-password-bundle/src/Resources/translations/ResetPasswordBundle.de.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfonycasts/verify-email-bundle/src/Resources/translations/VerifyEmailBundle.de.xlf</argument>
+            <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/babdev/pagerfanta-bundle/translations/pagerfanta.de.xliff</argument>
+            <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.de.xliff</argument>
           </argument>
           <argument key="el" type="collection">
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/validator/Resources/translations/validators.el.xlf</argument>
@@ -1931,6 +1958,8 @@
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/security-core/Resources/translations/security.en.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfonycasts/reset-password-bundle/src/Resources/translations/ResetPasswordBundle.en.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfonycasts/verify-email-bundle/src/Resources/translations/VerifyEmailBundle.en.xlf</argument>
+            <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/babdev/pagerfanta-bundle/translations/pagerfanta.en.xliff</argument>
+            <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.en.xliff</argument>
           </argument>
           <argument key="es" type="collection">
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/validator/Resources/translations/validators.es.xlf</argument>
@@ -1938,6 +1967,8 @@
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/security-core/Resources/translations/security.es.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfonycasts/reset-password-bundle/src/Resources/translations/ResetPasswordBundle.es.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfonycasts/verify-email-bundle/src/Resources/translations/VerifyEmailBundle.es.xlf</argument>
+            <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/babdev/pagerfanta-bundle/translations/pagerfanta.es.xliff</argument>
+            <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.es.xliff</argument>
           </argument>
           <argument key="et" type="collection">
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/validator/Resources/translations/validators.et.xlf</argument>
@@ -1948,11 +1979,14 @@
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/validator/Resources/translations/validators.eu.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/form/Resources/translations/validators.eu.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/security-core/Resources/translations/security.eu.xlf</argument>
+            <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.eu.xliff</argument>
           </argument>
           <argument key="fa" type="collection">
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/validator/Resources/translations/validators.fa.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/form/Resources/translations/validators.fa.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/security-core/Resources/translations/security.fa.xlf</argument>
+            <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/babdev/pagerfanta-bundle/translations/pagerfanta.fa.xliff</argument>
+            <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.fa.xliff</argument>
           </argument>
           <argument key="fi" type="collection">
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/validator/Resources/translations/validators.fi.xlf</argument>
@@ -1960,6 +1994,8 @@
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/security-core/Resources/translations/security.fi.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfonycasts/reset-password-bundle/src/Resources/translations/ResetPasswordBundle.fi.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfonycasts/verify-email-bundle/src/Resources/translations/VerifyEmailBundle.fi.xlf</argument>
+            <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/babdev/pagerfanta-bundle/translations/pagerfanta.fi.xliff</argument>
+            <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.fi.xliff</argument>
           </argument>
           <argument key="fr" type="collection">
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/validator/Resources/translations/validators.fr.xlf</argument>
@@ -1967,11 +2003,14 @@
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/security-core/Resources/translations/security.fr.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfonycasts/reset-password-bundle/src/Resources/translations/ResetPasswordBundle.fr.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfonycasts/verify-email-bundle/src/Resources/translations/VerifyEmailBundle.fr.xlf</argument>
+            <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/babdev/pagerfanta-bundle/translations/pagerfanta.fr.xliff</argument>
+            <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.fr.xliff</argument>
           </argument>
           <argument key="gl" type="collection">
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/validator/Resources/translations/validators.gl.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/form/Resources/translations/validators.gl.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/security-core/Resources/translations/security.gl.xlf</argument>
+            <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/babdev/pagerfanta-bundle/translations/pagerfanta.gl.xliff</argument>
           </argument>
           <argument key="he" type="collection">
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/validator/Resources/translations/validators.he.xlf</argument>
@@ -1982,6 +2021,8 @@
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/validator/Resources/translations/validators.hr.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/form/Resources/translations/validators.hr.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/security-core/Resources/translations/security.hr.xlf</argument>
+            <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/babdev/pagerfanta-bundle/translations/pagerfanta.hr.xliff</argument>
+            <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.hr.xliff</argument>
           </argument>
           <argument key="hu" type="collection">
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/validator/Resources/translations/validators.hu.xlf</argument>
@@ -1989,6 +2030,7 @@
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/security-core/Resources/translations/security.hu.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfonycasts/reset-password-bundle/src/Resources/translations/ResetPasswordBundle.hu.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfonycasts/verify-email-bundle/src/Resources/translations/VerifyEmailBundle.hu.xlf</argument>
+            <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.hu.xliff</argument>
           </argument>
           <argument key="hy" type="collection">
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/validator/Resources/translations/validators.hy.xlf</argument>
@@ -2000,6 +2042,7 @@
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/form/Resources/translations/validators.id.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/security-core/Resources/translations/security.id.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfonycasts/verify-email-bundle/src/Resources/translations/VerifyEmailBundle.id.xlf</argument>
+            <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.id.xliff</argument>
           </argument>
           <argument key="it" type="collection">
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/validator/Resources/translations/validators.it.xlf</argument>
@@ -2007,6 +2050,8 @@
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/security-core/Resources/translations/security.it.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfonycasts/reset-password-bundle/src/Resources/translations/ResetPasswordBundle.it.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfonycasts/verify-email-bundle/src/Resources/translations/VerifyEmailBundle.it.xlf</argument>
+            <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/babdev/pagerfanta-bundle/translations/pagerfanta.it.xliff</argument>
+            <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.it.xliff</argument>
           </argument>
           <argument key="ja" type="collection">
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/validator/Resources/translations/validators.ja.xlf</argument>
@@ -2014,6 +2059,7 @@
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/security-core/Resources/translations/security.ja.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfonycasts/reset-password-bundle/src/Resources/translations/ResetPasswordBundle.ja.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfonycasts/verify-email-bundle/src/Resources/translations/VerifyEmailBundle.ja.xlf</argument>
+            <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.ja.xliff</argument>
           </argument>
           <argument key="lb" type="collection">
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/validator/Resources/translations/validators.lb.xlf</argument>
@@ -2024,6 +2070,7 @@
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/validator/Resources/translations/validators.lt.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/form/Resources/translations/validators.lt.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/security-core/Resources/translations/security.lt.xlf</argument>
+            <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.lt.xliff</argument>
           </argument>
           <argument key="lv" type="collection">
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/validator/Resources/translations/validators.lv.xlf</argument>
@@ -2051,6 +2098,8 @@
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/security-core/Resources/translations/security.nl.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfonycasts/reset-password-bundle/src/Resources/translations/ResetPasswordBundle+intl-icu.nl.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfonycasts/verify-email-bundle/src/Resources/translations/VerifyEmailBundle+intl-icu.nl.xlf</argument>
+            <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/babdev/pagerfanta-bundle/translations/pagerfanta.nl.xliff</argument>
+            <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.nl.xliff</argument>
           </argument>
           <argument key="nn" type="collection">
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/validator/Resources/translations/validators.nn.xlf</argument>
@@ -2061,6 +2110,8 @@
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/validator/Resources/translations/validators.no.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/form/Resources/translations/validators.no.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/security-core/Resources/translations/security.no.xlf</argument>
+            <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/babdev/pagerfanta-bundle/translations/pagerfanta.no.xliff</argument>
+            <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.no.xliff</argument>
           </argument>
           <argument key="pl" type="collection">
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/validator/Resources/translations/validators.pl.xlf</argument>
@@ -2068,6 +2119,8 @@
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/security-core/Resources/translations/security.pl.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfonycasts/reset-password-bundle/src/Resources/translations/ResetPasswordBundle.pl.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfonycasts/verify-email-bundle/src/Resources/translations/VerifyEmailBundle.pl.xlf</argument>
+            <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/babdev/pagerfanta-bundle/translations/pagerfanta.pl.xliff</argument>
+            <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.pl.xliff</argument>
           </argument>
           <argument key="pt" type="collection">
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/validator/Resources/translations/validators.pt.xlf</argument>
@@ -2075,17 +2128,21 @@
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/security-core/Resources/translations/security.pt.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfonycasts/reset-password-bundle/src/Resources/translations/ResetPasswordBundle.pt.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfonycasts/verify-email-bundle/src/Resources/translations/VerifyEmailBundle.pt.xlf</argument>
+            <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/babdev/pagerfanta-bundle/translations/pagerfanta.pt.xliff</argument>
           </argument>
           <argument key="pt_BR" type="collection">
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/validator/Resources/translations/validators.pt_BR.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/form/Resources/translations/validators.pt_BR.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/security-core/Resources/translations/security.pt_BR.xlf</argument>
+            <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.pt_BR.xliff</argument>
           </argument>
           <argument key="ro" type="collection">
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/validator/Resources/translations/validators.ro.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/form/Resources/translations/validators.ro.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/security-core/Resources/translations/security.ro.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfonycasts/verify-email-bundle/src/Resources/translations/VerifyEmailBundle.ro.xlf</argument>
+            <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/babdev/pagerfanta-bundle/translations/pagerfanta.ro.xliff</argument>
+            <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.ro.xliff</argument>
           </argument>
           <argument key="ru" type="collection">
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/validator/Resources/translations/validators.ru.xlf</argument>
@@ -2093,6 +2150,8 @@
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/security-core/Resources/translations/security.ru.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfonycasts/reset-password-bundle/src/Resources/translations/ResetPasswordBundle.ru.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfonycasts/verify-email-bundle/src/Resources/translations/VerifyEmailBundle.ru.xlf</argument>
+            <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/babdev/pagerfanta-bundle/translations/pagerfanta.ru.xliff</argument>
+            <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.ru.xliff</argument>
           </argument>
           <argument key="sk" type="collection">
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/validator/Resources/translations/validators.sk.xlf</argument>
@@ -2100,11 +2159,13 @@
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/security-core/Resources/translations/security.sk.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfonycasts/reset-password-bundle/src/Resources/translations/ResetPasswordBundle.sk.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfonycasts/verify-email-bundle/src/Resources/translations/VerifyEmailBundle.sk.xlf</argument>
+            <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/babdev/pagerfanta-bundle/translations/pagerfanta.sk.xliff</argument>
           </argument>
           <argument key="sl" type="collection">
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/validator/Resources/translations/validators.sl.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/form/Resources/translations/validators.sl.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/security-core/Resources/translations/security.sl.xlf</argument>
+            <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/babdev/pagerfanta-bundle/translations/pagerfanta.sl.xliff</argument>
           </argument>
           <argument key="sq" type="collection">
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/validator/Resources/translations/validators.sq.xlf</argument>
@@ -2115,21 +2176,26 @@
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/validator/Resources/translations/validators.sr_Cyrl.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/form/Resources/translations/validators.sr_Cyrl.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/security-core/Resources/translations/security.sr_Cyrl.xlf</argument>
+            <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/babdev/pagerfanta-bundle/translations/pagerfanta.sr_Cyrl.xliff</argument>
           </argument>
           <argument key="sr_Latn" type="collection">
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/validator/Resources/translations/validators.sr_Latn.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/form/Resources/translations/validators.sr_Latn.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/security-core/Resources/translations/security.sr_Latn.xlf</argument>
+            <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/babdev/pagerfanta-bundle/translations/pagerfanta.sr_Latn.xliff</argument>
           </argument>
           <argument key="sv" type="collection">
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/validator/Resources/translations/validators.sv.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/form/Resources/translations/validators.sv.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/security-core/Resources/translations/security.sv.xlf</argument>
+            <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/babdev/pagerfanta-bundle/translations/pagerfanta.sv.xliff</argument>
+            <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.sv.xliff</argument>
           </argument>
           <argument key="th" type="collection">
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/validator/Resources/translations/validators.th.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/form/Resources/translations/validators.th.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/security-core/Resources/translations/security.th.xlf</argument>
+            <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/babdev/pagerfanta-bundle/translations/pagerfanta.th.xliff</argument>
           </argument>
           <argument key="tl" type="collection">
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/validator/Resources/translations/validators.tl.xlf</argument>
@@ -2142,6 +2208,8 @@
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/security-core/Resources/translations/security.tr.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfonycasts/reset-password-bundle/src/Resources/translations/ResetPasswordBundle.tr.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfonycasts/verify-email-bundle/src/Resources/translations/VerifyEmailBundle.tr.xlf</argument>
+            <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/babdev/pagerfanta-bundle/translations/pagerfanta.tr.xliff</argument>
+            <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.tr.xliff</argument>
           </argument>
           <argument key="uk" type="collection">
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/validator/Resources/translations/validators.uk.xlf</argument>
@@ -2149,6 +2217,8 @@
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/security-core/Resources/translations/security.uk.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfonycasts/reset-password-bundle/src/Resources/translations/ResetPasswordBundle.uk.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfonycasts/verify-email-bundle/src/Resources/translations/VerifyEmailBundle.uk.xlf</argument>
+            <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/babdev/pagerfanta-bundle/translations/pagerfanta.uk.xliff</argument>
+            <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.uk.xliff</argument>
           </argument>
           <argument key="ur" type="collection">
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/validator/Resources/translations/validators.ur.xlf</argument>
@@ -2169,6 +2239,7 @@
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/validator/Resources/translations/validators.zh_CN.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/form/Resources/translations/validators.zh_CN.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/security-core/Resources/translations/security.zh_CN.xlf</argument>
+            <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/babdev/pagerfanta-bundle/translations/pagerfanta.zh_CN.xliff</argument>
           </argument>
           <argument key="zh_TW" type="collection">
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/validator/Resources/translations/validators.zh_TW.xlf</argument>
@@ -2179,6 +2250,16 @@
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfonycasts/reset-password-bundle/src/Resources/translations/ResetPasswordBundle.sr.xlf</argument>
             <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfonycasts/verify-email-bundle/src/Resources/translations/VerifyEmailBundle.sr.xlf</argument>
           </argument>
+          <argument key="oc" type="collection">
+            <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/babdev/pagerfanta-bundle/translations/pagerfanta.oc.xliff</argument>
+          </argument>
+          <argument key="sw" type="collection">
+            <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/babdev/pagerfanta-bundle/translations/pagerfanta.sw.xliff</argument>
+            <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.sw.xliff</argument>
+          </argument>
+          <argument key="ky" type="collection">
+            <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.ky.xliff</argument>
+          </argument>
         </argument>
         <argument key="scanned_directories" type="collection">
           <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/validator/Resources/translations</argument>
@@ -2186,6 +2267,8 @@
           <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/security-core/Resources/translations</argument>
           <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfonycasts/reset-password-bundle/src/Resources/translations</argument>
           <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfonycasts/verify-email-bundle/src/Resources/translations</argument>
+          <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/babdev/pagerfanta-bundle/translations</argument>
+          <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/knplabs/knp-paginator-bundle/translations</argument>
           <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/translations</argument>
           <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/framework-bundle/translations</argument>
           <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/doctrine/doctrine-bundle/translations</argument>
@@ -2209,6 +2292,8 @@
             <argument>vendor/symfony/security-core/Resources/translations</argument>
             <argument>vendor/symfonycasts/reset-password-bundle/src/Resources/translations</argument>
             <argument>vendor/symfonycasts/verify-email-bundle/src/Resources/translations</argument>
+            <argument>vendor/babdev/pagerfanta-bundle/translations</argument>
+            <argument>vendor/knplabs/knp-paginator-bundle/translations</argument>
             <argument>translations</argument>
             <argument>vendor/symfony/framework-bundle/translations</argument>
             <argument>vendor/doctrine/doctrine-bundle/translations</argument>
@@ -2534,6 +2619,30 @@
         <argument type="collection">
           <argument type="service_closure" id="webpack_encore.exception_listener"/>
           <argument>onKernelException</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
+        <argument>kernel.exception</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="pagerfanta.event_listener.convert_not_valid_max_per_page_to_not_found"/>
+          <argument>onKernelException</argument>
+        </argument>
+        <argument>512</argument>
+      </call>
+      <call method="addListener">
+        <argument>kernel.exception</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="pagerfanta.event_listener.convert_not_valid_current_page_to_not_found"/>
+          <argument>onKernelException</argument>
+        </argument>
+        <argument>512</argument>
+      </call>
+      <call method="addListener">
+        <argument>kernel.request</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="knp_paginator.subscriber.sliding_pagination"/>
+          <argument>onKernelRequest</argument>
         </argument>
         <argument>0</argument>
       </call>
@@ -3112,6 +3221,46 @@
           <argument>resetAssets</argument>
         </argument>
         <argument>0</argument>
+      </call>
+      <call method="addListener">
+        <argument>knp_pager.before</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="knp_paginator.subscriber.paginate"/>
+          <argument>before</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
+        <argument>knp_pager.pagination</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="knp_paginator.subscriber.paginate"/>
+          <argument>pagination</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
+        <argument>knp_pager.before</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="knp_paginator.subscriber.sortable"/>
+          <argument>before</argument>
+        </argument>
+        <argument>1</argument>
+      </call>
+      <call method="addListener">
+        <argument>knp_pager.before</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="knp_paginator.subscriber.filtration"/>
+          <argument>before</argument>
+        </argument>
+        <argument>1</argument>
+      </call>
+      <call method="addListener">
+        <argument>knp_pager.pagination</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="knp_paginator.subscriber.sliding_pagination"/>
+          <argument>pagination</argument>
+        </argument>
+        <argument>1</argument>
       </call>
       <call method="addListener">
         <argument>Symfony\Component\Security\Http\Event\CheckPassportEvent</argument>
@@ -5104,6 +5253,9 @@
       <call method="addExtension">
         <argument type="service" id="webpack_encore.twig_stimulus_extension"/>
       </call>
+      <call method="addExtension">
+        <argument type="service" id="knp_paginator.twig.extension.pagination"/>
+      </call>
       <call method="addGlobal">
         <argument>app</argument>
         <argument type="service" id="twig.app_variable"/>
@@ -5127,6 +5279,12 @@
         <argument type="collection">
           <argument type="service" id="twig.missing_extension_suggestor"/>
           <argument>suggestTag</argument>
+        </argument>
+      </call>
+      <call method="registerUndefinedFunctionCallback">
+        <argument type="collection">
+          <argument type="service" id="pagerfanta.undefined_callable_handler"/>
+          <argument>onUndefinedFunction</argument>
         </argument>
       </call>
       <configurator service="twig.configurator.environment" method="configure"/>
@@ -5203,6 +5361,22 @@
       <call method="addPath">
         <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/symfony/security-bundle/Resources/views</argument>
         <argument>!Security</argument>
+      </call>
+      <call method="addPath">
+        <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/babdev/pagerfanta-bundle/templates</argument>
+        <argument>BabDevPagerfanta</argument>
+      </call>
+      <call method="addPath">
+        <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/babdev/pagerfanta-bundle/templates</argument>
+        <argument>!BabDevPagerfanta</argument>
+      </call>
+      <call method="addPath">
+        <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/knplabs/knp-paginator-bundle/templates</argument>
+        <argument>KnpPaginator</argument>
+      </call>
+      <call method="addPath">
+        <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/vendor/knplabs/knp-paginator-bundle/templates</argument>
+        <argument>!KnpPaginator</argument>
       </call>
       <call method="addPath">
         <argument>/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP &amp; Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/templates</argument>
@@ -5293,7 +5467,7 @@
       <argument>,</argument>
     </service>
     <service id="twig.runtime_loader" class="Twig\RuntimeLoader\ContainerRuntimeLoader">
-      <argument type="service" id=".service_locator.pTeli0u"/>
+      <argument type="service" id=".service_locator.YmHjcFj"/>
     </service>
     <service id="twig.error_renderer.html" class="Symfony\Bridge\Twig\ErrorRenderer\TwigErrorRenderer">
       <argument type="service" id="twig"/>
@@ -6683,6 +6857,106 @@
         <argument type="service" id="annotations.cached_reader"/>
       </call>
     </service>
+    <service id="pagerfanta.route_generator_factory" class="BabDev\PagerfantaBundle\RouteGenerator\RequestAwareRouteGeneratorFactory">
+      <argument type="service" id="router.default"/>
+      <argument type="service" id="request_stack"/>
+      <argument type="service" id="property_accessor"/>
+    </service>
+    <service id="pagerfanta.view.default" class="Pagerfanta\View\DefaultView">
+      <tag name="pagerfanta.view" alias="default"/>
+    </service>
+    <service id="pagerfanta.view.foundation6" class="Pagerfanta\View\Foundation6View">
+      <tag name="pagerfanta.view" alias="foundation6"/>
+    </service>
+    <service id="pagerfanta.view.semantic_ui" class="Pagerfanta\View\SemanticUiView">
+      <tag name="pagerfanta.view" alias="semantic_ui"/>
+    </service>
+    <service id="pagerfanta.view.twitter_bootstrap" class="Pagerfanta\View\TwitterBootstrapView">
+      <tag name="pagerfanta.view" alias="twitter_bootstrap"/>
+    </service>
+    <service id="pagerfanta.view.twitter_bootstrap3" class="Pagerfanta\View\TwitterBootstrap3View">
+      <tag name="pagerfanta.view" alias="twitter_bootstrap3"/>
+    </service>
+    <service id="pagerfanta.view.twitter_bootstrap4" class="Pagerfanta\View\TwitterBootstrap4View">
+      <tag name="pagerfanta.view" alias="twitter_bootstrap4"/>
+    </service>
+    <service id="pagerfanta.view.twitter_bootstrap5" class="Pagerfanta\View\TwitterBootstrap5View">
+      <tag name="pagerfanta.view" alias="twitter_bootstrap5"/>
+    </service>
+    <service id="pagerfanta.view_factory" class="BabDev\PagerfantaBundle\View\ContainerBackedImmutableViewFactory">
+      <argument type="service" id=".service_locator.WdLVXFq"/>
+      <argument type="collection">
+        <argument key="default">pagerfanta.view.default</argument>
+        <argument key="foundation6">pagerfanta.view.foundation6</argument>
+        <argument key="semantic_ui">pagerfanta.view.semantic_ui</argument>
+        <argument key="twitter_bootstrap">pagerfanta.view.twitter_bootstrap</argument>
+        <argument key="twitter_bootstrap3">pagerfanta.view.twitter_bootstrap3</argument>
+        <argument key="twitter_bootstrap4">pagerfanta.view.twitter_bootstrap4</argument>
+        <argument key="twitter_bootstrap5">pagerfanta.view.twitter_bootstrap5</argument>
+      </argument>
+    </service>
+    <service id="pagerfanta.undefined_callable_handler" class="BabDev\PagerfantaBundle\Twig\UndefinedCallableHandler"/>
+    <service id="pagerfanta.serializer.normalizer.legacy" class="BabDev\PagerfantaBundle\Serializer\Normalizer\LegacyPagerfantaNormalizer">
+      <argument type="service" id="pagerfanta.serializer.normalizer.legacy.inner"/>
+    </service>
+    <service id="pagerfanta.event_listener.convert_not_valid_max_per_page_to_not_found" class="BabDev\PagerfantaBundle\EventListener\ConvertNotValidCurrentPageToNotFoundListener">
+      <tag name="kernel.event_listener" event="kernel.exception" method="onKernelException" priority="512"/>
+    </service>
+    <service id="pagerfanta.event_listener.convert_not_valid_current_page_to_not_found" class="BabDev\PagerfantaBundle\EventListener\ConvertNotValidMaxPerPageToNotFoundListener">
+      <tag name="kernel.event_listener" event="kernel.exception" method="onKernelException" priority="512"/>
+    </service>
+    <service id="knp_paginator" class="Knp\Component\Pager\Paginator" public="true" lazy="true">
+      <tag name="proxy" interface="Knp\Component\Pager\PaginatorInterface"/>
+      <argument type="service" id="debug.event_dispatcher"/>
+      <argument type="service" id="Knp\Component\Pager\ArgumentAccess\RequestArgumentAccess"/>
+      <call method="setDefaultPaginatorOptions">
+        <argument type="collection">
+          <argument key="pageParameterName">page</argument>
+          <argument key="sortFieldParameterName">sort</argument>
+          <argument key="sortDirectionParameterName">direction</argument>
+          <argument key="filterFieldParameterName">filterField</argument>
+          <argument key="filterValueParameterName">filterValue</argument>
+          <argument key="distinct">true</argument>
+          <argument key="pageOutOfRange">ignore</argument>
+          <argument key="defaultLimit">10</argument>
+        </argument>
+      </call>
+    </service>
+    <service id="Knp\Component\Pager\ArgumentAccess\RequestArgumentAccess" class="Knp\Component\Pager\ArgumentAccess\RequestArgumentAccess">
+      <argument type="service" id="request_stack"/>
+    </service>
+    <service id="knp_paginator.subscriber.paginate" class="Knp\Component\Pager\Event\Subscriber\Paginate\PaginationSubscriber">
+      <tag name="kernel.event_subscriber"/>
+    </service>
+    <service id="knp_paginator.subscriber.sortable" class="Knp\Component\Pager\Event\Subscriber\Sortable\SortableSubscriber">
+      <tag name="kernel.event_subscriber"/>
+    </service>
+    <service id="knp_paginator.subscriber.filtration" class="Knp\Component\Pager\Event\Subscriber\Filtration\FiltrationSubscriber">
+      <tag name="kernel.event_subscriber"/>
+    </service>
+    <service id="knp_paginator.subscriber.sliding_pagination" class="Knp\Bundle\PaginatorBundle\Subscriber\SlidingPaginationSubscriber">
+      <tag name="kernel.event_subscriber"/>
+      <tag name="kernel.event_listener" event="kernel.request" method="onKernelRequest"/>
+      <tag name="container.hot_path"/>
+      <argument type="collection">
+        <argument key="defaultPaginationTemplate">@KnpPaginator/Pagination/sliding.html.twig</argument>
+        <argument key="defaultSortableTemplate">@KnpPaginator/Pagination/sortable_link.html.twig</argument>
+        <argument key="defaultFiltrationTemplate">@KnpPaginator/Pagination/filtration.html.twig</argument>
+        <argument key="defaultPageRange">5</argument>
+        <argument key="defaultPageLimit">null</argument>
+      </argument>
+    </service>
+    <service id="knp_paginator.helper.processor" class="Knp\Bundle\PaginatorBundle\Helper\Processor">
+      <argument type="service" id="router.default"/>
+      <argument type="service" id="translator.data_collector"/>
+    </service>
+    <service id="knp_paginator.twig.extension.pagination" class="Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension">
+      <tag name="twig.extension"/>
+    </service>
+    <service id="Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationRuntime" class="Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationRuntime">
+      <tag name="twig.runtime"/>
+      <argument type="service" id="knp_paginator.helper.processor"/>
+    </service>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\AboutController" class="App\Controller\AboutController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\AboutController" class="App\Controller\AboutController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\AboutController" class="App\Controller\AboutController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -7111,6 +7385,12 @@
         <argument key="fileUploader" type="service_closure" id="App\Service\FileUploader"/>
       </argument>
     </service>
+    <service id=".service_locator.CsMkqUa" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+      </argument>
+    </service>
     <service id=".service_locator.EE0.cm9" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -7148,11 +7428,12 @@
         <argument key="verifyEmailHelper" type="service_closure" id="symfonycasts.verify_email.helper"/>
       </argument>
     </service>
-    <service id=".service_locator.sqP2VXt" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.9IOAPHb" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="entityManagerInterface" type="service_closure" id="doctrine.orm.default_entity_manager"/>
-        <argument key="trick" type="service_closure" id=".errored..service_locator.sqP2VXt.App\Entity\Trick"/>
+        <argument key="paginator" type="service_closure" id="knp_paginator"/>
+        <argument key="trick" type="service_closure" id=".errored..service_locator.9IOAPHb.App\Entity\Trick"/>
       </argument>
     </service>
     <service id=".service_locator.V71r_w4" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -7176,6 +7457,13 @@
         <argument key="trick" type="service_closure" id=".errored..service_locator.uW_PT3G.App\Entity\Trick"/>
       </argument>
     </service>
+    <service id=".service_locator.sqP2VXt" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="entityManagerInterface" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+        <argument key="trick" type="service_closure" id=".errored..service_locator.sqP2VXt.App\Entity\Trick"/>
+      </argument>
+    </service>
     <service id=".service_locator.ZdHc.KM" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -7188,12 +7476,13 @@
         <argument key="event" type="service_closure" id=".errored..service_locator.wrGrPsA.Symfony\Component\Security\Http\Event\LogoutEvent"/>
       </argument>
     </service>
-    <service id=".service_locator.rbu7CBf" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.vCVG291" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\CommentController::deleteComment" type="service_closure" id=".service_locator.MhYHKki"/>
         <argument key="App\Controller\HomeController::index" type="service_closure" id=".service_locator.12XOZIl"/>
         <argument key="App\Controller\HomeController::loadMoreTricks" type="service_closure" id=".service_locator.12XOZIl"/>
+        <argument key="App\Controller\ProfileController::deleteProfile" type="service_closure" id=".service_locator.CsMkqUa"/>
         <argument key="App\Controller\ProfileController::getProfile" type="service_closure" id=".service_locator.fNvIwJr"/>
         <argument key="App\Controller\ResetPasswordController::request" type="service_closure" id=".service_locator.EE0.cm9"/>
         <argument key="App\Controller\ResetPasswordController::reset" type="service_closure" id=".service_locator.Z9ydiC1"/>
@@ -7204,7 +7493,7 @@
         <argument key="App\Controller\TrickController::delete" type="service_closure" id=".service_locator.sqP2VXt"/>
         <argument key="App\Controller\TrickController::deleteMedia" type="service_closure" id=".service_locator.sqP2VXt"/>
         <argument key="App\Controller\TrickController::edit" type="service_closure" id=".service_locator.uW_PT3G"/>
-        <argument key="App\Controller\TrickController::index" type="service_closure" id=".service_locator.sqP2VXt"/>
+        <argument key="App\Controller\TrickController::index" type="service_closure" id=".service_locator.9IOAPHb"/>
         <argument key="App\Controller\TrickController::new" type="service_closure" id=".service_locator.uJI3b0P"/>
         <argument key="App\EventListener\LoginSubscriber::onLogin" type="service_closure" id=".service_locator.ZdHc.KM"/>
         <argument key="App\EventListener\LogoutSubscriber::onLogout" type="service_closure" id=".service_locator.wrGrPsA"/>
@@ -7215,6 +7504,7 @@
         <argument key="App\Controller\CommentController:deleteComment" type="service_closure" id=".service_locator.MhYHKki"/>
         <argument key="App\Controller\HomeController:index" type="service_closure" id=".service_locator.12XOZIl"/>
         <argument key="App\Controller\HomeController:loadMoreTricks" type="service_closure" id=".service_locator.12XOZIl"/>
+        <argument key="App\Controller\ProfileController:deleteProfile" type="service_closure" id=".service_locator.CsMkqUa"/>
         <argument key="App\Controller\ProfileController:getProfile" type="service_closure" id=".service_locator.fNvIwJr"/>
         <argument key="App\Controller\ResetPasswordController:request" type="service_closure" id=".service_locator.EE0.cm9"/>
         <argument key="App\Controller\ResetPasswordController:reset" type="service_closure" id=".service_locator.Z9ydiC1"/>
@@ -7225,7 +7515,7 @@
         <argument key="App\Controller\TrickController:delete" type="service_closure" id=".service_locator.sqP2VXt"/>
         <argument key="App\Controller\TrickController:deleteMedia" type="service_closure" id=".service_locator.sqP2VXt"/>
         <argument key="App\Controller\TrickController:edit" type="service_closure" id=".service_locator.uW_PT3G"/>
-        <argument key="App\Controller\TrickController:index" type="service_closure" id=".service_locator.sqP2VXt"/>
+        <argument key="App\Controller\TrickController:index" type="service_closure" id=".service_locator.9IOAPHb"/>
         <argument key="App\Controller\TrickController:new" type="service_closure" id=".service_locator.uJI3b0P"/>
         <argument key="App\EventListener\LoginSubscriber:onLogin" type="service_closure" id=".service_locator.ZdHc.KM"/>
         <argument key="App\EventListener\LogoutSubscriber:onLogout" type="service_closure" id=".service_locator.wrGrPsA"/>
@@ -7326,6 +7616,11 @@
     <service id="debug.serializer.normalizer.flatten_exception" class="Symfony\Component\Serializer\Debug\TraceableNormalizer">
       <tag name="serializer.normalizer" priority="-880"/>
       <argument type="service" id="debug.serializer.normalizer.flatten_exception.inner"/>
+      <argument type="service" id="serializer.data_collector"/>
+    </service>
+    <service id="debug.pagerfanta.serializer.normalizer" class="Symfony\Component\Serializer\Debug\TraceableNormalizer">
+      <tag name="serializer.normalizer"/>
+      <argument type="service" id="pagerfanta.serializer.normalizer.legacy"/>
       <argument type="service" id="serializer.data_collector"/>
     </service>
     <service id="debug.serializer.encoder.xml" class="Symfony\Component\Serializer\Debug\TraceableEncoder">
@@ -7749,6 +8044,18 @@
       <configurator class="Symfony\Bundle\FrameworkBundle\DependencyInjection\Compiler\AddDebugLogProcessorPass" method="configureLogger"/>
     </service>
     <service id="monolog.handler.null_internal" class="Monolog\Handler\NullHandler"/>
+    <service id=".service_locator.WdLVXFq" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="default" type="service_closure" id="pagerfanta.view.default"/>
+        <argument key="foundation6" type="service_closure" id="pagerfanta.view.foundation6"/>
+        <argument key="semantic_ui" type="service_closure" id="pagerfanta.view.semantic_ui"/>
+        <argument key="twitter_bootstrap" type="service_closure" id="pagerfanta.view.twitter_bootstrap"/>
+        <argument key="twitter_bootstrap3" type="service_closure" id="pagerfanta.view.twitter_bootstrap3"/>
+        <argument key="twitter_bootstrap4" type="service_closure" id="pagerfanta.view.twitter_bootstrap4"/>
+        <argument key="twitter_bootstrap5" type="service_closure" id="pagerfanta.view.twitter_bootstrap5"/>
+      </argument>
+    </service>
     <service id=".service_locator.yY.p4P7" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -8014,6 +8321,7 @@
     <service id="debug.serializer.inner" class="Symfony\Component\Serializer\Serializer">
       <argument type="collection">
         <argument type="service" id="debug.serializer.denormalizer.unwrapping"/>
+        <argument type="service" id="debug.pagerfanta.serializer.normalizer"/>
         <argument type="service" id="debug.serializer.normalizer.flatten_exception"/>
         <argument type="service" id="debug.serializer.normalizer.problem"/>
         <argument type="service" id="debug.serializer.normalizer.uid"/>
@@ -8064,6 +8372,7 @@
     <service id="debug.security.firewall.authenticator.main.inner" class="Symfony\Component\Security\Http\Firewall\AuthenticatorManagerListener">
       <argument type="service" id="security.authenticator.manager.main"/>
     </service>
+    <service id="pagerfanta.serializer.normalizer.legacy.inner" class="BabDev\PagerfantaBundle\Serializer\Normalizer\PagerfantaNormalizer"/>
     <service id="debug.serializer.normalizer.constraint_violation_list.inner" class="Symfony\Component\Serializer\Normalizer\ConstraintViolationListNormalizer" autowire="true">
       <argument type="collection"/>
       <argument type="service" id="serializer.name_converter.metadata_aware"/>
@@ -8123,12 +8432,12 @@
     <service id="debug.argument_resolver.request.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\RequestValueResolver"/>
     <service id="debug.argument_resolver.session.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\SessionValueResolver"/>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.rbu7CBf"/>
+      <argument type="service" id=".service_locator.vCVG291"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.rbu7CBf"/>
+      <argument type="service" id=".service_locator.vCVG291"/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus">
       <argument type="iterator">
@@ -8149,8 +8458,9 @@
     </service>
     <service id=".errored..service_locator.y4_Zrx..Symfony\Component\Config\Loader\LoaderInterface" class="Symfony\Component\Config\Loader\LoaderInterface"/>
     <service id=".errored..service_locator.MhYHKki.App\Entity\Comment" class="App\Entity\Comment"/>
-    <service id=".errored..service_locator.sqP2VXt.App\Entity\Trick" class="App\Entity\Trick"/>
+    <service id=".errored..service_locator.9IOAPHb.App\Entity\Trick" class="App\Entity\Trick"/>
     <service id=".errored..service_locator.uW_PT3G.App\Entity\Trick" class="App\Entity\Trick"/>
+    <service id=".errored..service_locator.sqP2VXt.App\Entity\Trick" class="App\Entity\Trick"/>
     <service id=".errored..service_locator.ZdHc.KM.Symfony\Component\Security\Http\Event\InteractiveLoginEvent" class="Symfony\Component\Security\Http\Event\InteractiveLoginEvent"/>
     <service id=".errored..service_locator.wrGrPsA.Symfony\Component\Security\Http\Event\LogoutEvent" class="Symfony\Component\Security\Http\Event\LogoutEvent"/>
     <service id=".console.command.about.lazy" class="Symfony\Component\Console\Command\LazyCommand">
@@ -8959,13 +9269,14 @@
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
-    <service id=".service_locator.pTeli0u" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.YmHjcFj" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="Symfony\Bridge\Twig\Extension\CsrfRuntime" type="service_closure" id="twig.runtime.security_csrf"/>
         <argument key="Symfony\Bridge\Twig\Extension\HttpKernelRuntime" type="service_closure" id="twig.runtime.httpkernel"/>
         <argument key="Symfony\Bridge\Twig\Extension\SerializerRuntime" type="service_closure" id="twig.runtime.serializer"/>
         <argument key="Symfony\Component\Form\FormRenderer" type="service_closure" id="twig.form.renderer"/>
+        <argument key="Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationRuntime" type="service_closure" id="Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationRuntime"/>
       </argument>
     </service>
     <service id="App\Kernel" alias="kernel" public="true"/>
@@ -9111,9 +9422,13 @@
     <service id="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupInterface" alias="webpack_encore.entrypoint_lookup[_default]"/>
     <service id="SymfonyCasts\Bundle\ResetPassword\ResetPasswordHelperInterface" alias="symfonycasts.reset_password.helper"/>
     <service id="SymfonyCasts\Bundle\VerifyEmail\VerifyEmailHelperInterface" alias="symfonycasts.verify_email.helper"/>
+    <service id="Pagerfanta\RouteGenerator\RouteGeneratorFactoryInterface" alias="pagerfanta.route_generator_factory"/>
+    <service id="Pagerfanta\View\ViewFactoryInterface" alias="pagerfanta.view_factory"/>
+    <service id="Knp\Component\Pager\PaginatorInterface" alias="knp_paginator"/>
+    <service id="Knp\Component\Pager\ArgumentAccess\ArgumentAccessInterface" alias="Knp\Component\Pager\ArgumentAccess\RequestArgumentAccess"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.7nzbL4K" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.rbu7CBf"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.vCVG291"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.KLVvNIq"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -9137,9 +9452,10 @@
     <service id=".service_locator.o.uf2zi" alias=".service_locator.7nzbL4K"/>
     <service id=".service_locator.NpC9d8W" alias=".service_locator.OF7Jmdt"/>
     <service id=".service_locator.lvDlQJw" alias=".service_locator.Yez7eur"/>
-    <service id=".service_locator.3vR_00U" alias=".service_locator.sqP2VXt"/>
+    <service id=".service_locator...Krx9S" alias=".service_locator.9IOAPHb"/>
     <service id=".service_locator.tbXBHS3" alias=".service_locator.uW_PT3G"/>
-    <service id=".service_locator.d.zUrcD" alias=".service_locator.rbu7CBf"/>
+    <service id=".service_locator.3vR_00U" alias=".service_locator.sqP2VXt"/>
+    <service id=".service_locator.VaOwjLB" alias=".service_locator.vCVG291"/>
     <service id=".service_locator.9XMoc9I" alias=".service_locator.kzegaci"/>
     <service id=".service_locator.iLdOcke" alias=".service_locator.g_LbM0a"/>
     <service id=".service_locator.S4NeKah" alias=".service_locator.pbTY4jS"/>
@@ -9157,6 +9473,7 @@
     <service id="twig.error_renderer.html.inner" alias="error_handler.error_renderer.html"/>
     <service id="security.access.decision_manager" alias="debug.security.access.decision_manager"/>
     <service id="security.firewall.authenticator.main" alias="debug.security.firewall.authenticator.main"/>
+    <service id="pagerfanta.serializer.normalizer" alias="debug.pagerfanta.serializer.normalizer"/>
     <service id="serializer.normalizer.constraint_violation_list" alias="debug.serializer.normalizer.constraint_violation_list"/>
     <service id="serializer.normalizer.mime_message" alias="debug.serializer.normalizer.mime_message"/>
     <service id="serializer.normalizer.datetimezone" alias="debug.serializer.normalizer.datetimezone"/>
@@ -9172,6 +9489,7 @@
     <service id="serializer.denormalizer.array" alias="debug.serializer.denormalizer.array"/>
     <service id="serializer.normalizer.backed_enum" alias="debug.serializer.normalizer.backed_enum"/>
     <service id="serializer.normalizer.flatten_exception" alias="debug.serializer.normalizer.flatten_exception"/>
+    <service id="debug.pagerfanta.serializer.normalizer.inner" alias="pagerfanta.serializer.normalizer.legacy"/>
     <service id="serializer.encoder.xml" alias="debug.serializer.encoder.xml"/>
     <service id="serializer.encoder.json" alias="debug.serializer.encoder.json"/>
     <service id="serializer.encoder.yaml" alias="debug.serializer.encoder.yaml"/>
@@ -9193,15 +9511,17 @@
     <service id=".service_locator.Oxdc.mM" alias=".service_locator.MhYHKki"/>
     <service id=".service_locator.qs3AR7D" alias=".service_locator.12XOZIl"/>
     <service id=".service_locator.J4v_dgx" alias=".service_locator.fNvIwJr"/>
+    <service id=".service_locator.9e2t_lq" alias=".service_locator.CsMkqUa"/>
     <service id=".service_locator.ostNlSn" alias=".service_locator.EE0.cm9"/>
     <service id=".service_locator.uPguXMt" alias=".service_locator.Z9ydiC1"/>
     <service id=".service_locator.j1CJ.hu" alias=".service_locator.s9WD7FO"/>
     <service id=".service_locator.0ZP8ySE" alias=".service_locator.OF7Jmdt"/>
     <service id=".service_locator.iYddTw8" alias=".service_locator.Yez7eur"/>
-    <service id=".service_locator.E7TgsVa" alias=".service_locator.sqP2VXt"/>
+    <service id=".service_locator.jLxQ2i4" alias=".service_locator.9IOAPHb"/>
     <service id=".service_locator.6k5RJBU" alias=".service_locator.V71r_w4"/>
     <service id=".service_locator.RDNubbr" alias=".service_locator.uJI3b0P"/>
     <service id=".service_locator.tIis6rB" alias=".service_locator.uW_PT3G"/>
+    <service id=".service_locator.E7TgsVa" alias=".service_locator.sqP2VXt"/>
     <service id=".service_locator.Ge1gY6v" alias=".service_locator.ZdHc.KM"/>
     <service id=".service_locator.E0TVHno" alias=".service_locator.wrGrPsA"/>
     <service id=".service_locator.Kyflpr1" alias=".service_locator.CshazM0"/>

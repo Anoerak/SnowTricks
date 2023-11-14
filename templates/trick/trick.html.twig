@@ -2,9 +2,14 @@
 
 {% block title %}
 	{{ trick.name }}
+	- Category:
+	{{ trick.category }}
 {% endblock %}
 
 {% block body %}
+	{% block delete_modal %}
+		{% include "components/modals/delete_trick_confirmation.html.twig" %}
+	{% endblock %}
 	{# We display all the details about the trick #}
 	<section id="trick_details" class="container">
 		<div class="title__container">
@@ -15,7 +20,7 @@
 					<a href="{{ path('app_trick_edit', { slug: trick.slug }) }}" class="button edit">
 						<i class="fa-solid fa-pencil"></i>
 					</a>
-					<a href="{{ path('app_trick_delete', {'slug': trick.slug}) }}" class="button delete delete_trick_button">
+					<a id="{{trick.slug}}" class="button delete delete_trick_button">
 						<i class="fa-regular fa-trash-can"></i>
 					</a>
 				</div>
@@ -36,7 +41,7 @@
 		</div>
 		{# We add a category tag #}
 		<div class="trick__category">
-			<a href="{{ path('app_trick_category', {category: trick.category}) }}" class="trick__category__tag">
+			<a href="{{ path('app_trick_category', { 'slug': trick.category, }) }}" class="trick__category__tag">
 				{{ trick.category }}
 			</a>
 			{# We add tha date of creation #}
@@ -95,11 +100,13 @@
 							</div>
 						</div>
 					</div>
+
 					<div class="trick__comments__comment__content">
 						{{ comment.comment }}
 					</div>
 				</div>
 			{% endfor %}
+			{{ knp_pagination_render(comments) }}
 		</div>
 	</section>
 {% endblock %}

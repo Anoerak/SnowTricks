@@ -1,7 +1,8 @@
 {% extends "base.html.twig" %}
 
 {% block title %}
-	Category - {{ category }}
+	Category -
+	{{ category }}
 {% endblock %}
 
 {% block body %}
@@ -12,7 +13,7 @@
 		<h2 class="title">Category
 			{{ category }}</h2>
 		<div class="trick__category">
-			<a href="{{ path('app_trick_category', {category: category}) }}" class="trick__category__tag">
+			<a href="{{ path('app_trick_category', { 'slug': category }) }}" class="trick__category__tag">
 				{{ category }}
 			</a>
 		</div>
@@ -32,11 +33,11 @@
 						</p>
 						<div class="trick__bottom">
 							{% if not app.user %}
-								<a href="{{ path('app_trick', { id: trick.id }) }}" class="read__more">Read more</a>
+								<a href="{{ path('app_trick', { slug: trick.id }) }}" class="read__more">Read more</a>
 							{% else %}
-								<a href="{{ path('app_trick', { id: trick.id }) }}" class="read__more">Read more</a>
+								<a href="{{ path('app_trick', { slug: trick.id }) }}" class="read__more">Read more</a>
 								<div class="trick__commands">
-									<a href="{{ path('app_trick_edit', { id: trick.id }) }}" class="button edit">
+									<a href="{{ path('app_trick_edit', { slug: trick.id }) }}" class="button edit">
 										<i class="fa-solid fa-pencil"></i>
 									</a>
 									<a id="{{ trick.id }}" class="button delete delete_trick_button">

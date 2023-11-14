@@ -69,7 +69,7 @@ if (headTitle.includes('Home')) {
 
 \t// We query for more tricks
 \tfunction getMoreTricks(lastTrickIndex) {
-\t\tlet url = 'https://127.0.0.1:8000/load-more-tricks/' + lastTrickIndex + '/' + getTricksCount();
+\t\tlet url = 'https://localhost:8000/load-more-tricks/' + lastTrickIndex + '/' + getTricksCount();
 \t\tconsole.log(url);
 \t\tfetch(url)
 \t\t\t.then(function (response) {
@@ -147,7 +147,7 @@ if (headTitle.includes('Home')) {
 
 \t// We query for more tricks
 \tfunction getMoreTricks(lastTrickIndex) {
-\t\tlet url = 'https://127.0.0.1:8000/load-more-tricks/' + lastTrickIndex + '/' + getTricksCount();
+\t\tlet url = 'https://localhost:8000/load-more-tricks/' + lastTrickIndex + '/' + getTricksCount();
 \t\tconsole.log(url);
 \t\tfetch(url)
 \t\t\t.then(function (response) {

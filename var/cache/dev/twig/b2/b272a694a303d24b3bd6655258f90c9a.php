@@ -47,10 +47,12 @@ class __TwigTemplate_0760849bb24e0cd8db4210cae2edce5e extends Template
 .container {
 \tmax-width: 1440px;
 \tposition: relative;
+
 \tmargin: {
 \t\tleft: 2rem;
 \t\tright: 2rem;
 \t}
+
 \tpadding: {
 \t\tleft: 15px;
 \t\tright: 15px;
@@ -64,14 +66,16 @@ class __TwigTemplate_0760849bb24e0cd8db4210cae2edce5e extends Template
 */
 
 .navbar,
-.navbar > .container {
+.navbar>.container {
 \twidth: 100%;
 \tdisplay: flex;
 \tflex-wrap: wrap;
 \talign-items: center;
 \tjustify-content: space-between;
+
 \t@media (max-width: 768px) {
-\t\tdisplay: block;
+\t\tdisplay: flex;
+\t\tmargin: 0;
 \t}
 }
 
@@ -85,12 +89,15 @@ class __TwigTemplate_0760849bb24e0cd8db4210cae2edce5e extends Template
 \t\t@media (min-width: 576px) {
 \t\t\tmax-width: 540px;
 \t\t}
+
 \t\t@media (min-width: 768px) {
 \t\t\tmax-width: 720px;
 \t\t}
+
 \t\t@media (min-width: 992px) {
 \t\t\tmax-width: 960px;
 \t\t}
+
 \t\t@media (min-width: 1200px) {
 \t\t\tmax-width: 1440px;
 \t\t}
@@ -132,12 +139,13 @@ class __TwigTemplate_0760849bb24e0cd8db4210cae2edce5e extends Template
 \t\t\t\tbackground-color: lighten(\$text-dark, 35%);
 \t\t\t\tdisplay: block;
 \t\t\t}
+
 \t\t\tspan:not(:last-child) {
 \t\t\t\tmargin-bottom: 0.2rem;
 \t\t\t}
 \t\t}
 
-\t\t> a {
+\t\t>a {
 \t\t\tfont-weight: 500;
 \t\t\tcolor: \$text-dark;
 \t\t}
@@ -172,13 +180,16 @@ class __TwigTemplate_0760849bb24e0cd8db4210cae2edce5e extends Template
 \t\t\tpadding-left: 0;
 \t\t\tmargin-bottom: 0;
 \t\t\tlist-style: none;
+
 \t\t\t.dropdown {
 \t\t\t\tposition: relative;
+
 \t\t\t\t&:hover {
 \t\t\t\t\t.dropdown-menu {
 \t\t\t\t\t\tdisplay: block;
 \t\t\t\t\t}
 \t\t\t\t}
+
 \t\t\t\t.dropdown-menu {
 \t\t\t\t\tposition: absolute;
 \t\t\t\t\ttop: 70%;
@@ -197,17 +208,21 @@ class __TwigTemplate_0760849bb24e0cd8db4210cae2edce5e extends Template
 \t\t\t\t\tborder: 1px solid \$navbar-dropdown-separator-color;
 \t\t\t\t\tborder-radius: \$navbar-dropdown-radius;
 \t\t\t\t\tbox-shadow: \$navbar-dropdown-shadow;
+
 \t\t\t\t\tli {
 \t\t\t\t\t\tdisplay: block;
+
 \t\t\t\t\t\t&:not(:last-child) {
 \t\t\t\t\t\t\tborder-bottom: 1px solid \$navbar-dropdown-separator-color;
 \t\t\t\t\t\t}
+
 \t\t\t\t\t\t&.active {
-\t\t\t\t\t\t\t> a {
+\t\t\t\t\t\t\t>a {
 \t\t\t\t\t\t\t\tcolor: \$blue;
 \t\t\t\t\t\t\t}
 \t\t\t\t\t\t}
-\t\t\t\t\t\t> a {
+
+\t\t\t\t\t\t>a {
 \t\t\t\t\t\t\tdisplay: block;
 \t\t\t\t\t\t\tpadding: \$navbar-dropdown-item-padding-y \$navbar-dropdown-item-padding-x;
 \t\t\t\t\t\t\tclear: both;
@@ -217,6 +232,7 @@ class __TwigTemplate_0760849bb24e0cd8db4210cae2edce5e extends Template
 \t\t\t\t\t\t\twhite-space: nowrap;
 \t\t\t\t\t\t\tbackground-color: transparent;
 \t\t\t\t\t\t\tborder: 0;
+
 \t\t\t\t\t\t\t&:hover {
 \t\t\t\t\t\t\t\tbackground-color: \$blue;
 \t\t\t\t\t\t\t\tcolor: \$white;
@@ -233,42 +249,49 @@ class __TwigTemplate_0760849bb24e0cd8db4210cae2edce5e extends Template
 \t\t\t\tmargin-top: 1rem;
 \t\t\t}
 
-\t\t\t> li {
+\t\t\t>li {
 \t\t\t\t&.signup {
 \t\t\t\t\ta {
 \t\t\t\t\t\tborder-radius: 0.25rem;
 \t\t\t\t\t\tbackground-color: \$light-blue;
 \t\t\t\t\t\tcolor: \$white;
+
 \t\t\t\t\t\t&:hover {
 \t\t\t\t\t\t\tbackground-color: \$extra-light-blue;
 \t\t\t\t\t\t\tcolor: \$blue;
 \t\t\t\t\t\t}
 \t\t\t\t\t}
 \t\t\t\t}
-\t\t\t\t> a {
+
+\t\t\t\t>a {
 \t\t\t\t\tcolor: \$text-dark;
 \t\t\t\t\ttext-decoration: none;
 \t\t\t\t\tdisplay: inline-block;
 \t\t\t\t\tborder-radius: 0.25rem;
 \t\t\t\t\tpadding: \$navbar-link-padding-y \$navbar-link-padding-x;
 \t\t\t\t\ttransition: all 0.25s ease-in-out;
+
 \t\t\t\t\t&:hover {
 \t\t\t\t\t\tbackground-color: \$blue;
 \t\t\t\t\t\tcolor: \$white;
 \t\t\t\t\t}
+
 \t\t\t\t\t@media (max-width: 768px) {
 \t\t\t\t\t\tborder-bottom: 1px solid \$border-color;
 \t\t\t\t\t}
 \t\t\t\t}
+
 \t\t\t\t&.active {
-\t\t\t\t\t> a.signup {
+\t\t\t\t\t>a.signup {
 \t\t\t\t\t\tborder-radius: 0.25rem;
 \t\t\t\t\t}
-\t\t\t\t\t> a {
+
+\t\t\t\t\t>a {
 \t\t\t\t\t\tcolor: \$blue;
 \t\t\t\t\t\t// We reduce the length of the border to make it look like a line
 \t\t\t\t\t\tborder-bottom: 2px solid \$blue;
 \t\t\t\t\t\tborder-radius: 0;
+
 \t\t\t\t\t\t&:hover {
 \t\t\t\t\t\t\tcolor: \$white;
 \t\t\t\t\t\t\tborder-radius: 0.25rem;
@@ -293,10 +316,12 @@ class __TwigTemplate_0760849bb24e0cd8db4210cae2edce5e extends Template
 \t\t\t\t\tz-index: 99999;
 \t\t\t\t\tborder-radius: \$navbar-dropdown-radius;
 \t\t\t\t\tdisplay: none;
+
 \t\t\t\t\t@media (max-width: 768px) {
 \t\t\t\t\t\tposition: relative;
 \t\t\t\t\t\tbox-shadow: none;
 \t\t\t\t\t}
+
 \t\t\t\t\tli {
 \t\t\t\t\t\ta {
 \t\t\t\t\t\t\tcolor: \$text-dark;
@@ -304,19 +329,22 @@ class __TwigTemplate_0760849bb24e0cd8db4210cae2edce5e extends Template
 \t\t\t\t\t\t\tdisplay: block;
 \t\t\t\t\t\t}
 \t\t\t\t\t}
+
 \t\t\t\t\t&.show {
 \t\t\t\t\t\tdisplay: block !important;
 \t\t\t\t\t}
 \t\t\t\t}
 \t\t\t}
 
-\t\t\t.dropdown > .separator {
+\t\t\t.dropdown>.separator {
 \t\t\t\theight: 1px;
 \t\t\t\twidth: 100%;
+
 \t\t\t\tmargin: {
 \t\t\t\t\ttop: \$navbar-dropdown-separator-margin-y;
 \t\t\t\t\tbottom: \$navbar-dropdown-separator-margin-y;
 \t\t\t\t}
+
 \t\t\t\tbackground-color: \$navbar-dropdown-separator-color;
 \t\t\t}
 \t\t}
@@ -332,17 +360,19 @@ class __TwigTemplate_0760849bb24e0cd8db4210cae2edce5e extends Template
 \t| Custom
 \t|-----------------------------------
 */
-.navbar .navbar-header > a span {
+.navbar .navbar-header>a span {
 \tcolor: \$base-color;
 }
 
 .navbar .navbar-header svg {
 \twidth: 150px;
 \theight: 150px;
+
 \t@media (max-width: 768px) {
 \t\twidth: 100px;
 \t\theight: 100px;
 \t}
+
 \tborder-radius: 100%;
 }
 ";
@@ -373,10 +403,12 @@ class __TwigTemplate_0760849bb24e0cd8db4210cae2edce5e extends Template
 .container {
 \tmax-width: 1440px;
 \tposition: relative;
+
 \tmargin: {
 \t\tleft: 2rem;
 \t\tright: 2rem;
 \t}
+
 \tpadding: {
 \t\tleft: 15px;
 \t\tright: 15px;
@@ -390,14 +422,16 @@ class __TwigTemplate_0760849bb24e0cd8db4210cae2edce5e extends Template
 */
 
 .navbar,
-.navbar > .container {
+.navbar>.container {
 \twidth: 100%;
 \tdisplay: flex;
 \tflex-wrap: wrap;
 \talign-items: center;
 \tjustify-content: space-between;
+
 \t@media (max-width: 768px) {
-\t\tdisplay: block;
+\t\tdisplay: flex;
+\t\tmargin: 0;
 \t}
 }
 
@@ -411,12 +445,15 @@ class __TwigTemplate_0760849bb24e0cd8db4210cae2edce5e extends Template
 \t\t@media (min-width: 576px) {
 \t\t\tmax-width: 540px;
 \t\t}
+
 \t\t@media (min-width: 768px) {
 \t\t\tmax-width: 720px;
 \t\t}
+
 \t\t@media (min-width: 992px) {
 \t\t\tmax-width: 960px;
 \t\t}
+
 \t\t@media (min-width: 1200px) {
 \t\t\tmax-width: 1440px;
 \t\t}
@@ -458,12 +495,13 @@ class __TwigTemplate_0760849bb24e0cd8db4210cae2edce5e extends Template
 \t\t\t\tbackground-color: lighten(\$text-dark, 35%);
 \t\t\t\tdisplay: block;
 \t\t\t}
+
 \t\t\tspan:not(:last-child) {
 \t\t\t\tmargin-bottom: 0.2rem;
 \t\t\t}
 \t\t}
 
-\t\t> a {
+\t\t>a {
 \t\t\tfont-weight: 500;
 \t\t\tcolor: \$text-dark;
 \t\t}
@@ -498,13 +536,16 @@ class __TwigTemplate_0760849bb24e0cd8db4210cae2edce5e extends Template
 \t\t\tpadding-left: 0;
 \t\t\tmargin-bottom: 0;
 \t\t\tlist-style: none;
+
 \t\t\t.dropdown {
 \t\t\t\tposition: relative;
+
 \t\t\t\t&:hover {
 \t\t\t\t\t.dropdown-menu {
 \t\t\t\t\t\tdisplay: block;
 \t\t\t\t\t}
 \t\t\t\t}
+
 \t\t\t\t.dropdown-menu {
 \t\t\t\t\tposition: absolute;
 \t\t\t\t\ttop: 70%;
@@ -523,17 +564,21 @@ class __TwigTemplate_0760849bb24e0cd8db4210cae2edce5e extends Template
 \t\t\t\t\tborder: 1px solid \$navbar-dropdown-separator-color;
 \t\t\t\t\tborder-radius: \$navbar-dropdown-radius;
 \t\t\t\t\tbox-shadow: \$navbar-dropdown-shadow;
+
 \t\t\t\t\tli {
 \t\t\t\t\t\tdisplay: block;
+
 \t\t\t\t\t\t&:not(:last-child) {
 \t\t\t\t\t\t\tborder-bottom: 1px solid \$navbar-dropdown-separator-color;
 \t\t\t\t\t\t}
+
 \t\t\t\t\t\t&.active {
-\t\t\t\t\t\t\t> a {
+\t\t\t\t\t\t\t>a {
 \t\t\t\t\t\t\t\tcolor: \$blue;
 \t\t\t\t\t\t\t}
 \t\t\t\t\t\t}
-\t\t\t\t\t\t> a {
+
+\t\t\t\t\t\t>a {
 \t\t\t\t\t\t\tdisplay: block;
 \t\t\t\t\t\t\tpadding: \$navbar-dropdown-item-padding-y \$navbar-dropdown-item-padding-x;
 \t\t\t\t\t\t\tclear: both;
@@ -543,6 +588,7 @@ class __TwigTemplate_0760849bb24e0cd8db4210cae2edce5e extends Template
 \t\t\t\t\t\t\twhite-space: nowrap;
 \t\t\t\t\t\t\tbackground-color: transparent;
 \t\t\t\t\t\t\tborder: 0;
+
 \t\t\t\t\t\t\t&:hover {
 \t\t\t\t\t\t\t\tbackground-color: \$blue;
 \t\t\t\t\t\t\t\tcolor: \$white;
@@ -559,42 +605,49 @@ class __TwigTemplate_0760849bb24e0cd8db4210cae2edce5e extends Template
 \t\t\t\tmargin-top: 1rem;
 \t\t\t}
 
-\t\t\t> li {
+\t\t\t>li {
 \t\t\t\t&.signup {
 \t\t\t\t\ta {
 \t\t\t\t\t\tborder-radius: 0.25rem;
 \t\t\t\t\t\tbackground-color: \$light-blue;
 \t\t\t\t\t\tcolor: \$white;
+
 \t\t\t\t\t\t&:hover {
 \t\t\t\t\t\t\tbackground-color: \$extra-light-blue;
 \t\t\t\t\t\t\tcolor: \$blue;
 \t\t\t\t\t\t}
 \t\t\t\t\t}
 \t\t\t\t}
-\t\t\t\t> a {
+
+\t\t\t\t>a {
 \t\t\t\t\tcolor: \$text-dark;
 \t\t\t\t\ttext-decoration: none;
 \t\t\t\t\tdisplay: inline-block;
 \t\t\t\t\tborder-radius: 0.25rem;
 \t\t\t\t\tpadding: \$navbar-link-padding-y \$navbar-link-padding-x;
 \t\t\t\t\ttransition: all 0.25s ease-in-out;
+
 \t\t\t\t\t&:hover {
 \t\t\t\t\t\tbackground-color: \$blue;
 \t\t\t\t\t\tcolor: \$white;
 \t\t\t\t\t}
+
 \t\t\t\t\t@media (max-width: 768px) {
 \t\t\t\t\t\tborder-bottom: 1px solid \$border-color;
 \t\t\t\t\t}
 \t\t\t\t}
+
 \t\t\t\t&.active {
-\t\t\t\t\t> a.signup {
+\t\t\t\t\t>a.signup {
 \t\t\t\t\t\tborder-radius: 0.25rem;
 \t\t\t\t\t}
-\t\t\t\t\t> a {
+
+\t\t\t\t\t>a {
 \t\t\t\t\t\tcolor: \$blue;
 \t\t\t\t\t\t// We reduce the length of the border to make it look like a line
 \t\t\t\t\t\tborder-bottom: 2px solid \$blue;
 \t\t\t\t\t\tborder-radius: 0;
+
 \t\t\t\t\t\t&:hover {
 \t\t\t\t\t\t\tcolor: \$white;
 \t\t\t\t\t\t\tborder-radius: 0.25rem;
@@ -619,10 +672,12 @@ class __TwigTemplate_0760849bb24e0cd8db4210cae2edce5e extends Template
 \t\t\t\t\tz-index: 99999;
 \t\t\t\t\tborder-radius: \$navbar-dropdown-radius;
 \t\t\t\t\tdisplay: none;
+
 \t\t\t\t\t@media (max-width: 768px) {
 \t\t\t\t\t\tposition: relative;
 \t\t\t\t\t\tbox-shadow: none;
 \t\t\t\t\t}
+
 \t\t\t\t\tli {
 \t\t\t\t\t\ta {
 \t\t\t\t\t\t\tcolor: \$text-dark;
@@ -630,19 +685,22 @@ class __TwigTemplate_0760849bb24e0cd8db4210cae2edce5e extends Template
 \t\t\t\t\t\t\tdisplay: block;
 \t\t\t\t\t\t}
 \t\t\t\t\t}
+
 \t\t\t\t\t&.show {
 \t\t\t\t\t\tdisplay: block !important;
 \t\t\t\t\t}
 \t\t\t\t}
 \t\t\t}
 
-\t\t\t.dropdown > .separator {
+\t\t\t.dropdown>.separator {
 \t\t\t\theight: 1px;
 \t\t\t\twidth: 100%;
+
 \t\t\t\tmargin: {
 \t\t\t\t\ttop: \$navbar-dropdown-separator-margin-y;
 \t\t\t\t\tbottom: \$navbar-dropdown-separator-margin-y;
 \t\t\t\t}
+
 \t\t\t\tbackground-color: \$navbar-dropdown-separator-color;
 \t\t\t}
 \t\t}
@@ -658,17 +716,19 @@ class __TwigTemplate_0760849bb24e0cd8db4210cae2edce5e extends Template
 \t| Custom
 \t|-----------------------------------
 */
-.navbar .navbar-header > a span {
+.navbar .navbar-header>a span {
 \tcolor: \$base-color;
 }
 
 .navbar .navbar-header svg {
 \twidth: 150px;
 \theight: 150px;
+
 \t@media (max-width: 768px) {
 \t\twidth: 100px;
 \t\theight: 100px;
 \t}
+
 \tborder-radius: 100%;
 }
 ", "components/header/_header.scss", "/Users/sebastien/Sebbe's Cloud/School/OpenClassRooms/3 - OCR - Développeur d'application - PHP & Symfony/Projet 6 (120h)/P6 - Mission/0 - Code/templates/components/header/_header.scss");

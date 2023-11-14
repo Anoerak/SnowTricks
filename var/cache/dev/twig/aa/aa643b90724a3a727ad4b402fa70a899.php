@@ -47,10 +47,12 @@ section#new_trick {
 \t\tdisplay: flex;
 \t\tflex-direction: column;
 \t\tgap: 1rem;
-\t\t> div {
+
+\t\t>div {
 \t\t\tdisplay: flex;
 \t\t\tflex-direction: column;
 \t\t\tgap: 1rem;
+
 \t\t\t#add-video-links {
 \t\t\t\tdisplay: flex;
 \t\t\t\tflex-direction: column;
@@ -58,8 +60,10 @@ section#new_trick {
 \t\t\t\tjustify-content: space-between;
 \t\t\t\tgap: 0.5rem;
 \t\t\t\tposition: relative;
-\t\t\t\t> div {
+
+\t\t\t\t>div {
 \t\t\t\t\twidth: 104%;
+
 \t\t\t\t\t.video__link__added {
 \t\t\t\t\t\twidth: 90%;
 \t\t\t\t\t}
@@ -78,40 +82,47 @@ section#new_trick {
 \t\t\t\t\tborder-radius: 5px;
 \t\t\t\t\ttransition: all 0.2s ease-in-out;
 \t\t\t\t\tcursor: pointer;
+
 \t\t\t\t\t&:hover {
 \t\t\t\t\t\tbackground-color: \$blue;
 \t\t\t\t\t\tcolor: \$white;
 \t\t\t\t\t}
 \t\t\t\t}
+
 \t\t\t\t.video__link__added__container {
 \t\t\t\t\tdisplay: flex;
 \t\t\t\t\talign-items: center;
 \t\t\t\t\tjustify-content: space-between;
-\t\t\t\t\t> input {
+
+\t\t\t\t\t>input {
 \t\t\t\t\t\tmargin: 0;
 \t\t\t\t\t}
+
 \t\t\t\t\t.remove__video__link__button {
 \t\t\t\t\t\twidth: 1.75rem;
 \t\t\t\t\t\theight: 1.75rem;
-\t\t\t\t\t\tbackground-color: \$cancel-button-red;
+\t\t\t\t\t\tbackground-color: \$cancel-button;
 \t\t\t\t\t\tborder: none;
 \t\t\t\t\t\toutline: none;
 \t\t\t\t\t\tborder-radius: 100%;
 \t\t\t\t\t\ttransition: all 0.2s ease-in-out;
 \t\t\t\t\t\tcursor: pointer;
+
 \t\t\t\t\t\t&:hover {
-\t\t\t\t\t\t\tbackground-color: \$cancel-button-red-hover;
+\t\t\t\t\t\t\tbackground-color: \$cancel-button-hover;
 \t\t\t\t\t\t\tcolor: \$white;
 \t\t\t\t\t\t}
 \t\t\t\t\t}
 \t\t\t\t}
 \t\t\t}
+
 \t\t\t.medias__gallery {
 \t\t\t\twidth: 100%;
 \t\t\t\ttransition: 0.3s ease;
 \t\t\t\tpadding: 0.5rem;
 \t\t\t\tdisplay: flex;
 \t\t\t\tgap: 25px;
+
 \t\t\t\t.media {
 \t\t\t\t\tposition: relative;
 \t\t\t\t\twidth: 80px;
@@ -120,11 +131,13 @@ section#new_trick {
 \t\t\t\t\toverflow: visible;
 \t\t\t\t\tborder-radius: 5px;
 \t\t\t\t\ttransition: 0.2s ease;
+
 \t\t\t\t\t&:hover {
 \t\t\t\t\t\tbox-shadow: rgba(246, 128, 128, 0.25) 0px 13px 27px -5px,
 \t\t\t\t\t\t\trgba(246, 161, 161, 0.3) 0px 8px 16px -8px;
 \t\t\t\t\t\ttransform: translateY(-5px);
 \t\t\t\t\t}
+
 \t\t\t\t\timg,
 \t\t\t\t\tvideo {
 \t\t\t\t\t\twidth: 100%;
@@ -132,6 +145,7 @@ section#new_trick {
 \t\t\t\t\t\tborder-radius: 5px;
 \t\t\t\t\t\tobject-fit: cover;
 \t\t\t\t\t}
+
 \t\t\t\t\t.remove__media {
 \t\t\t\t\t\tposition: absolute;
 \t\t\t\t\t\ttop: -10px;
@@ -142,6 +156,7 @@ section#new_trick {
 \t\t\t\t\t\tpadding: 0.25rem 0.5rem;
 \t\t\t\t\t\ttransition: 0.2s ease;
 \t\t\t\t\t\tfont-weight: 500;
+
 \t\t\t\t\t\t&:hover {
 \t\t\t\t\t\t\tbackground-color: rgba(255, 0, 0, 0.8);
 \t\t\t\t\t\t}
@@ -179,10 +194,12 @@ section#new_trick {
 \t\tdisplay: flex;
 \t\tflex-direction: column;
 \t\tgap: 1rem;
-\t\t> div {
+
+\t\t>div {
 \t\t\tdisplay: flex;
 \t\t\tflex-direction: column;
 \t\t\tgap: 1rem;
+
 \t\t\t#add-video-links {
 \t\t\t\tdisplay: flex;
 \t\t\t\tflex-direction: column;
@@ -190,8 +207,10 @@ section#new_trick {
 \t\t\t\tjustify-content: space-between;
 \t\t\t\tgap: 0.5rem;
 \t\t\t\tposition: relative;
-\t\t\t\t> div {
+
+\t\t\t\t>div {
 \t\t\t\t\twidth: 104%;
+
 \t\t\t\t\t.video__link__added {
 \t\t\t\t\t\twidth: 90%;
 \t\t\t\t\t}
@@ -210,40 +229,47 @@ section#new_trick {
 \t\t\t\t\tborder-radius: 5px;
 \t\t\t\t\ttransition: all 0.2s ease-in-out;
 \t\t\t\t\tcursor: pointer;
+
 \t\t\t\t\t&:hover {
 \t\t\t\t\t\tbackground-color: \$blue;
 \t\t\t\t\t\tcolor: \$white;
 \t\t\t\t\t}
 \t\t\t\t}
+
 \t\t\t\t.video__link__added__container {
 \t\t\t\t\tdisplay: flex;
 \t\t\t\t\talign-items: center;
 \t\t\t\t\tjustify-content: space-between;
-\t\t\t\t\t> input {
+
+\t\t\t\t\t>input {
 \t\t\t\t\t\tmargin: 0;
 \t\t\t\t\t}
+
 \t\t\t\t\t.remove__video__link__button {
 \t\t\t\t\t\twidth: 1.75rem;
 \t\t\t\t\t\theight: 1.75rem;
-\t\t\t\t\t\tbackground-color: \$cancel-button-red;
+\t\t\t\t\t\tbackground-color: \$cancel-button;
 \t\t\t\t\t\tborder: none;
 \t\t\t\t\t\toutline: none;
 \t\t\t\t\t\tborder-radius: 100%;
 \t\t\t\t\t\ttransition: all 0.2s ease-in-out;
 \t\t\t\t\t\tcursor: pointer;
+
 \t\t\t\t\t\t&:hover {
-\t\t\t\t\t\t\tbackground-color: \$cancel-button-red-hover;
+\t\t\t\t\t\t\tbackground-color: \$cancel-button-hover;
 \t\t\t\t\t\t\tcolor: \$white;
 \t\t\t\t\t\t}
 \t\t\t\t\t}
 \t\t\t\t}
 \t\t\t}
+
 \t\t\t.medias__gallery {
 \t\t\t\twidth: 100%;
 \t\t\t\ttransition: 0.3s ease;
 \t\t\t\tpadding: 0.5rem;
 \t\t\t\tdisplay: flex;
 \t\t\t\tgap: 25px;
+
 \t\t\t\t.media {
 \t\t\t\t\tposition: relative;
 \t\t\t\t\twidth: 80px;
@@ -252,11 +278,13 @@ section#new_trick {
 \t\t\t\t\toverflow: visible;
 \t\t\t\t\tborder-radius: 5px;
 \t\t\t\t\ttransition: 0.2s ease;
+
 \t\t\t\t\t&:hover {
 \t\t\t\t\t\tbox-shadow: rgba(246, 128, 128, 0.25) 0px 13px 27px -5px,
 \t\t\t\t\t\t\trgba(246, 161, 161, 0.3) 0px 8px 16px -8px;
 \t\t\t\t\t\ttransform: translateY(-5px);
 \t\t\t\t\t}
+
 \t\t\t\t\timg,
 \t\t\t\t\tvideo {
 \t\t\t\t\t\twidth: 100%;
@@ -264,6 +292,7 @@ section#new_trick {
 \t\t\t\t\t\tborder-radius: 5px;
 \t\t\t\t\t\tobject-fit: cover;
 \t\t\t\t\t}
+
 \t\t\t\t\t.remove__media {
 \t\t\t\t\t\tposition: absolute;
 \t\t\t\t\t\ttop: -10px;
@@ -274,6 +303,7 @@ section#new_trick {
 \t\t\t\t\t\tpadding: 0.25rem 0.5rem;
 \t\t\t\t\t\ttransition: 0.2s ease;
 \t\t\t\t\t\tfont-weight: 500;
+
 \t\t\t\t\t\t&:hover {
 \t\t\t\t\t\t\tbackground-color: rgba(255, 0, 0, 0.8);
 \t\t\t\t\t\t}

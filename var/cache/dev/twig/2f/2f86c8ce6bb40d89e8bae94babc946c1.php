@@ -40,7 +40,9 @@ class __TwigTemplate_fd78fec725b3ef2ec2d06b77ae9ca06c extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "components/carousel/_carousel.scss"));
 
         // line 1
-        echo ".carousel__container {
+        echo "@import './carousel_responsive.scss';
+
+.carousel__container {
 \tmax-width: 720px;
 \theight: fit-content;
 \tmargin: auto;
@@ -49,6 +51,7 @@ class __TwigTemplate_fd78fec725b3ef2ec2d06b77ae9ca06c extends Template
 \tflex-direction: column;
 \talign-items: center;
 \tgap: 15px;
+
 \t.display {
 \t\twidth: 100%;
 \t\tpadding: 0.5rem;
@@ -68,6 +71,7 @@ class __TwigTemplate_fd78fec725b3ef2ec2d06b77ae9ca06c extends Template
 \t\t\toverflow: hidden;
 \t\t}
 \t}
+
 \t.img-select-container {
 \t\twidth: 100%;
 \t\tpadding: 1rem;
@@ -75,6 +79,7 @@ class __TwigTemplate_fd78fec725b3ef2ec2d06b77ae9ca06c extends Template
 \t\tdisplay: flex;
 \t\tjustify-content: center;
 \t\toverflow: hidden;
+
 \t\t.img-container {
 \t\t\twidth: 100%;
 
@@ -85,6 +90,7 @@ class __TwigTemplate_fd78fec725b3ef2ec2d06b77ae9ca06c extends Template
 \t\t\tdisplay: flex;
 
 \t\t\tgap: 25px;
+
 \t\t\t.img {
 \t\t\t\twidth: 80px;
 \t\t\t\tflex-shrink: 0;
@@ -92,10 +98,12 @@ class __TwigTemplate_fd78fec725b3ef2ec2d06b77ae9ca06c extends Template
 \t\t\t\toverflow: hidden;
 \t\t\t\tborder-radius: 5px;
 \t\t\t\ttransition: 0.2s ease;
+
 \t\t\t\t&:hover {
 \t\t\t\t\tbox-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 \t\t\t\t\ttransform: translateY(-5px);
 \t\t\t\t}
+
 \t\t\t\timg {
 \t\t\t\t\twidth: 100%;
 \t\t\t\t\theight: 100%;
@@ -105,6 +113,7 @@ class __TwigTemplate_fd78fec725b3ef2ec2d06b77ae9ca06c extends Template
 \t\t}
 \t}
 }
+
 .buttons {
 \tdisplay: flex;
 
@@ -112,6 +121,7 @@ class __TwigTemplate_fd78fec725b3ef2ec2d06b77ae9ca06c extends Template
 \tjustify-content: center;
 \tpadding: 0.5rem;
 \tgap: 15%;
+
 \tbutton {
 \t\twidth: 48px;
 \t\theight: 48px;
@@ -129,6 +139,7 @@ class __TwigTemplate_fd78fec725b3ef2ec2d06b77ae9ca06c extends Template
 \tfrom {
 \t\topacity: 0;
 \t}
+
 \tto {
 \t\topacity: 100%;
 \t}
@@ -154,7 +165,9 @@ class __TwigTemplate_fd78fec725b3ef2ec2d06b77ae9ca06c extends Template
 
     public function getSourceContext()
     {
-        return new Source(".carousel__container {
+        return new Source("@import './carousel_responsive.scss';
+
+.carousel__container {
 \tmax-width: 720px;
 \theight: fit-content;
 \tmargin: auto;
@@ -163,6 +176,7 @@ class __TwigTemplate_fd78fec725b3ef2ec2d06b77ae9ca06c extends Template
 \tflex-direction: column;
 \talign-items: center;
 \tgap: 15px;
+
 \t.display {
 \t\twidth: 100%;
 \t\tpadding: 0.5rem;
@@ -182,6 +196,7 @@ class __TwigTemplate_fd78fec725b3ef2ec2d06b77ae9ca06c extends Template
 \t\t\toverflow: hidden;
 \t\t}
 \t}
+
 \t.img-select-container {
 \t\twidth: 100%;
 \t\tpadding: 1rem;
@@ -189,6 +204,7 @@ class __TwigTemplate_fd78fec725b3ef2ec2d06b77ae9ca06c extends Template
 \t\tdisplay: flex;
 \t\tjustify-content: center;
 \t\toverflow: hidden;
+
 \t\t.img-container {
 \t\t\twidth: 100%;
 
@@ -199,6 +215,7 @@ class __TwigTemplate_fd78fec725b3ef2ec2d06b77ae9ca06c extends Template
 \t\t\tdisplay: flex;
 
 \t\t\tgap: 25px;
+
 \t\t\t.img {
 \t\t\t\twidth: 80px;
 \t\t\t\tflex-shrink: 0;
@@ -206,10 +223,12 @@ class __TwigTemplate_fd78fec725b3ef2ec2d06b77ae9ca06c extends Template
 \t\t\t\toverflow: hidden;
 \t\t\t\tborder-radius: 5px;
 \t\t\t\ttransition: 0.2s ease;
+
 \t\t\t\t&:hover {
 \t\t\t\t\tbox-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 \t\t\t\t\ttransform: translateY(-5px);
 \t\t\t\t}
+
 \t\t\t\timg {
 \t\t\t\t\twidth: 100%;
 \t\t\t\t\theight: 100%;
@@ -219,6 +238,7 @@ class __TwigTemplate_fd78fec725b3ef2ec2d06b77ae9ca06c extends Template
 \t\t}
 \t}
 }
+
 .buttons {
 \tdisplay: flex;
 
@@ -226,6 +246,7 @@ class __TwigTemplate_fd78fec725b3ef2ec2d06b77ae9ca06c extends Template
 \tjustify-content: center;
 \tpadding: 0.5rem;
 \tgap: 15%;
+
 \tbutton {
 \t\twidth: 48px;
 \t\theight: 48px;
@@ -243,6 +264,7 @@ class __TwigTemplate_fd78fec725b3ef2ec2d06b77ae9ca06c extends Template
 \tfrom {
 \t\topacity: 0;
 \t}
+
 \tto {
 \t\topacity: 100%;
 \t}

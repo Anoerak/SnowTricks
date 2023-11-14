@@ -5,14 +5,15 @@ namespace App\Controller;
 use App\Form\UserProfileType;
 use App\Service\FileUploader;
 
-use Doctrine\ORM\EntityManagerInterface;
+use App\Controller\SigninController;
 
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 
 class ProfileController extends AbstractController
@@ -68,5 +69,27 @@ class ProfileController extends AbstractController
             'form' => $form->createView(),
             'user' => $user,
         ]);
+    }
+
+    #[Route('/profile/delete', name: 'app_profile_delete')]
+    public function deleteProfile(EntityManagerInterface $entityManager): Response
+    {
+        // We need to get the user, logout and delete the user
+        $user = $this->getUser();
+
+        // We delete the user
+        $entityManager->remove($user);
+        $entityManager->flush();
+        // refresh session
+        session_destroy();
+        // We logout the user
+        $signinController = new SigninController();
+        $signinController->logout();
+        // We send a flash message
+        $this->addFlash('success', 'Your account has been deleted.');
+        // We wait for 3 seconds
+        sleep(3);
+        // We redirect to the homepage
+        return $this->redirectToRoute('app_home');
     }
 }

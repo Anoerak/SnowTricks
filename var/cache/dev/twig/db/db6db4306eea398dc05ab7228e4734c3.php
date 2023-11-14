@@ -49,8 +49,9 @@ class __TwigTemplate_bf0b20af77e186f8078518e0e3bb5bc5 extends Template
 \t\tborder-radius: 5px;
 \t\ttext-align: center;
 \t\ttransition: all 0.3s ease-in-out;
+
 \t\t&:hover {
-\t\t\tbackground-color: \$cancel-button-red-hover;
+\t\t\tbackground-color: \$cancel-button-hover;
 \t\t}
 \t}
 }
@@ -84,8 +85,9 @@ class __TwigTemplate_bf0b20af77e186f8078518e0e3bb5bc5 extends Template
 \t\tborder-radius: 5px;
 \t\ttext-align: center;
 \t\ttransition: all 0.3s ease-in-out;
+
 \t\t&:hover {
-\t\t\tbackground-color: \$cancel-button-red-hover;
+\t\t\tbackground-color: \$cancel-button-hover;
 \t\t}
 \t}
 }
