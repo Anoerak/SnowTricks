@@ -119,8 +119,6 @@ class SignupController extends AbstractController
     {
         $user = $userRepository->findOneBy(['id' => $request->get('id')]);
 
-        dump($request->get('id'));
-
         if (null === $user) {
             throw $this->createNotFoundException('User not found.');
         }

@@ -9,10 +9,10 @@ use Symfony\Component\String\Slugger\SluggerInterface;
 class FileUploader
 {
 	public function __construct(
-		private $targetDirectory,
-		private $picturePath,
-		private $profilePictureTargetDirectory,
-		private $profilePicturePath,
+		private string $targetDirectory,
+		private string $picturePath,
+		private string $profilePictureTargetDirectory,
+		private string $profilePicturePath,
 		private SluggerInterface $slugger,
 	) {
 	}

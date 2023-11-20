@@ -329,7 +329,7 @@ class TrickController extends AbstractController
 
 
 	#[Route('/trick/{slug}/delete/media/{media_id}', name: 'app_trick_delete_media')]
-	public function deleteMedia(Trick $trick, $media_id, EntityManagerInterface $entityManagerInterface): Response
+	public function deleteMedia(Trick $trick, int $media_id, EntityManagerInterface $entityManagerInterface): Response
 	{
 		// we check if the user is connected and if he is the author of the trick or if he is an admin
 		if (!$this->getUser() || ($this->getUser() !== $trick->getUser() && !$this->isGranted('ROLE_ADMIN'))) {

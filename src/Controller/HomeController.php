@@ -27,7 +27,7 @@ class HomeController extends AbstractController
     }
 
     #[Route('/load-more-tricks/{lastTrickIndex}/{tricksMarker}', name: 'app_load_more_tricks')]
-    public function loadMoreTricks(TrickRepository $repo, $lastTrickIndex, $tricksMarker): Response
+    public function loadMoreTricks(TrickRepository $repo, int $lastTrickIndex, int $tricksMarker): Response
     {
         $tricksMarker = $tricksMarker < 4 ? $tricksMarker : 4;
         // We get the next 9 Tricks
