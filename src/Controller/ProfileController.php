@@ -72,7 +72,7 @@ class ProfileController extends AbstractController
     }
 
     #[Route('/profile/delete', name: 'app_profile_delete')]
-    public function deleteProfile(EntityManagerInterface $entityManager): Response
+    public function deleteProfile(EntityManagerInterface $entityManager, Request $request): Response
     {
         // We need to get the user, logout and delete the user
         $user = $this->getUser();
@@ -81,7 +81,8 @@ class ProfileController extends AbstractController
         $entityManager->remove($user);
         $entityManager->flush();
         // refresh session
-        session_destroy();
+        $session = $request->getSession();
+        $session->invalidate();
         // We logout the user
         $signinController = new SigninController();
         $signinController->logout();

@@ -1,8 +1,5 @@
 twig:
     default_path: '%kernel.project_dir%/templates'
-    # We define the default domain name url
-    globals:
-        domain_name: 'https://localhost:8000'
 
 when@test:
     twig:
