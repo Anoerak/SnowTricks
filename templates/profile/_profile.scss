@@ -1,9 +1,11 @@
 section#user_profile {
 	min-height: 50vh;
+
 	#form {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+
 		.user__profile__picture {
 			height: 100px;
 			width: 100px;
@@ -11,6 +13,7 @@ section#user_profile {
 			margin: 1rem;
 		}
 	}
+
 	#user_profile_profile_picture {
 		margin-bottom: 1rem;
 	}

@@ -7,6 +7,7 @@ section#trick_category {
 	height: 100%;
 	background-color: $white;
 	padding: 2rem 0;
+
 	.trick__category {
 		.trick__category__tag {
 			font-size: 0.8rem;
@@ -17,30 +18,32 @@ section#trick_category {
 			padding: 0.5rem 0.75rem;
 			border-radius: 1rem;
 			transition: all 0.2s ease-in-out;
+
 			&:hover {
 				color: $blue;
 				background-color: $extra-light-blue;
 				font-weight: 500;
 			}
 		}
+
 		margin-bottom: 1rem;
 	}
 
-	& > h1 {
+	&>h1 {
 		font-size: 2rem;
 		font-weight: 700;
 		color: $text-dark;
 		margin-bottom: 1rem;
 	}
 
-	& > p {
+	&>p {
 		font-size: 1.2rem;
 		font-weight: 400;
 		color: $text-dark;
 		margin-bottom: 1rem;
 	}
 
-	& > div#tricks {
+	&>div#tricks {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -50,7 +53,7 @@ section#trick_category {
 		background-color: $white;
 		padding: 2rem 0;
 
-		& > div.trick {
+		&>div.trick {
 			display: flex;
 			flex-direction: column;
 			align-items: center;
@@ -60,21 +63,21 @@ section#trick_category {
 			background-color: $white;
 			padding: 2rem 0;
 
-			& > h2 {
+			&>h2 {
 				font-size: 1.5rem;
 				font-weight: 700;
 				color: $text-dark;
 				margin-bottom: 1rem;
 			}
 
-			& > p {
+			&>p {
 				font-size: 1rem;
 				font-weight: 400;
 				color: $text-dark;
 				margin-bottom: 1rem;
 			}
 
-			& > a {
+			&>a {
 				font-size: 1rem;
 				font-weight: 400;
 				color: $text-dark;
