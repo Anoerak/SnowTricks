@@ -12,6 +12,7 @@ use App\Form\AddTrickType;
 use App\Form\EditTrickType;
 
 use App\Service\FileUploader;
+use App\Service\ServicesLibrary;
 use Doctrine\ORM\EntityManagerInterface;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -122,10 +123,8 @@ class TrickController extends AbstractController
                 | We take care of the main_picture
                 |-----------------------------------
             */
-			$mainPicture = $form->get('main_picture')->getData();
-			if (!empty($mainPicture)) {
-				$fileName = $fileUploader->upload($mainPicture, 'media');
-				$trick->setMainPicture($fileName);
+			if (!empty($form->get('main_picture')->getData())) {
+				ServicesLibrary::modifyMainPicture($trick, $form, $fileUploader);
 			} else {
 				$this->addFlash('danger', 'You must add a main picture');
 				return $this->redirectToRoute('app_trick_new');
@@ -136,44 +135,14 @@ class TrickController extends AbstractController
 			|-----------------------------------
 		    */
 			if (!empty($form->get('medias')->getData())) {
-				foreach ($form->get('medias')->getData() as $media) {
-					$fileName = $fileUploader->upload($media, 'media');
-					$media = new Media();
-					$media->setPath($fileName);
-					$media->setTrick($trick);
-					/*
-                        |-----------------------------------
-                        | We find the extension to set the type
-                        |-----------------------------------
-                    */
-					$extension = pathinfo($fileName, PATHINFO_EXTENSION);
-					if ($extension === 'mp4' || $extension === 'webm' || $extension === 'ogg') {
-						$media->setType('video');
-					} elseif ($extension === 'png' || $extension === 'jpg' || $extension === 'jpeg') {
-						$media->setType('picture');
-					} else {
-						throw new \Exception('The file extension is not supported');
-					}
-					$entityManagerInterface->persist($media);
-				}
+				ServicesLibrary::modifyMediaCollection($trick, $form, $fileUploader, $entityManagerInterface);
 			}
 			/*
                 |-----------------------------------
                 | And we check if there are video links, if so, we loop through the array and  add the value to the database.
                 |-----------------------------------
             */
-			$videoLinks = $form->get('embed_video_links')->getData();
-			if (!empty($videoLinks)) {
-				foreach ($videoLinks as $videoLink) {
-					if (!empty($videoLink)) {
-						$media = new Media();
-						$media->setPath($videoLink);
-						$media->setTrick($trick);
-						$media->setType('video');
-						$entityManagerInterface->persist($media);
-					}
-				}
-			}
+			ServicesLibrary::modifyVideoLinks($trick, $form, $entityManagerInterface);
 
 			$trick->setCreatedAt(new \DateTimeImmutable());
 			$trick->setUser($this->getUser());
@@ -234,9 +203,7 @@ class TrickController extends AbstractController
                 |-----------------------------------
             */
 			if (!empty($form->get('main_picture')->getData())) {
-				$mainPicture = $form->get('main_picture')->getData();
-				$fileName = $fileUploader->upload($mainPicture, 'media');
-				$trick->setMainPicture($fileName);
+				ServicesLibrary::modifyMainPicture($trick, $form, $fileUploader);
 			}
 			/*
                 |-----------------------------------
@@ -244,44 +211,14 @@ class TrickController extends AbstractController
                 |-----------------------------------
             */
 			if (!empty($form->get('medias')->getData())) {
-				foreach ($form->get('medias')->getData() as $media) {
-					$fileName = $fileUploader->upload($media, 'media');
-					$media = new Media();
-					$media->setPath($fileName);
-					$media->setTrick($trick);
-					/*
-                        |-----------------------------------
-                        | We find the extension to set the type
-                        |-----------------------------------
-		            */
-					$extension = pathinfo($fileName, PATHINFO_EXTENSION);
-					if ($extension === 'mp4' || $extension === 'webm' || $extension === 'ogg') {
-						$media->setType('video');
-					} elseif ($extension === 'png' || $extension === 'jpg' || $extension === 'jpeg') {
-						$media->setType('picture');
-					} else {
-						throw new \Exception('The file extension is not supported');
-					}
-					$entityManagerInterface->persist($media);
-				}
+				ServicesLibrary::modifyMediaCollection($trick, $form, $fileUploader, $entityManagerInterface);
 			}
 			/*
                 |-----------------------------------
                 | And we check if there are video links, if so, we loop through the array and  add the value to the database.
                 |-----------------------------------
             */
-			$videoLinks = $form->get('embed_video_links')->getData();
-			if (!empty($videoLinks)) {
-				foreach ($videoLinks as $videoLink) {
-					if (!empty($videoLink)) {
-						$media = new Media();
-						$media->setPath($videoLink);
-						$media->setTrick($trick);
-						$media->setType('video');
-						$entityManagerInterface->persist($media);
-					}
-				}
-			}
+			ServicesLibrary::modifyVideoLinks($trick, $form, $entityManagerInterface);
 
 			$trick->setModifiedAt(new \DateTimeImmutable());
 

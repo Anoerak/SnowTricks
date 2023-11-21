@@ -1,0 +1,15 @@
+{
+	"name": "SnowTricks 🎿",
+	"short_name": "SnowTricks",
+	"description": "Find, share or create snowboard tricks",
+	"start_url": "/",
+	"background_color": "#000000",
+	"theme_color": "rgb (178, 243, 229)",
+	"icons": [
+		{
+			"src": "./favicon.ico",
+			"sizes": "256x256",
+			"type": "image/ico"
+		}
+	]
+}

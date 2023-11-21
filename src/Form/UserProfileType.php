@@ -52,7 +52,6 @@ class UserProfileType extends AbstractType
                         'placeholder' => 'New Password',
                         'name' => 'password',
                     ],
-                    'required' => false,
                 ]
             )
             ->add(
@@ -66,7 +65,6 @@ class UserProfileType extends AbstractType
                         'placeholder' => 'New Password',
                         'name' => 'confirm_password',
                     ],
-                    'required' => false,
                 ]
             );
     }

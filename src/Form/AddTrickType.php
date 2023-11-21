@@ -100,7 +100,7 @@ class AddTrickType extends AbstractType
                     'attr' => [
                         'value' => null,
                         'name' => 'video_link',
-                        'placeholder' => 'https://www.youtube.com/watch?v=xxxxxxxxxxx',
+                        'placeholder' => 'https://www.youtube.com/embed/xxxxxxxxxxx',
                         'class' => 'video__link__added',
                     ],
                 ],

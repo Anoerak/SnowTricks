@@ -100,6 +100,7 @@ class EditTrickType extends AbstractType
             ])
             ->add('embed_video_links', CollectionType::class, [
                 'label' => 'Video Links',
+                'required' => false,
                 'mapped' => false,
                 'entry_type' => TextType::class,
                 'data' => [null],
