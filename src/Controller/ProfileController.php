@@ -81,8 +81,7 @@ class ProfileController extends AbstractController
         $entityManager->remove($user);
         $entityManager->flush();
         // refresh session
-        $session = $request->getSession();
-        $session->invalidate();
+        $request->getSession()->invalidate();
         // We logout the user
         $signinController = new SigninController();
         $signinController->logout();

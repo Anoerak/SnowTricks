@@ -10,7 +10,6 @@ use Symfony\Component\Form\FormInterface;
 class ServicesLibrary
 {
 
-
 	static public function modifyMainPicture(Trick $trick, FormInterface $form, FileUploader $fileUploader)
 	{
 		$mainPicture = $form->get('main_picture')->getData();
